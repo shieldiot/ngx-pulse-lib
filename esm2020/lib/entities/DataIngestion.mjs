@@ -1,0 +1,27 @@
+// DataIngestion is the ingestion pipeline configuration
+export class DataIngestion {
+    constructor(inputURI, archiveURI, inputFilesExt, subNets, usageTimeWindowSec, sessionTimeWindowSec, schedule) {
+        if (inputURI !== undefined) {
+            this.inputURI = inputURI;
+        }
+        if (archiveURI !== undefined) {
+            this.archiveURI = archiveURI;
+        }
+        if (inputFilesExt !== undefined) {
+            this.inputFilesExt = inputFilesExt;
+        }
+        if (subNets !== undefined) {
+            this.subNets = subNets;
+        }
+        if (usageTimeWindowSec !== undefined) {
+            this.usageTimeWindowSec = usageTimeWindowSec;
+        }
+        if (sessionTimeWindowSec !== undefined) {
+            this.sessionTimeWindowSec = sessionTimeWindowSec;
+        }
+        if (schedule !== undefined) {
+            this.schedule = schedule;
+        }
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRGF0YUluZ2VzdGlvbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1wdWxzZS1saWIvc3JjL2xpYi9lbnRpdGllcy9EYXRhSW5nZXN0aW9uLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdBLHdEQUF3RDtBQUN4RCxNQUFNLE9BQU8sYUFBYTtJQXVCckIsWUFBWSxRQUFpQixFQUFFLFVBQW1CLEVBQUUsYUFBd0IsRUFBRSxPQUFrQixFQUFFLGtCQUEyQixFQUFFLG9CQUE2QixFQUFFLFFBQWlCO1FBQzVLLElBQUksUUFBUSxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxRQUFRLEdBQUcsUUFBUSxDQUFDO1NBQUU7UUFDekQsSUFBSSxVQUFVLEtBQUssU0FBUyxFQUFFO1lBQUUsSUFBSSxDQUFDLFVBQVUsR0FBRyxVQUFVLENBQUM7U0FBRTtRQUMvRCxJQUFJLGFBQWEsS0FBSyxTQUFTLEVBQUU7WUFBRSxJQUFJLENBQUMsYUFBYSxHQUFHLGFBQWEsQ0FBQztTQUFFO1FBQ3hFLElBQUksT0FBTyxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxPQUFPLEdBQUcsT0FBTyxDQUFDO1NBQUU7UUFDdEQsSUFBSSxrQkFBa0IsS0FBSyxTQUFTLEVBQUU7WUFBRSxJQUFJLENBQUMsa0JBQWtCLEdBQUcsa0JBQWtCLENBQUM7U0FBRTtRQUN2RixJQUFJLG9CQUFvQixLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxvQkFBb0IsR0FBRyxvQkFBb0IsQ0FBQztTQUFFO1FBQzdGLElBQUksUUFBUSxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxRQUFRLEdBQUcsUUFBUSxDQUFDO1NBQUU7SUFDN0QsQ0FBQztDQUVKIiwic291cmNlc0NvbnRlbnQiOlsiXG5cblxuLy8gRGF0YUluZ2VzdGlvbiBpcyB0aGUgaW5nZXN0aW9uIHBpcGVsaW5lIGNvbmZpZ3VyYXRpb25cbmV4cG9ydCBjbGFzcyBEYXRhSW5nZXN0aW9uIHtcbiBcbiAgICAvLyBJbnB1dCBmaWxlcyBsb2NhdGlvbnMgXG4gICAgcHVibGljIGlucHV0VVJJOiBzdHJpbmc7XG4gXG4gICAgLy8gV2hlcmUgdG8gYXJjaGl2ZSBwcm9jZXNzZWQgZmlsZXMgXG4gICAgcHVibGljIGFyY2hpdmVVUkk6IHN0cmluZztcbiBcbiAgICAvLyBJbnB1dCBmaWxlcyBleHRlbnNpb25zIChmaWx0ZXIgYnkgZXh0ZW5zaW9ucykgLSBpZ25vcmUgaWYgZW1wdHkgXG4gICAgcHVibGljIGlucHV0RmlsZXNFeHQ6IHN0cmluZ1tdO1xuIFxuICAgIC8vIExpc3Qgb2YgSW9UIGRldmljZXMgc3VibmV0cyAtIGlnbm9yZSBpZiBlbXB0eSBcbiAgICBwdWJsaWMgc3ViTmV0czogc3RyaW5nW107XG4gXG4gICAgLy8gVXNhZ2UgdGltZSB3aW5kb3cgZm9yIGFnZ3JlZ2F0aW9uIChpbiBzZWNvbmRzKSBcbiAgICBwdWJsaWMgdXNhZ2VUaW1lV2luZG93U2VjOiBudW1iZXI7XG4gXG4gICAgLy8gU2Vzc2lvbiB0aW1lIHdpbmRvdyBmb3IgYWdncmVnYXRpb24gKGluIHNlY29uZHMpIFxuICAgIHB1YmxpYyBzZXNzaW9uVGltZVdpbmRvd1NlYzogbnVtYmVyO1xuIFxuICAgIC8vIENyb24gc2NoZWR1bGUgdGVtcGxhdGUgaW4gNiBzZWdtZW50IGZvcm1hdCAoc2VlOiBodHRwczovL2VuLndpa2lwZWRpYS5vcmcvd2lraS9Dcm9uKSAtIGxlYXZlIGVtcHR5IGZvciBpbW1lZGlhdGUgcHJvY2Vzc2luZyBcbiAgICBwdWJsaWMgc2NoZWR1bGU6IHN0cmluZztcbiBcbiAgICAgY29uc3RydWN0b3IoaW5wdXRVUkk/OiBzdHJpbmcsIGFyY2hpdmVVUkk/OiBzdHJpbmcsIGlucHV0RmlsZXNFeHQ/OiBzdHJpbmdbXSwgc3ViTmV0cz86IHN0cmluZ1tdLCB1c2FnZVRpbWVXaW5kb3dTZWM/OiBudW1iZXIsIHNlc3Npb25UaW1lV2luZG93U2VjPzogbnVtYmVyLCBzY2hlZHVsZT86IHN0cmluZykgeyBcbiAgICAgICAgaWYgKGlucHV0VVJJICE9PSB1bmRlZmluZWQpIHsgdGhpcy5pbnB1dFVSSSA9IGlucHV0VVJJOyB9XG4gICAgICAgIGlmIChhcmNoaXZlVVJJICE9PSB1bmRlZmluZWQpIHsgdGhpcy5hcmNoaXZlVVJJID0gYXJjaGl2ZVVSSTsgfVxuICAgICAgICBpZiAoaW5wdXRGaWxlc0V4dCAhPT0gdW5kZWZpbmVkKSB7IHRoaXMuaW5wdXRGaWxlc0V4dCA9IGlucHV0RmlsZXNFeHQ7IH1cbiAgICAgICAgaWYgKHN1Yk5ldHMgIT09IHVuZGVmaW5lZCkgeyB0aGlzLnN1Yk5ldHMgPSBzdWJOZXRzOyB9XG4gICAgICAgIGlmICh1c2FnZVRpbWVXaW5kb3dTZWMgIT09IHVuZGVmaW5lZCkgeyB0aGlzLnVzYWdlVGltZVdpbmRvd1NlYyA9IHVzYWdlVGltZVdpbmRvd1NlYzsgfVxuICAgICAgICBpZiAoc2Vzc2lvblRpbWVXaW5kb3dTZWMgIT09IHVuZGVmaW5lZCkgeyB0aGlzLnNlc3Npb25UaW1lV2luZG93U2VjID0gc2Vzc2lvblRpbWVXaW5kb3dTZWM7IH1cbiAgICAgICAgaWYgKHNjaGVkdWxlICE9PSB1bmRlZmluZWQpIHsgdGhpcy5zY2hlZHVsZSA9IHNjaGVkdWxlOyB9XG4gICAgfVxuXG59XG5cblxuIl19

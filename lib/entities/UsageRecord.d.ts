@@ -1,0 +1,31 @@
+import { StringIntValue } from '../common/StringIntValue';
+import { BaseEntity } from '../entities/BaseEntity';
+export declare class UsageRecord extends BaseEntity {
+    source: string;
+    sessionId: string;
+    accountId: string;
+    streamId: string;
+    deviceId: string;
+    deviceIp: string;
+    startTime: number;
+    endTime: number;
+    sourceIP: string;
+    sourcePorts: StringIntValue[];
+    packetsIn: number;
+    packetsOut: number;
+    bytesIn: number;
+    bytesOut: number;
+    endpointsIn: StringIntValue[];
+    endpointsInCount: number;
+    endpointsOut: StringIntValue[];
+    endpointsOutCount: number;
+    dstPorts: StringIntValue[];
+    dstPortsCount: number;
+    srcAckFlags: number;
+    dstAckFlags: number;
+    srcSynFlags: number;
+    dstSynFlags: number;
+    srcRstFlags: number;
+    dstRstFlags: number;
+    labels: string[];
+}
