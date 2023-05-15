@@ -1,7 +1,7 @@
-import { DeviceTypeCode } from '../enums/DeviceTypeCode';
-import { DeviceStatusCode } from '../enums/DeviceStatusCode';
 import { DeviceActionCode } from '../enums/DeviceActionCode';
 import { BaseEntity } from '../entities/BaseEntity';
+import { DeviceTypeCode } from '../enums/DeviceTypeCode';
+import { DeviceStatusCode } from '../enums/DeviceStatusCode';
 export declare class Device extends BaseEntity {
     accountId: string;
     streamId: string;

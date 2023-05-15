@@ -1,5 +1,5 @@
-import { StringIntValue } from '../common/StringIntValue';
 import { BaseEntity } from '../entities/BaseEntity';
+import { StringIntValue } from '../common/StringIntValue';
 export declare class UsageRecord extends BaseEntity {
     source: string;
     sessionId: string;

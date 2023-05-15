@@ -12,6 +12,7 @@ export * from './EventWithDevice';
 export * from './IntDistribution';
 export * from './Integration';
 export * from './Member';
+export * from './Radius';
 export * from './Rule';
 export * from './RuleTemplate';
 export * from './SessionRecord';
