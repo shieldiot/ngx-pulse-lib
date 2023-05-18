@@ -3,7 +3,7 @@ import { BaseEntity } from '../entities/BaseEntity';
 export declare class Radius extends BaseEntity {
     accountId: string;
     streamId: string;
-    timestamp: number;
+    assignedOn: number;
     mac: string;
     ip: string;
     sid: string;
