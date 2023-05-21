@@ -28,4 +28,10 @@ export declare class UsageRecord extends BaseEntity {
     srcRstFlags: number;
     dstRstFlags: number;
     labels: string[];
+    zPacketsIn: number;
+    zPacketsOut: number;
+    zBytesIn: number;
+    zBytesOut: number;
+    zEndpointsCount: number;
+    zPortsCount: number;
 }

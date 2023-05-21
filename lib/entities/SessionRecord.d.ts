@@ -18,4 +18,8 @@ export declare class SessionRecord extends BaseEntity {
     bytesIn: number;
     bytesOut: number;
     labels: string[];
+    zPacketsIn: number;
+    zPacketsOut: number;
+    zBytesIn: number;
+    zBytesOut: number;
 }

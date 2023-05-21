@@ -1483,6 +1483,24 @@ class LoginParams {
     }
 }
 
+// Session data transformation parameters (to calculate z-score)
+class SessionTransform {
+    constructor(packetsIn, packetsOut, bytesIn, bytesOut) {
+        if (packetsIn !== undefined) {
+            this.packetsIn = packetsIn;
+        }
+        if (packetsOut !== undefined) {
+            this.packetsOut = packetsOut;
+        }
+        if (bytesIn !== undefined) {
+            this.bytesIn = bytesIn;
+        }
+        if (bytesOut !== undefined) {
+            this.bytesOut = bytesOut;
+        }
+    }
+}
+
 // String Int Value tuple
 class StringIntValue {
     constructor(key, value) {
@@ -1624,6 +1642,30 @@ class TokenData {
     }
 }
 
+// Usage data transformation parameters (to calculate z-score)
+class UsageTransform {
+    constructor(packetsIn, packetsOut, bytesIn, bytesOut, endpointsCount, portsCount) {
+        if (packetsIn !== undefined) {
+            this.packetsIn = packetsIn;
+        }
+        if (packetsOut !== undefined) {
+            this.packetsOut = packetsOut;
+        }
+        if (bytesIn !== undefined) {
+            this.bytesIn = bytesIn;
+        }
+        if (bytesOut !== undefined) {
+            this.bytesOut = bytesOut;
+        }
+        if (endpointsCount !== undefined) {
+            this.endpointsCount = endpointsCount;
+        }
+        if (portsCount !== undefined) {
+            this.portsCount = portsCount;
+        }
+    }
+}
+
 // ZScore parameters
 class ZScore {
     constructor(mean, sD) {
@@ -1678,7 +1720,7 @@ class DNSRecord extends BaseEntity {
 
 // DataIngestion is the ingestion pipeline configuration
 class DataIngestion {
-    constructor(inputURI, archiveURI, inputFilesExt, subNets, usageTimeWindowSec, sessionTimeWindowSec, schedule) {
+    constructor(inputURI, archiveURI, inputFilesExt, subNets, usageTimeWindowSec, sessionTimeWindowSec, schedule, defaultDeviceType, isStaticIPs) {
         if (inputURI !== undefined) {
             this.inputURI = inputURI;
         }
@@ -1699,6 +1741,12 @@ class DataIngestion {
         }
         if (schedule !== undefined) {
             this.schedule = schedule;
+        }
+        if (defaultDeviceType !== undefined) {
+            this.defaultDeviceType = defaultDeviceType;
+        }
+        if (isStaticIPs !== undefined) {
+            this.isStaticIPs = isStaticIPs;
         }
     }
 }
@@ -1772,9 +1820,15 @@ class Stream extends BaseEntity {
 
 // StreamConfig is a stream configuration description
 class StreamConfig {
-    constructor(ingest) {
+    constructor(ingest, sessionTransform, usageTransform) {
         if (ingest !== undefined) {
             this.ingest = ingest;
+        }
+        if (sessionTransform !== undefined) {
+            this.sessionTransform = sessionTransform;
+        }
+        if (usageTransform !== undefined) {
+            this.usageTransform = usageTransform;
         }
     }
 }
@@ -2202,5 +2256,5 @@ function GetUserTypeCodes() {
  * Generated bundle index. Do not edit.
  */
 
-export { Account, AccountRole, AccountSettings, AccountStatusCode, AccountTypeCode, ActionResponse, AuditLog, BaseEntity, BaseRestResponse, Checkpoint, DNSRecord, DataIngestion, Device, DeviceActionCode, DeviceStatusCode, DeviceTypeCode, DeviceWithEvents, DevicesService, EntitiesResponse, EntityResponse, Event, EventCategoryCode, EventStatusCode, EventTypeCode, EventWithDevice, EventsService, FloatKeyValue, GetAccountStatusCodes, GetAccountTypeCodes, GetDeviceActionCodes, GetDeviceStatusCodes, GetDeviceTypeCodes, GetEventCategoryCodes, GetEventStatusCodes, GetEventTypeCodes, GetIntegrationTypeCodes, GetMemberRoleCodes, GetRuleTypeCodes, GetSeverityTypeCodes, GetUserStatusCodes, GetUserTypeCodes, Indicator, IntDistribution, IntKeyValue, Integration, IntegrationTypeCode, LoginParams, Member, MemberRoleCode, NgxPulseLibModule, PulseConfig, Radius, RestUtil, Rule, RuleTemplate, RuleTypeCode, Services, SessionRecord, SeverityTypeCode, Shieldex, Stream, StreamConfig, StringIntValue, StringKeyValue, SysAccountsService, SysMembersService, SysRuleTemplatesService, SysRulesService, SysStreamsService, SysUsersService, TimeDataPoint, TimeDataPoint2D, TimeDataPointFloat, TimeFrame, TimeSeries, TimeSeriesOf2D, TimeSeriesOfFloat, TokenData, UsageRecord, User, UserMembership, UserMemberships, UserService, UserStatusCode, UserTypeCode, UsrIntegrationsService, ZScore };
+export { Account, AccountRole, AccountSettings, AccountStatusCode, AccountTypeCode, ActionResponse, AuditLog, BaseEntity, BaseRestResponse, Checkpoint, DNSRecord, DataIngestion, Device, DeviceActionCode, DeviceStatusCode, DeviceTypeCode, DeviceWithEvents, DevicesService, EntitiesResponse, EntityResponse, Event, EventCategoryCode, EventStatusCode, EventTypeCode, EventWithDevice, EventsService, FloatKeyValue, GetAccountStatusCodes, GetAccountTypeCodes, GetDeviceActionCodes, GetDeviceStatusCodes, GetDeviceTypeCodes, GetEventCategoryCodes, GetEventStatusCodes, GetEventTypeCodes, GetIntegrationTypeCodes, GetMemberRoleCodes, GetRuleTypeCodes, GetSeverityTypeCodes, GetUserStatusCodes, GetUserTypeCodes, Indicator, IntDistribution, IntKeyValue, Integration, IntegrationTypeCode, LoginParams, Member, MemberRoleCode, NgxPulseLibModule, PulseConfig, Radius, RestUtil, Rule, RuleTemplate, RuleTypeCode, Services, SessionRecord, SessionTransform, SeverityTypeCode, Shieldex, Stream, StreamConfig, StringIntValue, StringKeyValue, SysAccountsService, SysMembersService, SysRuleTemplatesService, SysRulesService, SysStreamsService, SysUsersService, TimeDataPoint, TimeDataPoint2D, TimeDataPointFloat, TimeFrame, TimeSeries, TimeSeriesOf2D, TimeSeriesOfFloat, TokenData, UsageRecord, UsageTransform, User, UserMembership, UserMemberships, UserService, UserStatusCode, UserTypeCode, UsrIntegrationsService, ZScore };
 //# sourceMappingURL=ngx-pulse-lib.mjs.map
