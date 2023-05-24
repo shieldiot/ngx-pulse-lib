@@ -12,6 +12,7 @@ export declare enum DeviceTypeCode {
     TEMPERATURE_SENSOR = 10,
     AIR_QUALITY_SENSOR = 11,
     VALVE = 12,
-    GATEWAY = 13
+    GATEWAY = 13,
+    ATM = 14
 }
 export declare function GetDeviceTypeCodes(): Map<DeviceTypeCode, string>;
