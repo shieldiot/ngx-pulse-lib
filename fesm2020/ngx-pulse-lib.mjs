@@ -1955,7 +1955,7 @@ var DeviceTypeCode;
     DeviceTypeCode[DeviceTypeCode["VALVE"] = 12] = "VALVE";
     // Gateway [13] 
     DeviceTypeCode[DeviceTypeCode["GATEWAY"] = 13] = "GATEWAY";
-    // ATM [13] 
+    // ATM [14] 
     DeviceTypeCode[DeviceTypeCode["ATM"] = 14] = "ATM";
 })(DeviceTypeCode || (DeviceTypeCode = {}));
 // Return list of DeviceTypeCode values and their display names
