@@ -1,6 +1,7 @@
 export * from './AccountStatusCode';
 export * from './AccountTypeCode';
 export * from './DeviceActionCode';
+export * from './DeviceCreationCode';
 export * from './DeviceStatusCode';
 export * from './DeviceTypeCode';
 export * from './EventCategoryCode';

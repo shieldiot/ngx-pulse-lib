@@ -1,4 +1,3 @@
-import { StringIntValue } from '../common/StringIntValue';
 import { BaseEntity } from '../entities/BaseEntity';
 export declare class UsageRecord extends BaseEntity {
     source: string;
@@ -9,18 +8,15 @@ export declare class UsageRecord extends BaseEntity {
     deviceIp: string;
     startTime: number;
     endTime: number;
-    sourceIP: string;
-    sourcePorts: StringIntValue[];
+    srcPortsList: string;
+    srcPortsCount: number;
+    dstPortsList: string;
+    dstPortsCount: number;
+    endpointsCount: number;
     packetsIn: number;
     packetsOut: number;
     bytesIn: number;
     bytesOut: number;
-    endpointsIn: StringIntValue[];
-    endpointsInCount: number;
-    endpointsOut: StringIntValue[];
-    endpointsOutCount: number;
-    dstPorts: StringIntValue[];
-    dstPortsCount: number;
     srcAckFlags: number;
     dstAckFlags: number;
     srcSynFlags: number;
@@ -32,6 +28,6 @@ export declare class UsageRecord extends BaseEntity {
     zPacketsOut: number;
     zBytesIn: number;
     zBytesOut: number;
-    zEndpointsCount: number;
     zPortsCount: number;
+    zEndpointsCount: number;
 }

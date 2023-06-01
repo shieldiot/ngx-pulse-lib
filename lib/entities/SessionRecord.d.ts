@@ -8,10 +8,10 @@ export declare class SessionRecord extends BaseEntity {
     deviceIp: string;
     startTime: number;
     endTime: number;
-    sourceIP: string;
-    sourcePort: number;
-    destinationIP: string;
-    destinationPort: number;
+    srcIP: string;
+    srcPort: number;
+    dstIP: string;
+    dstPort: number;
     protocol: string;
     packetsIn: number;
     packetsOut: number;
