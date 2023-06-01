@@ -12,6 +12,7 @@ export declare class UsageRecord extends BaseEntity {
     srcPortsCount: number;
     dstPortsList: string;
     dstPortsCount: number;
+    endpointsList: string;
     endpointsCount: number;
     packetsIn: number;
     packetsOut: number;
