@@ -1807,6 +1807,9 @@ class RuleTemplate extends BaseEntity {
 }
 
 // SessionRecord represents network statistics for a session
+// The unique Id of session record is based on the template: [window_start_time]-[device_id]-[session_id]
+// The createdOn field represents the first communication time of the device within this time window
+// The updatedOn field represents the last communication time of the device within this time window
 class SessionRecord extends BaseEntity {
 }
 
@@ -1834,6 +1837,9 @@ class StreamConfig {
 }
 
 // UsageRecord represents network statistics
+// The unique Id of usage record is based on the template: [window_start_time]-[stream_id]-[device_id]
+// The createdOn field represents the first communication time of the device within this time window
+// The updatedOn field represents the last communication time of the device within this time window
 class UsageRecord extends BaseEntity {
 }
 

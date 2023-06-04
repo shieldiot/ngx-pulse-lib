@@ -1,7 +1,6 @@
 import { BaseEntity } from '../entities/BaseEntity';
 export declare class UsageRecord extends BaseEntity {
     source: string;
-    sessionId: string;
     accountId: string;
     streamId: string;
     deviceId: string;
