@@ -7,7 +7,6 @@ export declare class DNSRecord extends BaseEntity {
     streamId: string;
     startTime: number;
     endTime: number;
-    sourceIP: string;
     fqdn: string;
     records: string[];
 }

@@ -1715,6 +1715,8 @@ class Checkpoint extends BaseEntity {
 }
 
 // DNSRecord represents network statistics of DNS requests
+// The createdOn field represents the first communication time of the device within this time window
+// The updatedOn field represents the last communication time of the device within this time window
 class DNSRecord extends BaseEntity {
 }
 
