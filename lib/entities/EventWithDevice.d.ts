@@ -1,3 +1,4 @@
+import { RuleTypeCode } from '../enums/RuleTypeCode';
 import { EventCategoryCode } from '../enums/EventCategoryCode';
 import { Device } from '../entities/Device';
 import { BaseEntity } from '../entities/BaseEntity';
@@ -5,7 +6,6 @@ import { EventTypeCode } from '../enums/EventTypeCode';
 import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { EventStatusCode } from '../enums/EventStatusCode';
 import { Indicator } from '../common/Indicator';
-import { RuleTypeCode } from '../enums/RuleTypeCode';
 export declare class EventWithDevice extends BaseEntity {
     accountId: string;
     streamId: string;
