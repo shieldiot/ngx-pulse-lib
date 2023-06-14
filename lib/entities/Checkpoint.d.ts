@@ -6,9 +6,12 @@ export declare class Checkpoint extends BaseEntity {
     label: string;
     description: string;
     elapsed: number;
+    elapsedSent: number;
     totalFiles: number;
     totalPackets: number;
     totalUsage: number;
     totalSession: number;
     totalRadius: number;
+    state: number;
+    processedBy: string;
 }
