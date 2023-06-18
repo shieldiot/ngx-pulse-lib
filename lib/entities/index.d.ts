@@ -6,6 +6,7 @@ export * from './Checkpoint';
 export * from './DNSRecord';
 export * from './DataIngestion';
 export * from './Device';
+export * from './DeviceReport';
 export * from './DeviceWithEvents';
 export * from './Event';
 export * from './EventWithDevice';
