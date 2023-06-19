@@ -10,6 +10,8 @@ export * from './DeviceReport';
 export * from './DeviceWithEvents';
 export * from './Event';
 export * from './EventWithDevice';
+export * from './Feature';
+export * from './FeaturesGroup';
 export * from './IntDistribution';
 export * from './Integration';
 export * from './Member';
