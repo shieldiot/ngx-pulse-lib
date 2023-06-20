@@ -707,6 +707,12 @@ class UserService {
         return this.rest.get(`${this.baseUrl}/get-account`);
     }
     /**
+     * Get the user's current account features (aggregated list of all features in all the account's features groups)
+     */
+    getAccountFeatures() {
+        return this.rest.get(`${this.baseUrl}/get-account-features`);
+    }
+    /**
      * Get all the user memberships (all accounts that the current user has access to)
      */
     getMemberships() {
@@ -1468,6 +1474,27 @@ class IntKeyValue {
     }
 }
 
+// Link represents a relation between two nodes
+class Link {
+    constructor(id, name, src, dst, value) {
+        if (id !== undefined) {
+            this.id = id;
+        }
+        if (name !== undefined) {
+            this.name = name;
+        }
+        if (src !== undefined) {
+            this.src = src;
+        }
+        if (dst !== undefined) {
+            this.dst = dst;
+        }
+        if (value !== undefined) {
+            this.value = value;
+        }
+    }
+}
+
 // Login parameters data model
 class LoginParams {
     constructor(email, password, accessToken) {
@@ -1479,6 +1506,36 @@ class LoginParams {
         }
         if (accessToken !== undefined) {
             this.accessToken = accessToken;
+        }
+    }
+}
+
+// NetworkMap is a data structure representing a set of nodes and vertex representing a network
+class NetworkMap {
+    constructor(nodes, links) {
+        if (nodes !== undefined) {
+            this.nodes = nodes;
+        }
+        if (links !== undefined) {
+            this.links = links;
+        }
+    }
+}
+
+// Node represents a vertex in a network map
+class Node {
+    constructor(id, name, ip, type) {
+        if (id !== undefined) {
+            this.id = id;
+        }
+        if (name !== undefined) {
+            this.name = name;
+        }
+        if (ip !== undefined) {
+            this.ip = ip;
+        }
+        if (type !== undefined) {
+            this.type = type;
         }
     }
 }
@@ -2157,14 +2214,14 @@ var FeatureCode;
 (function (FeatureCode) {
     // Undefined [0] 
     FeatureCode[FeatureCode["UNDEFINED"] = 0] = "UNDEFINED";
-    // Link Map view [1] 
-    FeatureCode[FeatureCode["LINK_MAP_VIEW"] = 1] = "LINK_MAP_VIEW";
+    // Network Map view [1] 
+    FeatureCode[FeatureCode["NETWORK_MAP_VIEW"] = 1] = "NETWORK_MAP_VIEW";
 })(FeatureCode || (FeatureCode = {}));
 // Return list of FeatureCode values and their display names
 function GetFeatureCodes() {
     let result = new Map();
     result.set(FeatureCode.UNDEFINED, 'Undefined');
-    result.set(FeatureCode.LINK_MAP_VIEW, 'Link Map View');
+    result.set(FeatureCode.NETWORK_MAP_VIEW, 'Network Map View');
     return result;
 }
 
@@ -2320,5 +2377,5 @@ function GetUserTypeCodes() {
  * Generated bundle index. Do not edit.
  */
 
-export { Account, AccountRole, AccountSettings, AccountStatusCode, AccountTypeCode, ActionResponse, AuditLog, BaseEntity, BaseRestResponse, Checkpoint, DNSRecord, DataIngestion, Device, DeviceActionCode, DeviceCreationCode, DeviceReport, DeviceStatusCode, DeviceTypeCode, DeviceWithEvents, DevicesService, EntitiesResponse, EntityResponse, Event, EventCategoryCode, EventStatusCode, EventTypeCode, EventWithDevice, EventsService, Feature, FeatureCode, FeaturesGroup, FloatKeyValue, GetAccountStatusCodes, GetAccountTypeCodes, GetDeviceActionCodes, GetDeviceCreationCodes, GetDeviceStatusCodes, GetDeviceTypeCodes, GetEventCategoryCodes, GetEventStatusCodes, GetEventTypeCodes, GetFeatureCodes, GetIntegrationTypeCodes, GetMemberRoleCodes, GetRuleTypeCodes, GetSeverityTypeCodes, GetUserStatusCodes, GetUserTypeCodes, Indicator, IntDistribution, IntKeyValue, Integration, IntegrationTypeCode, LoginParams, Member, MemberRoleCode, NgxPulseLibModule, PulseConfig, Radius, RestUtil, Rule, RuleTemplate, RuleTypeCode, Services, SessionRecord, SessionTransform, SeverityTypeCode, Shieldex, Stream, StreamConfig, StringIntValue, StringKeyValue, SysAccountsService, SysMembersService, SysRuleTemplatesService, SysRulesService, SysStreamsService, SysUsersService, TimeDataPoint, TimeDataPoint2D, TimeDataPointFloat, TimeFrame, TimeSeries, TimeSeriesOf2D, TimeSeriesOfFloat, TokenData, UsageRecord, UsageTransform, User, UserMembership, UserMemberships, UserService, UserStatusCode, UserTypeCode, UsrIntegrationsService, ZScore };
+export { Account, AccountRole, AccountSettings, AccountStatusCode, AccountTypeCode, ActionResponse, AuditLog, BaseEntity, BaseRestResponse, Checkpoint, DNSRecord, DataIngestion, Device, DeviceActionCode, DeviceCreationCode, DeviceReport, DeviceStatusCode, DeviceTypeCode, DeviceWithEvents, DevicesService, EntitiesResponse, EntityResponse, Event, EventCategoryCode, EventStatusCode, EventTypeCode, EventWithDevice, EventsService, Feature, FeatureCode, FeaturesGroup, FloatKeyValue, GetAccountStatusCodes, GetAccountTypeCodes, GetDeviceActionCodes, GetDeviceCreationCodes, GetDeviceStatusCodes, GetDeviceTypeCodes, GetEventCategoryCodes, GetEventStatusCodes, GetEventTypeCodes, GetFeatureCodes, GetIntegrationTypeCodes, GetMemberRoleCodes, GetRuleTypeCodes, GetSeverityTypeCodes, GetUserStatusCodes, GetUserTypeCodes, Indicator, IntDistribution, IntKeyValue, Integration, IntegrationTypeCode, Link, LoginParams, Member, MemberRoleCode, NetworkMap, NgxPulseLibModule, Node, PulseConfig, Radius, RestUtil, Rule, RuleTemplate, RuleTypeCode, Services, SessionRecord, SessionTransform, SeverityTypeCode, Shieldex, Stream, StreamConfig, StringIntValue, StringKeyValue, SysAccountsService, SysMembersService, SysRuleTemplatesService, SysRulesService, SysStreamsService, SysUsersService, TimeDataPoint, TimeDataPoint2D, TimeDataPointFloat, TimeFrame, TimeSeries, TimeSeriesOf2D, TimeSeriesOfFloat, TokenData, UsageRecord, UsageTransform, User, UserMembership, UserMemberships, UserService, UserStatusCode, UserTypeCode, UsrIntegrationsService, ZScore };
 //# sourceMappingURL=ngx-pulse-lib.mjs.map

@@ -1,7 +1,8 @@
-import { RestUtil, EntityResponse, ActionResponse } from '../../utils';
+import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
 import { LoginParams } from '../common/LoginParams';
 import { Account } from '../entities/Account';
+import { Feature } from '../entities/Feature';
 import { UserMemberships } from '../entities/UserMemberships';
 import * as i0 from "@angular/core";
 export declare class UserService {
@@ -23,6 +24,10 @@ export declare class UserService {
      * Get the user's current account details
      */
     getAccount(): import("rxjs").Observable<EntityResponse<Account>>;
+    /**
+     * Get the user's current account features (aggregated list of all features in all the account's features groups)
+     */
+    getAccountFeatures(): import("rxjs").Observable<EntitiesResponse<Feature>>;
     /**
      * Get all the user memberships (all accounts that the current user has access to)
      */
