@@ -1,11 +1,12 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { DeviceWithEvents } from '../entities/DeviceWithEvents';
+import { IntDistribution } from '../entities/IntDistribution';
 import { DeviceActionCode } from '../enums/DeviceActionCode';
+import { NetworkMap } from '../common/NetworkMap';
 import { Device } from '../entities/Device';
 import { DeviceTypeCode } from '../enums/DeviceTypeCode';
 import { DeviceStatusCode } from '../enums/DeviceStatusCode';
-import { DeviceWithEvents } from '../entities/DeviceWithEvents';
-import { IntDistribution } from '../entities/IntDistribution';
 import * as i0 from "@angular/core";
 export declare class DevicesService {
     private config;
@@ -64,6 +65,10 @@ export declare class DevicesService {
      * Apply action on a device
      */
     applyAction(id?: string, action?: DeviceActionCode): import("rxjs").Observable<ActionResponse>;
+    /**
+     * Get network map of devices
+     */
+    getNetworkMap(streamId?: string, from?: number, to?: number, type?: DeviceTypeCode[], tag?: string[], id?: string[]): import("rxjs").Observable<EntityResponse<NetworkMap>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<DevicesService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DevicesService>;
 }

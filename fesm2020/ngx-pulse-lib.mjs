@@ -954,6 +954,31 @@ class DevicesService {
     applyAction(id, action) {
         return this.rest.post(`${this.baseUrl}/${id}/action/${action}`, '');
     }
+    /**
+     * Get network map of devices
+     */
+    getNetworkMap(streamId, from, to, type, tag, id) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (tag != null) {
+            params.push(`tag=${tag}`);
+        }
+        if (id != null) {
+            params.push(`id=${id}`);
+        }
+        return this.rest.get(`${this.baseUrl}/network-map`, ...params);
+    }
 }
 DevicesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: DevicesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
 DevicesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: DevicesService });
@@ -1456,7 +1481,7 @@ class IntKeyValue {
 
 // Link represents a relation between two nodes
 class Link {
-    constructor(id, name, src, dst, value) {
+    constructor(id, name, src, dst, value, severity, eventCount) {
         if (id !== undefined) {
             this.id = id;
         }
@@ -1471,6 +1496,12 @@ class Link {
         }
         if (value !== undefined) {
             this.value = value;
+        }
+        if (severity !== undefined) {
+            this.severity = severity;
+        }
+        if (eventCount !== undefined) {
+            this.eventCount = eventCount;
         }
     }
 }
@@ -1504,7 +1535,7 @@ class NetworkMap {
 
 // Node represents a vertex in a network map
 class Node {
-    constructor(id, name, ip, type) {
+    constructor(id, name, ip, type, score, tags, labels, eventCount) {
         if (id !== undefined) {
             this.id = id;
         }
@@ -1516,6 +1547,18 @@ class Node {
         }
         if (type !== undefined) {
             this.type = type;
+        }
+        if (score !== undefined) {
+            this.score = score;
+        }
+        if (tags !== undefined) {
+            this.tags = tags;
+        }
+        if (labels !== undefined) {
+            this.labels = labels;
+        }
+        if (eventCount !== undefined) {
+            this.eventCount = eventCount;
         }
     }
 }
