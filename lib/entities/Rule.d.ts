@@ -1,3 +1,4 @@
+import { DeviceTypeCode } from '../enums/DeviceTypeCode';
 import { BaseEntity } from '../entities/BaseEntity';
 export declare class Rule extends BaseEntity {
     accountId: string;
@@ -9,4 +10,7 @@ export declare class Rule extends BaseEntity {
     context: string;
     matchAll: string[];
     matchAny: string[];
+    excludeIDs: string[];
+    excludeTags: string[];
+    excludeTypes: DeviceTypeCode[];
 }
