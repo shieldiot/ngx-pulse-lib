@@ -3,6 +3,7 @@ export * from './AccountSettings';
 export * from './AuditLog';
 export * from './BaseEntity';
 export * from './Checkpoint';
+export * from './Condition';
 export * from './DNSRecord';
 export * from './DataIngestion';
 export * from './Device';
