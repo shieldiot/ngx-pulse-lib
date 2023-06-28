@@ -9,5 +9,7 @@ export declare class Radius extends BaseEntity {
     ip: string;
     sid: string;
     eid: string;
+    country: string;
+    operator: string;
     attributes: StringKeyValue[];
 }
