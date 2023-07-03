@@ -1119,6 +1119,19 @@ class EventsService {
         return this.rest.get(`${this.baseUrl}/top`, ...params);
     }
     /**
+     * Get top malicious IPs
+     */
+    getTopMaliciousIPs(streamId, top) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (top != null) {
+            params.push(`top=${top}`);
+        }
+        return this.rest.get(`${this.baseUrl}/top-malicious-ips`, ...params);
+    }
+    /**
      * Find events distribution by type filtered by query
      */
     countByType(streamId, deviceId, search, from, to, type, severity, sort, page, size) {

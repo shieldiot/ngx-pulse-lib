@@ -1,13 +1,14 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
-import { EventWithDevice } from '../entities/EventWithDevice';
-import { IntDistribution } from '../entities/IntDistribution';
-import { EventStatusCode } from '../enums/EventStatusCode';
-import { TimeSeriesOf2D } from '../common/TimeSeriesOf2D';
-import { TimeSeriesOfFloat } from '../common/TimeSeriesOfFloat';
 import { Event } from '../entities/Event';
 import { EventTypeCode } from '../enums/EventTypeCode';
+import { EventWithDevice } from '../entities/EventWithDevice';
+import { StringIntValue } from '../common/StringIntValue';
+import { IntDistribution } from '../entities/IntDistribution';
+import { TimeSeriesOf2D } from '../common/TimeSeriesOf2D';
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { EventStatusCode } from '../enums/EventStatusCode';
+import { TimeSeriesOfFloat } from '../common/TimeSeriesOfFloat';
 import * as i0 from "@angular/core";
 export declare class EventsService {
     private config;
@@ -30,6 +31,10 @@ export declare class EventsService {
      * Find top 10 events by their severity filter by query
      */
     getTop(streamId?: string, deviceId?: string, search?: string, from?: number, to?: number, type?: EventTypeCode[], severity?: SeverityTypeCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<EventWithDevice>>;
+    /**
+     * Get top malicious IPs
+     */
+    getTopMaliciousIPs(streamId?: string, top?: number): import("rxjs").Observable<EntitiesResponse<StringIntValue>>;
     /**
      * Find events distribution by type filtered by query
      */
