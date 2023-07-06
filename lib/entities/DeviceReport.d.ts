@@ -4,4 +4,5 @@ export declare class DeviceReport extends BaseEntity {
     streamId: string;
     totalDevices: number;
     activeDevices: number;
+    devicesAtRisk: number;
 }
