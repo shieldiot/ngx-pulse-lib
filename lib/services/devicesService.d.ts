@@ -1,12 +1,14 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { DeviceTypeCode } from '../enums/DeviceTypeCode';
-import { DeviceStatusCode } from '../enums/DeviceStatusCode';
-import { DeviceWithEvents } from '../entities/DeviceWithEvents';
-import { IntDistribution } from '../entities/IntDistribution';
 import { DeviceActionCode } from '../enums/DeviceActionCode';
 import { NetworkMap } from '../common/NetworkMap';
+import { TimeSeriesOfDeviceReport } from '../entities/TimeSeriesOfDeviceReport';
+import { DeviceTypeCode } from '../enums/DeviceTypeCode';
+import { IntDistribution } from '../entities/IntDistribution';
+import { DeviceWithEvents } from '../entities/DeviceWithEvents';
+import { DeviceReport } from '../entities/DeviceReport';
 import { Device } from '../entities/Device';
+import { DeviceStatusCode } from '../enums/DeviceStatusCode';
 import * as i0 from "@angular/core";
 export declare class DevicesService {
     private config;
@@ -69,6 +71,14 @@ export declare class DevicesService {
      * Get network map of devices
      */
     getNetworkMap(streamId?: string, from?: number, to?: number, type?: DeviceTypeCode[], tag?: string[], id?: string[]): import("rxjs").Observable<EntityResponse<NetworkMap>>;
+    /**
+     * Get daily device report over time (daily device report includes: total devices, active devices, devices at risk)
+     */
+    getDeviceReportTimeline(streamId?: string, from?: number, to?: number): import("rxjs").Observable<EntityResponse<TimeSeriesOfDeviceReport>>;
+    /**
+     * Get latest device report, the Key contains latest devices at risk number (works in account level)
+     */
+    getLatestDeviceReport(): import("rxjs").Observable<EntityResponse<DeviceReport>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<DevicesService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DevicesService>;
 }
