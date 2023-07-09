@@ -4,6 +4,7 @@ export * from './Indicator';
 export * from './IntKeyValue';
 export * from './Link';
 export * from './LoginParams';
+export * from './MaliciousIPData';
 export * from './NetworkMap';
 export * from './Node';
 export * from './SessionTransform';
