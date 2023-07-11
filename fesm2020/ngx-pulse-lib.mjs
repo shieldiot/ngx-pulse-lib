@@ -1409,6 +1409,31 @@ class EventsService {
     exportSource(id) {
         return this.rest.download(`events`, `${this.baseUrl}/${id}/export_source`);
     }
+    /**
+     * Get total number devices at risk (affected by the events matching the query)
+     */
+    getTotalDevicesAtRisk(streamId, search, from, to, type, severity) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (severity != null) {
+            params.push(`severity=${severity}`);
+        }
+        return this.rest.get(`${this.baseUrl}/devices-at-risk`, ...params);
+    }
 }
 EventsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: EventsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
 EventsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.9", ngImport: i0, type: EventsService });
