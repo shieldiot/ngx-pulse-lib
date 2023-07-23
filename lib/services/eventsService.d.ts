@@ -1,14 +1,14 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { Event } from '../entities/Event';
+import { MaliciousIPData } from '../common/MaliciousIPData';
+import { EventStatusCode } from '../enums/EventStatusCode';
+import { TimeSeriesOfFloat } from '../common/TimeSeriesOfFloat';
+import { EventTypeCode } from '../enums/EventTypeCode';
 import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { EventWithDevice } from '../entities/EventWithDevice';
 import { IntDistribution } from '../entities/IntDistribution';
-import { EventStatusCode } from '../enums/EventStatusCode';
 import { TimeSeriesOf2D } from '../common/TimeSeriesOf2D';
-import { TimeSeriesOfFloat } from '../common/TimeSeriesOfFloat';
-import { EventTypeCode } from '../enums/EventTypeCode';
-import { MaliciousIPData } from '../common/MaliciousIPData';
-import { Event } from '../entities/Event';
 import * as i0 from "@angular/core";
 export declare class EventsService {
     private config;

@@ -1,4 +1,5 @@
 export * from './Account';
+export * from './AccountDTO';
 export * from './AccountSettings';
 export * from './AuditLog';
 export * from './BaseEntity';
