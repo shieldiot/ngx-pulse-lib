@@ -11,6 +11,7 @@ export * from './Device';
 export * from './DeviceReport';
 export * from './DeviceWithEvents';
 export * from './Event';
+export * from './EventOccurrence';
 export * from './EventWithDevice';
 export * from './Feature';
 export * from './FeaturesGroup';

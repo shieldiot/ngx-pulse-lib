@@ -1,11 +1,12 @@
-import { EventCategoryCode } from '../enums/EventCategoryCode';
+import { EventStatusCode } from '../enums/EventStatusCode';
+import { RuleTypeCode } from '../enums/RuleTypeCode';
 import { Device } from '../entities/Device';
 import { BaseEntity } from '../entities/BaseEntity';
 import { EventTypeCode } from '../enums/EventTypeCode';
 import { SeverityTypeCode } from '../enums/SeverityTypeCode';
-import { EventStatusCode } from '../enums/EventStatusCode';
+import { EventOccurrence } from '../entities/EventOccurrence';
 import { Indicator } from '../common/Indicator';
-import { RuleTypeCode } from '../enums/RuleTypeCode';
+import { EventCategoryCode } from '../enums/EventCategoryCode';
 export declare class EventWithDevice extends BaseEntity {
     accountId: string;
     streamId: string;
@@ -26,4 +27,5 @@ export declare class EventWithDevice extends BaseEntity {
     recommendedAction: string;
     device: Device;
     sources: string[];
+    occurrences: EventOccurrence[];
 }
