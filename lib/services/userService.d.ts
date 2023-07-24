@@ -1,10 +1,9 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { UserMemberships } from '../entities/UserMemberships';
 import { LoginParams } from '../common/LoginParams';
-import { Account } from '../entities/Account';
 import { AccountDTO } from '../entities/AccountDTO';
 import { Feature } from '../entities/Feature';
+import { UserMemberships } from '../entities/UserMemberships';
 import * as i0 from "@angular/core";
 export declare class UserService {
     private config;
@@ -20,7 +19,7 @@ export declare class UserService {
      * Refresh token (set new expiration time) and associate with new account if required
      * The response includes the account details and the newly refreshed token in the HTTP header X-ACCESS-TOKEN
      */
-    setAccount(id?: string): import("rxjs").Observable<EntityResponse<Account>>;
+    setAccount(id?: string): import("rxjs").Observable<EntityResponse<AccountDTO>>;
     /**
      * Get the user's current account details
      */
