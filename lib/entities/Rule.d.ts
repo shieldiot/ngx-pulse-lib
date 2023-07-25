@@ -13,4 +13,5 @@ export declare class Rule extends BaseEntity {
     excludeIDs: string[];
     excludeTags: string[];
     excludeTypes: DeviceTypeCode[];
+    timeWindowSec: number;
 }

@@ -5,4 +5,5 @@ export declare class RuleTemplate extends BaseEntity {
     context: string;
     matchAll: string[];
     matchAny: string[];
+    timeWindowSec: number;
 }
