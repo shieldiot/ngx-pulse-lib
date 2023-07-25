@@ -2394,12 +2394,15 @@ var FeatureCode;
     FeatureCode[FeatureCode["UNDEFINED"] = 0] = "UNDEFINED";
     // Network Map view [1] 
     FeatureCode[FeatureCode["NETWORK_MAP_VIEW"] = 1] = "NETWORK_MAP_VIEW";
+    // Network Map module [2] 
+    FeatureCode[FeatureCode["NETWORK_MAP_MODULE"] = 2] = "NETWORK_MAP_MODULE";
 })(FeatureCode || (FeatureCode = {}));
 // Return list of FeatureCode values and their display names
 function GetFeatureCodes() {
     let result = new Map();
     result.set(FeatureCode.UNDEFINED, 'Undefined');
     result.set(FeatureCode.NETWORK_MAP_VIEW, 'Network Map View');
+    result.set(FeatureCode.NETWORK_MAP_MODULE, 'Network Map Module');
     return result;
 }
 
