@@ -1,4 +1,6 @@
 export * from './AccountRole';
+export * from './ConsumptionData';
+export * from './ConsumptionTimeDataPoint';
 export * from './FloatKeyValue';
 export * from './Indicator';
 export * from './IntKeyValue';
@@ -16,6 +18,7 @@ export * from './TimeDataPointFloat';
 export * from './TimeFrame';
 export * from './TimeSeries';
 export * from './TimeSeriesOf2D';
+export * from './TimeSeriesOfDataConsumption';
 export * from './TimeSeriesOfFloat';
 export * from './TokenData';
 export * from './UsageTransform';

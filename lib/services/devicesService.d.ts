@@ -1,14 +1,15 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { IntDistribution } from '../entities/IntDistribution';
 import { DeviceActionCode } from '../enums/DeviceActionCode';
-import { DeviceTypeCode } from '../enums/DeviceTypeCode';
-import { DeviceStatusCode } from '../enums/DeviceStatusCode';
 import { NetworkMap } from '../common/NetworkMap';
+import { Device } from '../entities/Device';
+import { DeviceStatusCode } from '../enums/DeviceStatusCode';
+import { DeviceWithEvents } from '../entities/DeviceWithEvents';
+import { IntDistribution } from '../entities/IntDistribution';
+import { DeviceTypeCode } from '../enums/DeviceTypeCode';
 import { TimeSeriesOfDeviceReport } from '../entities/TimeSeriesOfDeviceReport';
 import { DeviceReport } from '../entities/DeviceReport';
-import { Device } from '../entities/Device';
-import { DeviceWithEvents } from '../entities/DeviceWithEvents';
+import { TimeSeriesOfDataConsumption } from '../common/TimeSeriesOfDataConsumption';
 import * as i0 from "@angular/core";
 export declare class DevicesService {
     private config;
@@ -79,6 +80,14 @@ export declare class DevicesService {
      * Get latest device report, the Key contains latest devices at risk number (works in account level)
      */
     getLatestDeviceReport(): import("rxjs").Observable<EntityResponse<DeviceReport>>;
+    /**
+     * Get device / group of devices consumption over time
+     */
+    getConsumptionTimeline(streamId?: string, from?: number, to?: number, type?: DeviceTypeCode[], tag?: string[], id?: string[]): import("rxjs").Observable<EntityResponse<TimeSeriesOfDataConsumption>>;
+    /**
+     * Get device / group of devices consumption over time
+     */
+    getConsumptionTrend(streamId?: string, from?: number, to?: number, type?: DeviceTypeCode[], tag?: string[], id?: string[]): import("rxjs").Observable<ActionResponse>;
     static ɵfac: i0.ɵɵFactoryDeclaration<DevicesService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<DevicesService>;
 }
