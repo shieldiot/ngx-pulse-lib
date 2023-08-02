@@ -1456,8 +1456,12 @@ class EventsService {
     /**
      * Export event source file
      */
-    exportSource(id) {
-        return this.rest.download(`events`, `${this.baseUrl}/${id}/export_source`);
+    exportSource(id, timestamp) {
+        const params = [];
+        if (timestamp != null) {
+            params.push(`timestamp=${timestamp}`);
+        }
+        return this.rest.download(`events`, `${this.baseUrl}/${id}/export_source`, ...params);
     }
     /**
      * Get total number devices at risk (affected by the events matching the query)

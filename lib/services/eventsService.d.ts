@@ -1,14 +1,14 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { IntDistribution } from '../entities/IntDistribution';
+import { EventStatusCode } from '../enums/EventStatusCode';
 import { TimeSeriesOf2D } from '../common/TimeSeriesOf2D';
 import { TimeSeriesOfFloat } from '../common/TimeSeriesOfFloat';
+import { EventWithDevice } from '../entities/EventWithDevice';
+import { MaliciousIPData } from '../common/MaliciousIPData';
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { Event } from '../entities/Event';
 import { EventTypeCode } from '../enums/EventTypeCode';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
-import { MaliciousIPData } from '../common/MaliciousIPData';
-import { EventStatusCode } from '../enums/EventStatusCode';
-import { EventWithDevice } from '../entities/EventWithDevice';
-import { IntDistribution } from '../entities/IntDistribution';
 import * as i0 from "@angular/core";
 export declare class EventsService {
     private config;
@@ -74,7 +74,7 @@ export declare class EventsService {
     /**
      * Export event source file
      */
-    exportSource(id?: string): import("rxjs").Observable<import("@angular/common/http").HttpEvent<Blob>>;
+    exportSource(id?: string, timestamp?: number): import("rxjs").Observable<import("@angular/common/http").HttpEvent<Blob>>;
     /**
      * Get total number devices at risk (affected by the events matching the query)
      */
