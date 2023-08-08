@@ -1100,7 +1100,7 @@ class EventsService {
     /**
      * Find list of events by query
      */
-    find(streamId, deviceId, search, from, to, type, severity, sort, page, size) {
+    find(streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1122,6 +1122,12 @@ class EventsService {
         }
         if (severity != null) {
             params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1174,7 +1180,7 @@ class EventsService {
     /**
      * Find top 10 events by their severity filter by query
      */
-    getTop(streamId, deviceId, search, from, to, type, severity, sort, page, size) {
+    getTop(streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1196,6 +1202,12 @@ class EventsService {
         }
         if (severity != null) {
             params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1224,7 +1236,7 @@ class EventsService {
     /**
      * Find events distribution by type filtered by query
      */
-    countByType(streamId, deviceId, search, from, to, type, severity, sort, page, size) {
+    countByType(streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1246,6 +1258,12 @@ class EventsService {
         }
         if (severity != null) {
             params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1261,7 +1279,7 @@ class EventsService {
     /**
      * Find events distribution by status filtered by query
      */
-    countByStatus(streamId, deviceId, search, from, to, type, severity, sort, page, size) {
+    countByStatus(streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1283,6 +1301,12 @@ class EventsService {
         }
         if (severity != null) {
             params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1298,7 +1322,7 @@ class EventsService {
     /**
      * Find events distribution by severity filtered by query
      */
-    countBySeverity(streamId, deviceId, search, from, to, type, severity, sort, page, size) {
+    countBySeverity(streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1320,6 +1344,12 @@ class EventsService {
         }
         if (severity != null) {
             params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1335,7 +1365,7 @@ class EventsService {
     /**
      * Find events distribution by rule filtered by query
      */
-    countByRule(streamId, deviceId, search, from, to, type, severity, sort, page, size) {
+    countByRule(streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1357,6 +1387,12 @@ class EventsService {
         }
         if (severity != null) {
             params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1372,7 +1408,7 @@ class EventsService {
     /**
      * Find events distribution by category filtered by query
      */
-    countByCategory(streamId, deviceId, search, from, to, type, severity, sort, page, size) {
+    countByCategory(streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1394,6 +1430,12 @@ class EventsService {
         }
         if (severity != null) {
             params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
