@@ -1143,7 +1143,7 @@ class EventsService {
     /**
      * Export list of events by query to a file with the specified format
      */
-    exportFormat(format, streamId, deviceId, search, from, to, type, severity, sort, page, size) {
+    exportFormat(format, streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1165,6 +1165,12 @@ class EventsService {
         }
         if (severity != null) {
             params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1463,7 +1469,7 @@ class EventsService {
     /**
      * Get histogram of events over time by dimension (type | severity | status | ruleType | category)
      */
-    eventsTimeline(streamId, deviceId, dimension, from, to, type, severity, sort, page, size) {
+    eventsTimeline(streamId, deviceId, dimension, from, to, type, severity, category, status, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1485,6 +1491,12 @@ class EventsService {
         }
         if (severity != null) {
             params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1526,7 +1538,7 @@ class EventsService {
     /**
      * Get total number devices at risk (affected by the events matching the query)
      */
-    getTotalDevicesAtRisk(streamId, search, from, to, type, severity) {
+    getTotalDevicesAtRisk(streamId, search, from, to, type, severity, category, status) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1545,6 +1557,12 @@ class EventsService {
         }
         if (severity != null) {
             params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
         }
         return this.rest.get(`${this.baseUrl}/devices-at-risk`, ...params);
     }
