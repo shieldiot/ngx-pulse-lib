@@ -1,5 +1,5 @@
-import { BaseEntity } from '../entities/BaseEntity';
 import { DeviceTypeCode } from '../enums/DeviceTypeCode';
+import { BaseEntity } from '../entities/BaseEntity';
 export declare class Rule extends BaseEntity {
     accountId: string;
     streamId: string;

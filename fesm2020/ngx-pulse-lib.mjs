@@ -1082,7 +1082,7 @@ class EventsService {
     /**
      * Find list of events by query
      */
-    find(streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
+    find(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, ruleType, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1110,6 +1110,12 @@ class EventsService {
         }
         if (status != null) {
             params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1125,7 +1131,7 @@ class EventsService {
     /**
      * Export list of events by query to a file with the specified format
      */
-    exportFormat(format, streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
+    exportFormat(format, streamId, deviceId, search, from, to, type, severity, category, status, ruleId, ruleType, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1153,6 +1159,12 @@ class EventsService {
         }
         if (status != null) {
             params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1168,7 +1180,7 @@ class EventsService {
     /**
      * Find top 10 events by their severity filter by query
      */
-    getTop(streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
+    getTop(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, ruleType, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1196,6 +1208,12 @@ class EventsService {
         }
         if (status != null) {
             params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1224,7 +1242,7 @@ class EventsService {
     /**
      * Find events distribution by type filtered by query
      */
-    countByType(streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
+    countByType(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, ruleType, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1252,6 +1270,12 @@ class EventsService {
         }
         if (status != null) {
             params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1267,7 +1291,7 @@ class EventsService {
     /**
      * Find events distribution by status filtered by query
      */
-    countByStatus(streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
+    countByStatus(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, ruleType, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1295,6 +1319,12 @@ class EventsService {
         }
         if (status != null) {
             params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1310,7 +1340,7 @@ class EventsService {
     /**
      * Find events distribution by severity filtered by query
      */
-    countBySeverity(streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
+    countBySeverity(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, ruleType, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1338,6 +1368,12 @@ class EventsService {
         }
         if (status != null) {
             params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1353,7 +1389,7 @@ class EventsService {
     /**
      * Find events distribution by rule filtered by query
      */
-    countByRule(streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
+    countByRule(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, ruleType, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1381,6 +1417,12 @@ class EventsService {
         }
         if (status != null) {
             params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1396,7 +1438,7 @@ class EventsService {
     /**
      * Find events distribution by category filtered by query
      */
-    countByCategory(streamId, deviceId, search, from, to, type, severity, category, status, sort, page, size) {
+    countByCategory(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, ruleType, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1424,6 +1466,12 @@ class EventsService {
         }
         if (status != null) {
             params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1451,7 +1499,7 @@ class EventsService {
     /**
      * Get histogram of events over time by dimension (type | severity | status | ruleType | category)
      */
-    eventsTimeline(streamId, deviceId, dimension, from, to, type, severity, category, status, sort, page, size) {
+    eventsTimeline(streamId, deviceId, dimension, from, to, type, severity, category, status, ruleId, ruleType, sort, page, size) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1479,6 +1527,12 @@ class EventsService {
         }
         if (status != null) {
             params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
         }
         if (sort != null) {
             params.push(`sort=${sort}`);
@@ -1520,7 +1574,7 @@ class EventsService {
     /**
      * Get total number devices at risk (affected by the events matching the query)
      */
-    getTotalDevicesAtRisk(streamId, search, from, to, type, severity, category, status) {
+    getTotalDevicesAtRisk(streamId, search, from, to, type, severity, category, status, ruleId, ruleType) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1545,6 +1599,12 @@ class EventsService {
         }
         if (status != null) {
             params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
         }
         return this.rest.get(`${this.baseUrl}/devices-at-risk`, ...params);
     }
