@@ -2175,12 +2175,15 @@ class Event extends BaseEntity {
 
 // A single instance of event generated for the same deviceId based on the same rule on the same month
 class EventOccurrence {
-    constructor(timestamp, source, indicators) {
+    constructor(timestamp, source, sourceIp, indicators) {
         if (timestamp !== undefined) {
             this.timestamp = timestamp;
         }
         if (source !== undefined) {
             this.source = source;
+        }
+        if (sourceIp !== undefined) {
+            this.sourceIp = sourceIp;
         }
         if (indicators !== undefined) {
             this.indicators = indicators;
