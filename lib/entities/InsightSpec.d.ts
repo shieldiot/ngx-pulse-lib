@@ -1,7 +1,6 @@
 import { BaseEntity } from '../entities/BaseEntity';
-export declare class Shieldex extends BaseEntity {
+export declare class InsightSpec extends BaseEntity {
     accountId: string;
     streamId: string;
-    eventCount: number;
-    score: number;
+    queryId: string;
 }

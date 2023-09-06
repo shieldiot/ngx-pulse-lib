@@ -2236,6 +2236,21 @@ class Feature extends BaseEntity {
 class FeaturesGroup extends BaseEntity {
 }
 
+// Insight
+// The Insight entity is created by the insights micro service and represents an account-wide insight.
+class Insight extends BaseEntity {
+}
+
+// InsightQuery
+// The InsightQuery entity is a definition of insight query to execute periodically in order to generate "insights" for the users.
+class InsightQuery extends BaseEntity {
+}
+
+// InsightSpec
+// The InsightSpec entity is a link between account and stream Id to insight query.
+class InsightSpec extends BaseEntity {
+}
+
 // IntDistribution model represents a grouped counts of elements of type int (usually enum)
 class IntDistribution {
     constructor(name, total, values) {
@@ -2638,6 +2653,47 @@ function GetFeatureCodes() {
     return result;
 }
 
+// Insight status code
+var InsightStatusCode;
+(function (InsightStatusCode) {
+    // Undefined [0] 
+    InsightStatusCode[InsightStatusCode["UNDEFINED"] = 0] = "UNDEFINED";
+    // Inactive (muted) insight [1] 
+    InsightStatusCode[InsightStatusCode["INACTIVE"] = 1] = "INACTIVE";
+    // Pending insight (not visible yet - for testing only) [2] 
+    InsightStatusCode[InsightStatusCode["PENDING"] = 2] = "PENDING";
+    // Active insight [3] 
+    InsightStatusCode[InsightStatusCode["ACTIVE"] = 3] = "ACTIVE";
+})(InsightStatusCode || (InsightStatusCode = {}));
+// Return list of InsightStatusCode values and their display names
+function GetInsightStatusCodes() {
+    let result = new Map();
+    result.set(InsightStatusCode.UNDEFINED, 'Undefined');
+    result.set(InsightStatusCode.INACTIVE, 'Inactive');
+    result.set(InsightStatusCode.PENDING, 'Pending');
+    result.set(InsightStatusCode.ACTIVE, 'Active');
+    return result;
+}
+
+// Insight type code
+var InsightTypeCode;
+(function (InsightTypeCode) {
+    // Undefined [0] 
+    InsightTypeCode[InsightTypeCode["UNDEFINED"] = 0] = "UNDEFINED";
+    // Event Group insight [1] 
+    InsightTypeCode[InsightTypeCode["EVENTS"] = 1] = "EVENTS";
+    // Statistical insight [2] 
+    InsightTypeCode[InsightTypeCode["STATISTICS"] = 2] = "STATISTICS";
+})(InsightTypeCode || (InsightTypeCode = {}));
+// Return list of InsightTypeCode values and their display names
+function GetInsightTypeCodes() {
+    let result = new Map();
+    result.set(InsightTypeCode.UNDEFINED, 'Undefined');
+    result.set(InsightTypeCode.EVENTS, 'Events');
+    result.set(InsightTypeCode.STATISTICS, 'Statistics');
+    return result;
+}
+
 // Integration type code
 var IntegrationTypeCode;
 (function (IntegrationTypeCode) {
@@ -2790,5 +2846,5 @@ function GetUserTypeCodes() {
  * Generated bundle index. Do not edit.
  */
 
-export { Account, AccountDTO, AccountRole, AccountSettings, AccountStatusCode, AccountTypeCode, ActionResponse, AuditLog, BaseEntity, BaseRestResponse, Checkpoint, Condition, ConsumptionData, ConsumptionTimeDataPoint, DNSRecord, DataIngestion, DataPointOfDeviceReport, Device, DeviceActionCode, DeviceCreationCode, DeviceReport, DeviceStatusCode, DeviceTypeCode, DeviceWithEvents, DevicesService, EntitiesResponse, EntityResponse, Event, EventCategoryCode, EventOccurrence, EventStatusCode, EventTypeCode, EventWithDevice, EventsService, Feature, FeatureCode, FeaturesGroup, FloatKeyValue, GetAccountStatusCodes, GetAccountTypeCodes, GetDeviceActionCodes, GetDeviceCreationCodes, GetDeviceStatusCodes, GetDeviceTypeCodes, GetEventCategoryCodes, GetEventStatusCodes, GetEventTypeCodes, GetFeatureCodes, GetIntegrationTypeCodes, GetMemberRoleCodes, GetRuleTypeCodes, GetSeverityTypeCodes, GetUserStatusCodes, GetUserTypeCodes, Indicator, IntDistribution, IntKeyValue, Integration, IntegrationTypeCode, Link, LoginParams, MaliciousIPData, Member, MemberRoleCode, NetworkMap, NgxPulseLibModule, Node, PulseConfig, Radius, RestUtil, Rule, RuleTemplate, RuleTypeCode, Services, SessionRecord, SessionTransform, SeverityTypeCode, Shieldex, Stream, StreamConfig, StringIntValue, StringKeyValue, SysAccountsService, SysMembersService, SysRuleTemplatesService, SysRulesService, SysStreamsService, SysUsersService, TimeDataPoint, TimeDataPoint2D, TimeDataPointFloat, TimeFrame, TimeSeries, TimeSeriesOf2D, TimeSeriesOfDataConsumption, TimeSeriesOfDeviceReport, TimeSeriesOfFloat, TokenData, UsageRecord, UsageTransform, User, UserMembership, UserMemberships, UserService, UserStatusCode, UserTypeCode, UsrIntegrationsService, ZScore };
+export { Account, AccountDTO, AccountRole, AccountSettings, AccountStatusCode, AccountTypeCode, ActionResponse, AuditLog, BaseEntity, BaseRestResponse, Checkpoint, Condition, ConsumptionData, ConsumptionTimeDataPoint, DNSRecord, DataIngestion, DataPointOfDeviceReport, Device, DeviceActionCode, DeviceCreationCode, DeviceReport, DeviceStatusCode, DeviceTypeCode, DeviceWithEvents, DevicesService, EntitiesResponse, EntityResponse, Event, EventCategoryCode, EventOccurrence, EventStatusCode, EventTypeCode, EventWithDevice, EventsService, Feature, FeatureCode, FeaturesGroup, FloatKeyValue, GetAccountStatusCodes, GetAccountTypeCodes, GetDeviceActionCodes, GetDeviceCreationCodes, GetDeviceStatusCodes, GetDeviceTypeCodes, GetEventCategoryCodes, GetEventStatusCodes, GetEventTypeCodes, GetFeatureCodes, GetInsightStatusCodes, GetInsightTypeCodes, GetIntegrationTypeCodes, GetMemberRoleCodes, GetRuleTypeCodes, GetSeverityTypeCodes, GetUserStatusCodes, GetUserTypeCodes, Indicator, Insight, InsightQuery, InsightSpec, InsightStatusCode, InsightTypeCode, IntDistribution, IntKeyValue, Integration, IntegrationTypeCode, Link, LoginParams, MaliciousIPData, Member, MemberRoleCode, NetworkMap, NgxPulseLibModule, Node, PulseConfig, Radius, RestUtil, Rule, RuleTemplate, RuleTypeCode, Services, SessionRecord, SessionTransform, SeverityTypeCode, Shieldex, Stream, StreamConfig, StringIntValue, StringKeyValue, SysAccountsService, SysMembersService, SysRuleTemplatesService, SysRulesService, SysStreamsService, SysUsersService, TimeDataPoint, TimeDataPoint2D, TimeDataPointFloat, TimeFrame, TimeSeries, TimeSeriesOf2D, TimeSeriesOfDataConsumption, TimeSeriesOfDeviceReport, TimeSeriesOfFloat, TokenData, UsageRecord, UsageTransform, User, UserMembership, UserMemberships, UserService, UserStatusCode, UserTypeCode, UsrIntegrationsService, ZScore };
 //# sourceMappingURL=ngx-pulse-lib.mjs.map
