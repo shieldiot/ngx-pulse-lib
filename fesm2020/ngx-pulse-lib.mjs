@@ -2061,6 +2061,15 @@ class StringKeyValue {
     }
 }
 
+// Thresholds is a list of stream configuration thresholds
+class Thresholds {
+    constructor(inactiveDeviceWindowMin) {
+        if (inactiveDeviceWindowMin !== undefined) {
+            this.inactiveDeviceWindowMin = inactiveDeviceWindowMin;
+        }
+    }
+}
+
 // TimeDataPoint model represents a generic datapoint in time
 class TimeDataPoint {
     constructor(timestamp, value) {
@@ -2291,9 +2300,12 @@ class DNSRecord extends BaseEntity {
 
 // DataIngestion is the ingestion pipeline configuration
 class DataIngestion {
-    constructor(inputURI, archiveURI, inputFilesExt, subNets, exclude, usageTimeWindowSec, sessionTimeWindowSec, schedule, defaultDeviceType, deviceCreationPolicy) {
+    constructor(inputURI, format, archiveURI, inputFilesExt, subNets, exclude, usageTimeWindowSec, sessionTimeWindowSec, schedule, defaultDeviceType, deviceCreationPolicy, deviceIdentityPolicy) {
         if (inputURI !== undefined) {
             this.inputURI = inputURI;
+        }
+        if (format !== undefined) {
+            this.format = format;
         }
         if (archiveURI !== undefined) {
             this.archiveURI = archiveURI;
@@ -2321,6 +2333,9 @@ class DataIngestion {
         }
         if (deviceCreationPolicy !== undefined) {
             this.deviceCreationPolicy = deviceCreationPolicy;
+        }
+        if (deviceIdentityPolicy !== undefined) {
+            this.deviceIdentityPolicy = deviceIdentityPolicy;
         }
     }
 }
@@ -2454,7 +2469,7 @@ class Stream extends BaseEntity {
 
 // StreamConfig is a stream configuration description
 class StreamConfig {
-    constructor(ingest, sessionTransform, usageTransform) {
+    constructor(ingest, sessionTransform, usageTransform, thresholds) {
         if (ingest !== undefined) {
             this.ingest = ingest;
         }
@@ -2463,6 +2478,9 @@ class StreamConfig {
         }
         if (usageTransform !== undefined) {
             this.usageTransform = usageTransform;
+        }
+        if (thresholds !== undefined) {
+            this.thresholds = thresholds;
         }
     }
 }
@@ -2593,6 +2611,34 @@ function GetDeviceCreationCodes() {
     result.set(DeviceCreationCode.IP, 'Ip');
     result.set(DeviceCreationCode.SID, 'Sid');
     result.set(DeviceCreationCode.EID, 'Eid');
+    return result;
+}
+
+// Set the device unique identity policy
+var DeviceIdentityCode;
+(function (DeviceIdentityCode) {
+    // Undefined [0] 
+    DeviceIdentityCode[DeviceIdentityCode["UNDEFINED"] = 0] = "UNDEFINED";
+    // Device Identity is provided by the system [1] 
+    DeviceIdentityCode[DeviceIdentityCode["AUTO"] = 1] = "AUTO";
+    // Device Identity is based on static IP: ip@stream_id [2] 
+    DeviceIdentityCode[DeviceIdentityCode["IP"] = 2] = "IP";
+    // Device Identity is based on Subscriber Id: imsi@stream_id [3] 
+    DeviceIdentityCode[DeviceIdentityCode["SID"] = 3] = "SID";
+    // Device Identity is based on Equipment Id: imei@stream_id [4] 
+    DeviceIdentityCode[DeviceIdentityCode["EID"] = 4] = "EID";
+    // Device Identity is based on MAC address: mac@stream_id [4] 
+    DeviceIdentityCode[DeviceIdentityCode["MAC"] = 5] = "MAC";
+})(DeviceIdentityCode || (DeviceIdentityCode = {}));
+// Return list of DeviceIdentityCode values and their display names
+function GetDeviceIdentityCodes() {
+    let result = new Map();
+    result.set(DeviceIdentityCode.UNDEFINED, 'Undefined');
+    result.set(DeviceIdentityCode.AUTO, 'Auto');
+    result.set(DeviceIdentityCode.IP, 'Ip');
+    result.set(DeviceIdentityCode.SID, 'Sid');
+    result.set(DeviceIdentityCode.EID, 'Eid');
+    result.set(DeviceIdentityCode.MAC, 'Mac');
     return result;
 }
 
@@ -2996,5 +3042,5 @@ function GetUserTypeCodes() {
  * Generated bundle index. Do not edit.
  */
 
-export { Account, AccountDTO, AccountRole, AccountSettings, AccountStatusCode, AccountTypeCode, ActionResponse, AuditLog, BaseEntity, BaseRestResponse, Checkpoint, Condition, ConsumptionData, ConsumptionTimeDataPoint, DNSRecord, DataIngestion, DataPointOfDeviceReport, Device, DeviceActionCode, DeviceCreationCode, DeviceReport, DeviceStatusCode, DeviceTypeCode, DeviceWithEvents, DevicesService, EntitiesResponse, EntityResponse, Event, EventCategoryCode, EventOccurrence, EventStatusCode, EventTypeCode, EventWithDevice, EventsService, Feature, FeatureCode, FeaturesGroup, FloatKeyValue, GetAccountStatusCodes, GetAccountTypeCodes, GetDeviceActionCodes, GetDeviceCreationCodes, GetDeviceStatusCodes, GetDeviceTypeCodes, GetEventCategoryCodes, GetEventStatusCodes, GetEventTypeCodes, GetFeatureCodes, GetInsightStatusCodes, GetInsightTypeCodes, GetIntegrationTypeCodes, GetMemberRoleCodes, GetRuleTypeCodes, GetSeverityTypeCodes, GetUserStatusCodes, GetUserTypeCodes, Indicator, Insight, InsightQuery, InsightSpec, InsightStatusCode, InsightTypeCode, IntDistribution, IntKeyValue, Integration, IntegrationTypeCode, Link, LoginParams, MaliciousIPData, Member, MemberRoleCode, NetworkMap, NgxPulseLibModule, Node, PulseConfig, Radius, RestUtil, Rule, RuleTemplate, RuleTypeCode, Services, SessionRecord, SessionTransform, SeverityTypeCode, Shieldex, Stream, StreamConfig, StringIntValue, StringKeyValue, SysAccountsService, SysInsightsService, SysMembersService, SysRuleTemplatesService, SysRulesService, SysStreamsService, SysUsersService, TimeDataPoint, TimeDataPoint2D, TimeDataPointFloat, TimeFrame, TimeSeries, TimeSeriesOf2D, TimeSeriesOfDataConsumption, TimeSeriesOfDeviceReport, TimeSeriesOfFloat, TokenData, UsageRecord, UsageTransform, User, UserMembership, UserMemberships, UserService, UserStatusCode, UserTypeCode, UsrInsightsService, UsrIntegrationsService, ZScore };
+export { Account, AccountDTO, AccountRole, AccountSettings, AccountStatusCode, AccountTypeCode, ActionResponse, AuditLog, BaseEntity, BaseRestResponse, Checkpoint, Condition, ConsumptionData, ConsumptionTimeDataPoint, DNSRecord, DataIngestion, DataPointOfDeviceReport, Device, DeviceActionCode, DeviceCreationCode, DeviceIdentityCode, DeviceReport, DeviceStatusCode, DeviceTypeCode, DeviceWithEvents, DevicesService, EntitiesResponse, EntityResponse, Event, EventCategoryCode, EventOccurrence, EventStatusCode, EventTypeCode, EventWithDevice, EventsService, Feature, FeatureCode, FeaturesGroup, FloatKeyValue, GetAccountStatusCodes, GetAccountTypeCodes, GetDeviceActionCodes, GetDeviceCreationCodes, GetDeviceIdentityCodes, GetDeviceStatusCodes, GetDeviceTypeCodes, GetEventCategoryCodes, GetEventStatusCodes, GetEventTypeCodes, GetFeatureCodes, GetInsightStatusCodes, GetInsightTypeCodes, GetIntegrationTypeCodes, GetMemberRoleCodes, GetRuleTypeCodes, GetSeverityTypeCodes, GetUserStatusCodes, GetUserTypeCodes, Indicator, Insight, InsightQuery, InsightSpec, InsightStatusCode, InsightTypeCode, IntDistribution, IntKeyValue, Integration, IntegrationTypeCode, Link, LoginParams, MaliciousIPData, Member, MemberRoleCode, NetworkMap, NgxPulseLibModule, Node, PulseConfig, Radius, RestUtil, Rule, RuleTemplate, RuleTypeCode, Services, SessionRecord, SessionTransform, SeverityTypeCode, Shieldex, Stream, StreamConfig, StringIntValue, StringKeyValue, SysAccountsService, SysInsightsService, SysMembersService, SysRuleTemplatesService, SysRulesService, SysStreamsService, SysUsersService, Thresholds, TimeDataPoint, TimeDataPoint2D, TimeDataPointFloat, TimeFrame, TimeSeries, TimeSeriesOf2D, TimeSeriesOfDataConsumption, TimeSeriesOfDeviceReport, TimeSeriesOfFloat, TokenData, UsageRecord, UsageTransform, User, UserMembership, UserMemberships, UserService, UserStatusCode, UserTypeCode, UsrInsightsService, UsrIntegrationsService, ZScore };
 //# sourceMappingURL=ngx-pulse-lib.mjs.map

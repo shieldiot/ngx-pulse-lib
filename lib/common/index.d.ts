@@ -12,6 +12,7 @@ export * from './Node';
 export * from './SessionTransform';
 export * from './StringIntValue';
 export * from './StringKeyValue';
+export * from './Thresholds';
 export * from './TimeDataPoint';
 export * from './TimeDataPoint2D';
 export * from './TimeDataPointFloat';
