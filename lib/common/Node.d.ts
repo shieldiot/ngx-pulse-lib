@@ -9,5 +9,6 @@ export declare class Node {
     tags: string[];
     labels: StringKeyValue[];
     eventCount: number;
-    constructor(id?: string, name?: string, ip?: string, type?: DeviceTypeCode, score?: number, tags?: string[], labels?: StringKeyValue[], eventCount?: number);
+    isGroup: boolean;
+    constructor(id?: string, name?: string, ip?: string, type?: DeviceTypeCode, score?: number, tags?: string[], labels?: StringKeyValue[], eventCount?: number, isGroup?: boolean);
 }
