@@ -1408,13 +1408,19 @@ class EventsService {
     /**
      * Get top malicious IPs
      */
-    getTopMaliciousIPs(streamId, top) {
+    getTopMaliciousIPs(streamId, top, from, to) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
         }
         if (top != null) {
             params.push(`top=${top}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
         }
         return this.rest.get(`${this.baseUrl}/top-malicious-ips`, ...params);
     }
@@ -1988,7 +1994,7 @@ class LoginParams {
 
 // MaliciousIPData is a data structure representing malicious IP and its statistics
 class MaliciousIPData {
-    constructor(iP, totalEvents, totalDevices) {
+    constructor(iP, totalEvents, totalDevices, totalMaliciousIPs) {
         if (iP !== undefined) {
             this.ip = iP;
         }
@@ -1997,6 +2003,9 @@ class MaliciousIPData {
         }
         if (totalDevices !== undefined) {
             this.totalDevices = totalDevices;
+        }
+        if (totalMaliciousIPs !== undefined) {
+            this.totalMaliciousIPs = totalMaliciousIPs;
         }
     }
 }
@@ -2866,6 +2875,8 @@ var FeatureCode;
     FeatureCode[FeatureCode["NETWORK_MAP_VIEW"] = 1] = "NETWORK_MAP_VIEW";
     // Network Map module [2] 
     FeatureCode[FeatureCode["NETWORK_MAP_MODULE"] = 2] = "NETWORK_MAP_MODULE";
+    // Home Page version 2 [3] 
+    FeatureCode[FeatureCode["HOME_PAGE_V2"] = 3] = "HOME_PAGE_V2";
 })(FeatureCode || (FeatureCode = {}));
 // Return list of FeatureCode values and their display names
 function GetFeatureCodes() {
@@ -2873,6 +2884,7 @@ function GetFeatureCodes() {
     result.set(FeatureCode.UNDEFINED, 'Undefined');
     result.set(FeatureCode.NETWORK_MAP_VIEW, 'Network Map View');
     result.set(FeatureCode.NETWORK_MAP_MODULE, 'Network Map Module');
+    result.set(FeatureCode.HOME_PAGE_V2, 'Home Page V2');
     return result;
 }
 
