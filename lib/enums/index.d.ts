@@ -13,6 +13,7 @@ export * from './InsightStatusCode';
 export * from './InsightTypeCode';
 export * from './IntegrationTypeCode';
 export * from './MemberRoleCode';
+export * from './NetworkMapTypeCode';
 export * from './RuleTypeCode';
 export * from './SeverityTypeCode';
 export * from './UserStatusCode';
