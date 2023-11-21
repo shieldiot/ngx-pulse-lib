@@ -1,17 +1,17 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { IntDistribution } from '../entities/IntDistribution';
-import { DeviceReport } from '../entities/DeviceReport';
+import { NetworkMap } from '../common/NetworkMap';
 import { TimeSeriesOfDataConsumption } from '../common/TimeSeriesOfDataConsumption';
+import { Device } from '../entities/Device';
 import { DeviceTypeCode } from '../enums/DeviceTypeCode';
 import { DeviceStatusCode } from '../enums/DeviceStatusCode';
-import { DeviceWithEvents } from '../entities/DeviceWithEvents';
-import { NetworkMapTypeCode } from '../enums/NetworkMapTypeCode';
-import { NetworkMap } from '../common/NetworkMap';
-import { TimeSeriesOfDeviceReport } from '../entities/TimeSeriesOfDeviceReport';
-import { Device } from '../entities/Device';
 import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { DeviceWithEvents } from '../entities/DeviceWithEvents';
+import { IntDistribution } from '../entities/IntDistribution';
 import { DeviceActionCode } from '../enums/DeviceActionCode';
+import { NetworkMapTypeCode } from '../enums/NetworkMapTypeCode';
+import { TimeSeriesOfDeviceReport } from '../entities/TimeSeriesOfDeviceReport';
+import { DeviceReport } from '../entities/DeviceReport';
 import * as i0 from "@angular/core";
 export declare class DevicesService {
     private config;
@@ -73,7 +73,7 @@ export declare class DevicesService {
     /**
      * Get network map of devices
      */
-    getNetworkMap(streamId?: string, from?: number, to?: number, type?: DeviceTypeCode[], tag?: string[], id?: string[], mapType?: NetworkMapTypeCode[], ips?: string[]): import("rxjs").Observable<EntityResponse<NetworkMap>>;
+    getNetworkMap(streamId?: string, from?: number, to?: number, type?: DeviceTypeCode[], tag?: string[], id?: string[], mapType?: NetworkMapTypeCode, ips?: string[]): import("rxjs").Observable<EntityResponse<NetworkMap>>;
     /**
      * Get daily device report over time (daily device report includes: total devices, active devices, devices at risk)
      */
