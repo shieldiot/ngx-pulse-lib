@@ -921,7 +921,7 @@ class DevicesService {
     /**
      * Find list of devices by query
      */
-    find(streamId, search, type, status, risk, sort, page, size) {
+    find(streamId, search, type, status, risk, sort, page, size, scoreRange) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -946,6 +946,9 @@ class DevicesService {
         }
         if (size != null) {
             params.push(`size=${size}`);
+        }
+        if (scoreRange != null) {
+            params.push(`scoreRange=${scoreRange}`);
         }
         return this.rest.get(`${this.baseUrl}`, ...params);
     }
@@ -983,7 +986,7 @@ class DevicesService {
     /**
      * Find top 10 devices by their score filter by query
      */
-    findTop(streamId, search, type, status, risk, sort, page, size) {
+    findTop(streamId, search, type, status, risk, sort, page, size, scoreRange) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1008,13 +1011,16 @@ class DevicesService {
         }
         if (size != null) {
             params.push(`size=${size}`);
+        }
+        if (scoreRange != null) {
+            params.push(`scoreRange=${scoreRange}`);
         }
         return this.rest.get(`${this.baseUrl}/top`, ...params);
     }
     /**
      * Find device distribution by type filtered by query
      */
-    countByType(streamId, search, type, status, risk, sort, page, size) {
+    countByType(streamId, search, type, status, risk, sort, page, size, scoreRange) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1039,13 +1045,16 @@ class DevicesService {
         }
         if (size != null) {
             params.push(`size=${size}`);
+        }
+        if (scoreRange != null) {
+            params.push(`scoreRange=${scoreRange}`);
         }
         return this.rest.get(`${this.baseUrl}/count/by-type`, ...params);
     }
     /**
      * Find device distribution by status filtered by query
      */
-    countByStatus(streamId, search, type, status, risk, sort, page, size) {
+    countByStatus(streamId, search, type, status, risk, sort, page, size, scoreRange) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1070,13 +1079,16 @@ class DevicesService {
         }
         if (size != null) {
             params.push(`size=${size}`);
+        }
+        if (scoreRange != null) {
+            params.push(`scoreRange=${scoreRange}`);
         }
         return this.rest.get(`${this.baseUrl}/count/by-status`, ...params);
     }
     /**
      * Find device distribution by action filtered by query
      */
-    countByAction(streamId, search, type, status, risk, sort, page, size) {
+    countByAction(streamId, search, type, status, risk, sort, page, size, scoreRange) {
         const params = [];
         if (streamId != null) {
             params.push(`streamId=${streamId}`);
@@ -1101,6 +1113,9 @@ class DevicesService {
         }
         if (size != null) {
             params.push(`size=${size}`);
+        }
+        if (scoreRange != null) {
+            params.push(`scoreRange=${scoreRange}`);
         }
         return this.rest.get(`${this.baseUrl}/count/by-action`, ...params);
     }

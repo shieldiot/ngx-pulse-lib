@@ -1,17 +1,17 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { NetworkMapTypeCode } from '../enums/NetworkMapTypeCode';
 import { NetworkMap } from '../common/NetworkMap';
+import { TimeSeriesOfDeviceReport } from '../entities/TimeSeriesOfDeviceReport';
 import { TimeSeriesOfDataConsumption } from '../common/TimeSeriesOfDataConsumption';
-import { Device } from '../entities/Device';
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { DeviceTypeCode } from '../enums/DeviceTypeCode';
 import { DeviceStatusCode } from '../enums/DeviceStatusCode';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { DeviceWithEvents } from '../entities/DeviceWithEvents';
 import { IntDistribution } from '../entities/IntDistribution';
 import { DeviceActionCode } from '../enums/DeviceActionCode';
-import { NetworkMapTypeCode } from '../enums/NetworkMapTypeCode';
-import { TimeSeriesOfDeviceReport } from '../entities/TimeSeriesOfDeviceReport';
 import { DeviceReport } from '../entities/DeviceReport';
+import { Device } from '../entities/Device';
 import * as i0 from "@angular/core";
 export declare class DevicesService {
     private config;
@@ -37,7 +37,7 @@ export declare class DevicesService {
     /**
      * Find list of devices by query
      */
-    find(streamId?: string, search?: string, type?: DeviceTypeCode[], status?: DeviceStatusCode[], risk?: SeverityTypeCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<Device>>;
+    find(streamId?: string, search?: string, type?: DeviceTypeCode[], status?: DeviceStatusCode[], risk?: SeverityTypeCode[], sort?: string, page?: number, size?: number, scoreRange?: number[]): import("rxjs").Observable<EntitiesResponse<Device>>;
     /**
      * Export list of devices by query to a file with the specified format
      */
@@ -45,19 +45,19 @@ export declare class DevicesService {
     /**
      * Find top 10 devices by their score filter by query
      */
-    findTop(streamId?: string, search?: string, type?: DeviceTypeCode[], status?: DeviceStatusCode[], risk?: SeverityTypeCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<DeviceWithEvents>>;
+    findTop(streamId?: string, search?: string, type?: DeviceTypeCode[], status?: DeviceStatusCode[], risk?: SeverityTypeCode[], sort?: string, page?: number, size?: number, scoreRange?: number[]): import("rxjs").Observable<EntitiesResponse<DeviceWithEvents>>;
     /**
      * Find device distribution by type filtered by query
      */
-    countByType(streamId?: string, search?: string, type?: DeviceTypeCode[], status?: DeviceStatusCode[], risk?: SeverityTypeCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntityResponse<IntDistribution>>;
+    countByType(streamId?: string, search?: string, type?: DeviceTypeCode[], status?: DeviceStatusCode[], risk?: SeverityTypeCode[], sort?: string, page?: number, size?: number, scoreRange?: number[]): import("rxjs").Observable<EntityResponse<IntDistribution>>;
     /**
      * Find device distribution by status filtered by query
      */
-    countByStatus(streamId?: string, search?: string, type?: DeviceTypeCode[], status?: DeviceStatusCode[], risk?: SeverityTypeCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntityResponse<IntDistribution>>;
+    countByStatus(streamId?: string, search?: string, type?: DeviceTypeCode[], status?: DeviceStatusCode[], risk?: SeverityTypeCode[], sort?: string, page?: number, size?: number, scoreRange?: number[]): import("rxjs").Observable<EntityResponse<IntDistribution>>;
     /**
      * Find device distribution by action filtered by query
      */
-    countByAction(streamId?: string, search?: string, type?: DeviceTypeCode[], status?: DeviceStatusCode[], risk?: SeverityTypeCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntityResponse<IntDistribution>>;
+    countByAction(streamId?: string, search?: string, type?: DeviceTypeCode[], status?: DeviceStatusCode[], risk?: SeverityTypeCode[], sort?: string, page?: number, size?: number, scoreRange?: number[]): import("rxjs").Observable<EntityResponse<IntDistribution>>;
     /**
      * Add tag to a device
      */
