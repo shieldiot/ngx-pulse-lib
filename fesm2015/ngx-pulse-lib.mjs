@@ -2898,6 +2898,8 @@ var FeatureCode;
     FeatureCode[FeatureCode["NETWORK_MAP_MODULE"] = 2] = "NETWORK_MAP_MODULE";
     // Home Page version 2 [3] 
     FeatureCode[FeatureCode["HOME_PAGE_V2"] = 3] = "HOME_PAGE_V2";
+    // Compliance report feature flag [4] 
+    FeatureCode[FeatureCode["COMPLIANCE_REPORT"] = 4] = "COMPLIANCE_REPORT";
 })(FeatureCode || (FeatureCode = {}));
 // Return list of FeatureCode values and their display names
 function GetFeatureCodes() {
@@ -2906,6 +2908,7 @@ function GetFeatureCodes() {
     result.set(FeatureCode.NETWORK_MAP_VIEW, 'Network Map View');
     result.set(FeatureCode.NETWORK_MAP_MODULE, 'Network Map Module');
     result.set(FeatureCode.HOME_PAGE_V2, 'Home Page V2');
+    result.set(FeatureCode.COMPLIANCE_REPORT, 'Compliance Report');
     return result;
 }
 
