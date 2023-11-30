@@ -1,5 +1,6 @@
 export * from './devicesService';
 export * from './eventsService';
+export * from './reportsService';
 export * from './services.export';
 export * from './sysAccountsService';
 export * from './sysInsightsService';

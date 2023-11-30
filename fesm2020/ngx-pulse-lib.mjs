@@ -1823,6 +1823,44 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImpo
                     args: ['config']
                 }] }, { type: RestUtil }]; } });
 
+// List of events related actions for the operator 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class ReportsService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/reports';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Get compliance report
+     */
+    getComplianceReport(streamId, from, to) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        return this.rest.download(`reports`, `${this.baseUrl}/compliance`, ...params);
+    }
+}
+ReportsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: ReportsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+ReportsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: ReportsService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: ReportsService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
 const Services = [
     SysAccountsService,
     SysInsightsService,
@@ -1836,6 +1874,7 @@ const Services = [
     UserService,
     DevicesService,
     EventsService,
+    ReportsService,
 ];
 
 class NgxPulseLibModule {
@@ -3103,5 +3142,5 @@ function GetUserTypeCodes() {
  * Generated bundle index. Do not edit.
  */
 
-export { Account, AccountDTO, AccountRole, AccountSettings, AccountStatusCode, AccountTypeCode, ActionResponse, AuditLog, BaseEntity, BaseRestResponse, Checkpoint, Condition, ConsumptionData, ConsumptionTimeDataPoint, DNSRecord, DataIngestion, DataPointOfDeviceReport, Device, DeviceActionCode, DeviceCreationCode, DeviceIdentityCode, DeviceReport, DeviceStatusCode, DeviceTypeCode, DeviceWithEvents, DevicesService, EntitiesResponse, EntityResponse, Event, EventCategoryCode, EventOccurrence, EventStatusCode, EventTypeCode, EventWithDevice, EventsService, Feature, FeatureCode, FeaturesGroup, FloatKeyValue, GetAccountStatusCodes, GetAccountTypeCodes, GetDeviceActionCodes, GetDeviceCreationCodes, GetDeviceIdentityCodes, GetDeviceStatusCodes, GetDeviceTypeCodes, GetEventCategoryCodes, GetEventStatusCodes, GetEventTypeCodes, GetFeatureCodes, GetInsightStatusCodes, GetInsightTypeCodes, GetIntegrationTypeCodes, GetMemberRoleCodes, GetNetworkMapTypeCodes, GetRuleTypeCodes, GetSeverityTypeCodes, GetUserStatusCodes, GetUserTypeCodes, Indicator, Insight, InsightQuery, InsightSpec, InsightStatusCode, InsightTypeCode, IntDistribution, IntKeyValue, Integration, IntegrationTypeCode, Link, LoginParams, MaliciousIPData, Member, MemberRoleCode, NetworkMap, NetworkMapTypeCode, NgxPulseLibModule, Node, PulseConfig, Radius, RestUtil, Rule, RuleTemplate, RuleTypeCode, Services, SessionRecord, SessionTransform, SeverityTypeCode, Shieldex, Stream, StreamConfig, StringIntValue, StringKeyValue, SysAccountsService, SysInsightsService, SysMembersService, SysRuleTemplatesService, SysRulesService, SysStreamsService, SysUsersService, Thresholds, TimeDataPoint, TimeDataPoint2D, TimeDataPointFloat, TimeFrame, TimeSeries, TimeSeriesOf2D, TimeSeriesOfDataConsumption, TimeSeriesOfDeviceReport, TimeSeriesOfFloat, TokenData, UsageRecord, UsageTransform, User, UserMembership, UserMemberships, UserService, UserStatusCode, UserTypeCode, UsrInsightsService, UsrIntegrationsService, ZScore };
+export { Account, AccountDTO, AccountRole, AccountSettings, AccountStatusCode, AccountTypeCode, ActionResponse, AuditLog, BaseEntity, BaseRestResponse, Checkpoint, Condition, ConsumptionData, ConsumptionTimeDataPoint, DNSRecord, DataIngestion, DataPointOfDeviceReport, Device, DeviceActionCode, DeviceCreationCode, DeviceIdentityCode, DeviceReport, DeviceStatusCode, DeviceTypeCode, DeviceWithEvents, DevicesService, EntitiesResponse, EntityResponse, Event, EventCategoryCode, EventOccurrence, EventStatusCode, EventTypeCode, EventWithDevice, EventsService, Feature, FeatureCode, FeaturesGroup, FloatKeyValue, GetAccountStatusCodes, GetAccountTypeCodes, GetDeviceActionCodes, GetDeviceCreationCodes, GetDeviceIdentityCodes, GetDeviceStatusCodes, GetDeviceTypeCodes, GetEventCategoryCodes, GetEventStatusCodes, GetEventTypeCodes, GetFeatureCodes, GetInsightStatusCodes, GetInsightTypeCodes, GetIntegrationTypeCodes, GetMemberRoleCodes, GetNetworkMapTypeCodes, GetRuleTypeCodes, GetSeverityTypeCodes, GetUserStatusCodes, GetUserTypeCodes, Indicator, Insight, InsightQuery, InsightSpec, InsightStatusCode, InsightTypeCode, IntDistribution, IntKeyValue, Integration, IntegrationTypeCode, Link, LoginParams, MaliciousIPData, Member, MemberRoleCode, NetworkMap, NetworkMapTypeCode, NgxPulseLibModule, Node, PulseConfig, Radius, ReportsService, RestUtil, Rule, RuleTemplate, RuleTypeCode, Services, SessionRecord, SessionTransform, SeverityTypeCode, Shieldex, Stream, StreamConfig, StringIntValue, StringKeyValue, SysAccountsService, SysInsightsService, SysMembersService, SysRuleTemplatesService, SysRulesService, SysStreamsService, SysUsersService, Thresholds, TimeDataPoint, TimeDataPoint2D, TimeDataPointFloat, TimeFrame, TimeSeries, TimeSeriesOf2D, TimeSeriesOfDataConsumption, TimeSeriesOfDeviceReport, TimeSeriesOfFloat, TokenData, UsageRecord, UsageTransform, User, UserMembership, UserMemberships, UserService, UserStatusCode, UserTypeCode, UsrInsightsService, UsrIntegrationsService, ZScore };
 //# sourceMappingURL=ngx-pulse-lib.mjs.map
