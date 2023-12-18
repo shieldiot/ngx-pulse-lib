@@ -1953,6 +1953,31 @@ class FloatKeyValue {
     }
 }
 
+// GeoData model represents Geographic data associated with IP
+// This structure is based on the Elasticsearch GeoIP pipeline fetching data from MaxMind database
+class GeoData {
+    constructor(countryIsoCode, countryName, regionIsoCode, regionName, cityName, location) {
+        if (countryIsoCode !== undefined) {
+            this.country_iso_code = countryIsoCode;
+        }
+        if (countryName !== undefined) {
+            this.country_name = countryName;
+        }
+        if (regionIsoCode !== undefined) {
+            this.region_iso_code = regionIsoCode;
+        }
+        if (regionName !== undefined) {
+            this.region_name = regionName;
+        }
+        if (cityName !== undefined) {
+            this.city_name = cityName;
+        }
+        if (location !== undefined) {
+            this.location = location;
+        }
+    }
+}
+
 // Indicator model represents a feature and feature value within a normal range
 class Indicator {
     constructor(name, significance, min, max, actual) {
@@ -2009,6 +2034,18 @@ class Link {
         }
         if (eventCount !== undefined) {
             this.eventCount = eventCount;
+        }
+    }
+}
+
+// WGS-84 Geo Location
+class Location {
+    constructor(lat, lon) {
+        if (lat !== undefined) {
+            this.lat = lat;
+        }
+        if (lon !== undefined) {
+            this.lon = lon;
         }
     }
 }
@@ -3142,5 +3179,5 @@ function GetUserTypeCodes() {
  * Generated bundle index. Do not edit.
  */
 
-export { Account, AccountDTO, AccountRole, AccountSettings, AccountStatusCode, AccountTypeCode, ActionResponse, AuditLog, BaseEntity, BaseRestResponse, Checkpoint, Condition, ConsumptionData, ConsumptionTimeDataPoint, DNSRecord, DataIngestion, DataPointOfDeviceReport, Device, DeviceActionCode, DeviceCreationCode, DeviceIdentityCode, DeviceReport, DeviceStatusCode, DeviceTypeCode, DeviceWithEvents, DevicesService, EntitiesResponse, EntityResponse, Event, EventCategoryCode, EventOccurrence, EventStatusCode, EventTypeCode, EventWithDevice, EventsService, Feature, FeatureCode, FeaturesGroup, FloatKeyValue, GetAccountStatusCodes, GetAccountTypeCodes, GetDeviceActionCodes, GetDeviceCreationCodes, GetDeviceIdentityCodes, GetDeviceStatusCodes, GetDeviceTypeCodes, GetEventCategoryCodes, GetEventStatusCodes, GetEventTypeCodes, GetFeatureCodes, GetInsightStatusCodes, GetInsightTypeCodes, GetIntegrationTypeCodes, GetMemberRoleCodes, GetNetworkMapTypeCodes, GetRuleTypeCodes, GetSeverityTypeCodes, GetUserStatusCodes, GetUserTypeCodes, Indicator, Insight, InsightQuery, InsightSpec, InsightStatusCode, InsightTypeCode, IntDistribution, IntKeyValue, Integration, IntegrationTypeCode, Link, LoginParams, MaliciousIPData, Member, MemberRoleCode, NetworkMap, NetworkMapTypeCode, NgxPulseLibModule, Node, PulseConfig, Radius, ReportsService, RestUtil, Rule, RuleTemplate, RuleTypeCode, Services, SessionRecord, SessionTransform, SeverityTypeCode, Shieldex, Stream, StreamConfig, StringIntValue, StringKeyValue, SysAccountsService, SysInsightsService, SysMembersService, SysRuleTemplatesService, SysRulesService, SysStreamsService, SysUsersService, Thresholds, TimeDataPoint, TimeDataPoint2D, TimeDataPointFloat, TimeFrame, TimeSeries, TimeSeriesOf2D, TimeSeriesOfDataConsumption, TimeSeriesOfDeviceReport, TimeSeriesOfFloat, TokenData, UsageRecord, UsageTransform, User, UserMembership, UserMemberships, UserService, UserStatusCode, UserTypeCode, UsrInsightsService, UsrIntegrationsService, ZScore };
+export { Account, AccountDTO, AccountRole, AccountSettings, AccountStatusCode, AccountTypeCode, ActionResponse, AuditLog, BaseEntity, BaseRestResponse, Checkpoint, Condition, ConsumptionData, ConsumptionTimeDataPoint, DNSRecord, DataIngestion, DataPointOfDeviceReport, Device, DeviceActionCode, DeviceCreationCode, DeviceIdentityCode, DeviceReport, DeviceStatusCode, DeviceTypeCode, DeviceWithEvents, DevicesService, EntitiesResponse, EntityResponse, Event, EventCategoryCode, EventOccurrence, EventStatusCode, EventTypeCode, EventWithDevice, EventsService, Feature, FeatureCode, FeaturesGroup, FloatKeyValue, GeoData, GetAccountStatusCodes, GetAccountTypeCodes, GetDeviceActionCodes, GetDeviceCreationCodes, GetDeviceIdentityCodes, GetDeviceStatusCodes, GetDeviceTypeCodes, GetEventCategoryCodes, GetEventStatusCodes, GetEventTypeCodes, GetFeatureCodes, GetInsightStatusCodes, GetInsightTypeCodes, GetIntegrationTypeCodes, GetMemberRoleCodes, GetNetworkMapTypeCodes, GetRuleTypeCodes, GetSeverityTypeCodes, GetUserStatusCodes, GetUserTypeCodes, Indicator, Insight, InsightQuery, InsightSpec, InsightStatusCode, InsightTypeCode, IntDistribution, IntKeyValue, Integration, IntegrationTypeCode, Link, Location, LoginParams, MaliciousIPData, Member, MemberRoleCode, NetworkMap, NetworkMapTypeCode, NgxPulseLibModule, Node, PulseConfig, Radius, ReportsService, RestUtil, Rule, RuleTemplate, RuleTypeCode, Services, SessionRecord, SessionTransform, SeverityTypeCode, Shieldex, Stream, StreamConfig, StringIntValue, StringKeyValue, SysAccountsService, SysInsightsService, SysMembersService, SysRuleTemplatesService, SysRulesService, SysStreamsService, SysUsersService, Thresholds, TimeDataPoint, TimeDataPoint2D, TimeDataPointFloat, TimeFrame, TimeSeries, TimeSeriesOf2D, TimeSeriesOfDataConsumption, TimeSeriesOfDeviceReport, TimeSeriesOfFloat, TokenData, UsageRecord, UsageTransform, User, UserMembership, UserMemberships, UserService, UserStatusCode, UserTypeCode, UsrInsightsService, UsrIntegrationsService, ZScore };
 //# sourceMappingURL=ngx-pulse-lib.mjs.map
