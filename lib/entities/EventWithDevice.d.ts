@@ -1,14 +1,14 @@
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { EventOccurrence } from '../entities/EventOccurrence';
+import { EventTypeCode } from '../enums/EventTypeCode';
 import { EventStatusCode } from '../enums/EventStatusCode';
 import { Indicator } from '../common/Indicator';
-import { EventCategoryCode } from '../enums/EventCategoryCode';
-import { StringKeyValue } from '../common/StringKeyValue';
-import { EventOccurrence } from '../entities/EventOccurrence';
-import { Device } from '../entities/Device';
-import { BaseEntity } from '../entities/BaseEntity';
-import { EventTypeCode } from '../enums/EventTypeCode';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { RuleTypeCode } from '../enums/RuleTypeCode';
 import { GeoData } from '../common/GeoData';
+import { StringKeyValue } from '../common/StringKeyValue';
+import { EventCategoryCode } from '../enums/EventCategoryCode';
+import { Device } from '../entities/Device';
+import { BaseEntity } from '../entities/BaseEntity';
 export declare class EventWithDevice extends BaseEntity {
     accountId: string;
     streamId: string;
