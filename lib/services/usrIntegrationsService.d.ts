@@ -1,7 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { Rule } from '../entities/Rule';
 import { Integration } from '../entities/Integration';
+import { Rule } from '../entities/Rule';
 import * as i0 from "@angular/core";
 export declare class UsrIntegrationsService {
     private config;
