@@ -8,10 +8,10 @@ class PulseConfig {
     constructor() {
         this.api = '';
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: PulseConfig, deps: [], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: PulseConfig }); }
 }
-PulseConfig.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PulseConfig, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
-PulseConfig.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PulseConfig });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PulseConfig, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: PulseConfig, decorators: [{
             type: Injectable
         }] });
 
@@ -178,10 +178,10 @@ class RestUtil {
         }
         return contentType;
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: RestUtil, deps: [{ token: i1.HttpClient }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: RestUtil }); }
 }
-RestUtil.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: RestUtil, deps: [{ token: i1.HttpClient }], target: i0.ɵɵFactoryTarget.Injectable });
-RestUtil.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: RestUtil });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: RestUtil, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: RestUtil, decorators: [{
             type: Injectable
         }], ctorParameters: function () { return [{ type: i1.HttpClient }]; } });
 
@@ -246,10 +246,10 @@ class SysAccountsService {
         }
         return this.rest.get(`${this.baseUrl}`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysAccountsService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysAccountsService }); }
 }
-SysAccountsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAccountsService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysAccountsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAccountsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAccountsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysAccountsService, decorators: [{
             type: Injectable
         }], ctorParameters: function () { return [{ type: PulseConfig }, { type: RestUtil }]; } });
 
@@ -363,10 +363,10 @@ class SysInsightsService {
         }
         return this.rest.get(`${this.baseUrl}/spec`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysInsightsService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysInsightsService }); }
 }
-SysInsightsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysInsightsService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysInsightsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysInsightsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysInsightsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysInsightsService, decorators: [{
             type: Injectable
         }], ctorParameters: function () { return [{ type: PulseConfig }, { type: RestUtil }]; } });
 
@@ -412,10 +412,10 @@ class SysMembersService {
     find() {
         return this.rest.get(`${this.baseUrl}`);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysMembersService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysMembersService }); }
 }
-SysMembersService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysMembersService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysMembersService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysMembersService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysMembersService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysMembersService, decorators: [{
             type: Injectable
         }], ctorParameters: function () { return [{ type: PulseConfig }, { type: RestUtil }]; } });
 
@@ -474,10 +474,10 @@ class SysRuleTemplatesService {
         }
         return this.rest.get(`${this.baseUrl}`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysRuleTemplatesService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysRuleTemplatesService }); }
 }
-SysRuleTemplatesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRuleTemplatesService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysRuleTemplatesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRuleTemplatesService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRuleTemplatesService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysRuleTemplatesService, decorators: [{
             type: Injectable
         }], ctorParameters: function () { return [{ type: PulseConfig }, { type: RestUtil }]; } });
 
@@ -542,10 +542,10 @@ class SysRulesService {
         }
         return this.rest.get(`${this.baseUrl}`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysRulesService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysRulesService }); }
 }
-SysRulesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRulesService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysRulesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRulesService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRulesService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysRulesService, decorators: [{
             type: Injectable
         }], ctorParameters: function () { return [{ type: PulseConfig }, { type: RestUtil }]; } });
 
@@ -607,10 +607,10 @@ class SysStreamsService {
         }
         return this.rest.get(`${this.baseUrl}`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysStreamsService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysStreamsService }); }
 }
-SysStreamsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStreamsService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysStreamsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStreamsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStreamsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysStreamsService, decorators: [{
             type: Injectable
         }], ctorParameters: function () { return [{ type: PulseConfig }, { type: RestUtil }]; } });
 
@@ -681,10 +681,10 @@ class SysUsersService {
     createMembership(body) {
         return this.rest.post(`${this.baseUrl}/memberships`, typeof body === 'object' ? JSON.stringify(body) : body);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysUsersService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysUsersService }); }
 }
-SysUsersService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysUsersService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysUsersService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysUsersService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysUsersService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: SysUsersService, decorators: [{
             type: Injectable
         }], ctorParameters: function () { return [{ type: PulseConfig }, { type: RestUtil }]; } });
 
@@ -706,10 +706,10 @@ class UsrInsightsService {
     getDailyInsights(dayId) {
         return this.rest.get(`${this.baseUrl}/daily/${dayId}`);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: UsrInsightsService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: UsrInsightsService }); }
 }
-UsrInsightsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrInsightsService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrInsightsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrInsightsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrInsightsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: UsrInsightsService, decorators: [{
             type: Injectable
         }], ctorParameters: function () { return [{ type: PulseConfig }, { type: RestUtil }]; } });
 
@@ -774,10 +774,10 @@ class UsrIntegrationsService {
         }
         return this.rest.get(`${this.baseUrl}`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: UsrIntegrationsService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: UsrIntegrationsService }); }
 }
-UsrIntegrationsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrIntegrationsService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrIntegrationsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrIntegrationsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrIntegrationsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: UsrIntegrationsService, decorators: [{
             type: Injectable
         }], ctorParameters: function () { return [{ type: PulseConfig }, { type: RestUtil }]; } });
 
@@ -825,10 +825,10 @@ class UserService {
     getMemberships() {
         return this.rest.get(`${this.baseUrl}/memberships`);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: UserService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: UserService }); }
 }
-UserService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UserService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UserService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UserService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UserService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: UserService, decorators: [{
             type: Injectable
         }], ctorParameters: function () { return [{ type: PulseConfig }, { type: RestUtil }]; } });
 
@@ -1190,10 +1190,10 @@ class DevicesService {
         }
         return this.rest.get(`${this.baseUrl}/consumption/trend`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: DevicesService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: DevicesService }); }
 }
-DevicesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: DevicesService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-DevicesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: DevicesService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: DevicesService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: DevicesService, decorators: [{
             type: Injectable
         }], ctorParameters: function () { return [{ type: PulseConfig }, { type: RestUtil }]; } });
 
@@ -1780,10 +1780,10 @@ class EventsService {
         }
         return this.rest.get(`${this.baseUrl}/devices-at-risk`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: EventsService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: EventsService }); }
 }
-EventsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: EventsService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-EventsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: EventsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: EventsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: EventsService, decorators: [{
             type: Injectable
         }], ctorParameters: function () { return [{ type: PulseConfig }, { type: RestUtil }]; } });
 
@@ -1815,10 +1815,10 @@ class ReportsService {
         }
         return this.rest.download(`reports`, `${this.baseUrl}/compliance`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: ReportsService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: ReportsService }); }
 }
-ReportsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: ReportsService, deps: [{ token: PulseConfig }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-ReportsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: ReportsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: ReportsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: ReportsService, decorators: [{
             type: Injectable
         }], ctorParameters: function () { return [{ type: PulseConfig }, { type: RestUtil }]; } });
 
@@ -1854,11 +1854,11 @@ const Services = [
 //   }
 // }
 class NgxPulseLibModule {
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: NgxPulseLibModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule }); }
+    static { this.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "16.2.12", ngImport: i0, type: NgxPulseLibModule, imports: [CommonModule, HttpClientModule] }); }
+    static { this.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: NgxPulseLibModule, providers: [RestUtil, RestUtil, ...Services], imports: [CommonModule, HttpClientModule] }); }
 }
-NgxPulseLibModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: NgxPulseLibModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-NgxPulseLibModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "15.2.10", ngImport: i0, type: NgxPulseLibModule, imports: [CommonModule, HttpClientModule] });
-NgxPulseLibModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: NgxPulseLibModule, providers: [RestUtil, RestUtil, ...Services], imports: [CommonModule, HttpClientModule] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: NgxPulseLibModule, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.12", ngImport: i0, type: NgxPulseLibModule, decorators: [{
             type: NgModule,
             args: [{
                     imports: [CommonModule, HttpClientModule],
