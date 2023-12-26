@@ -8,4 +8,5 @@ export declare class User extends BaseEntity {
     type: UserTypeCode;
     status: UserStatusCode;
     defaultAccount: string;
+    lastSignIn: number;
 }
