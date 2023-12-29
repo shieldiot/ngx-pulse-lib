@@ -20,6 +20,10 @@ export declare class ReportsService {
      * Get histogram of device distribution by number of destinations
      */
     getDeviceDistributionByNumberOfDestinations(streamId?: string, from?: number, to?: number): import("rxjs").Observable<EntityResponse<GraphSeries>>;
+    /**
+     * Get histogram of device distribution by communication frequency
+     */
+    getDeviceGroupsByCommunicationFrequency(streamId?: string, from?: number, to?: number): import("rxjs").Observable<EntityResponse<GraphSeries>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<ReportsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<ReportsService>;
 }
