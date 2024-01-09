@@ -1,16 +1,17 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { RuleTypeCode } from '../enums/RuleTypeCode';
 import { EventWithDevice } from '../entities/EventWithDevice';
+import { MaliciousIPData } from '../common/MaliciousIPData';
 import { TimeSeriesOf2D } from '../common/TimeSeriesOf2D';
 import { Event } from '../entities/Event';
 import { EventTypeCode } from '../enums/EventTypeCode';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { EventStatusCode } from '../enums/EventStatusCode';
 import { IntDistribution } from '../entities/IntDistribution';
 import { TimeSeriesOfFloat } from '../common/TimeSeriesOfFloat';
+import { MaliciousIPCard } from '../common/MaliciousIPCard';
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { EventCategoryCode } from '../enums/EventCategoryCode';
-import { EventStatusCode } from '../enums/EventStatusCode';
-import { MaliciousIPData } from '../common/MaliciousIPData';
+import { RuleTypeCode } from '../enums/RuleTypeCode';
 import * as i0 from "@angular/core";
 export declare class EventsService {
     private config;
@@ -84,7 +85,7 @@ export declare class EventsService {
     /**
      * Get malicious IP data card for specific malicious IP
      */
-    getMaliciousIpCard(streamId?: string, targetIp?: string, from?: number, to?: number): import("rxjs").Observable<ActionResponse>;
+    getMaliciousIpCard(streamId?: string, targetIp?: string, from?: number, to?: number): import("rxjs").Observable<EntityResponse<MaliciousIPCard>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<EventsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<EventsService>;
 }
