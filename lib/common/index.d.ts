@@ -11,6 +11,7 @@ export * from './Interval';
 export * from './Link';
 export * from './Location';
 export * from './LoginParams';
+export * from './MaliciousIPCard';
 export * from './MaliciousIPData';
 export * from './NetworkMap';
 export * from './Node';

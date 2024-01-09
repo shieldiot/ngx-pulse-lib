@@ -1,0 +1,27 @@
+// MaliciousIPCard is a data structure representing malicious IP card
+export class MaliciousIPCard {
+    constructor(maliciousIp, countryCode, ipDescription, lastEventTime, attackCategories, numberOfDevices, eventsBySeverityBreakdown) {
+        if (maliciousIp !== undefined) {
+            this.maliciousIp = maliciousIp;
+        }
+        if (countryCode !== undefined) {
+            this.countryCode = countryCode;
+        }
+        if (ipDescription !== undefined) {
+            this.ipDescription = ipDescription;
+        }
+        if (lastEventTime !== undefined) {
+            this.lastEventTime = lastEventTime;
+        }
+        if (attackCategories !== undefined) {
+            this.attackCategories = attackCategories;
+        }
+        if (numberOfDevices !== undefined) {
+            this.numberOfDevices = numberOfDevices;
+        }
+        if (eventsBySeverityBreakdown !== undefined) {
+            this.eventsBySeverityBreakdown = eventsBySeverityBreakdown;
+        }
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTWFsaWNpb3VzSVBDYXJkLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvbmd4LXB1bHNlLWxpYi9zcmMvbGliL2NvbW1vbi9NYWxpY2lvdXNJUENhcmQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBSUEscUVBQXFFO0FBQ3JFLE1BQU0sT0FBTyxlQUFlO0lBdUJ2QixZQUFZLFdBQW9CLEVBQUUsV0FBb0IsRUFBRSxhQUFzQixFQUFFLGFBQXNCLEVBQUUsZ0JBQTJCLEVBQUUsZUFBd0IsRUFBRSx5QkFBMkM7UUFDdk0sSUFBSSxXQUFXLEtBQUssU0FBUyxFQUFFO1lBQUUsSUFBSSxDQUFDLFdBQVcsR0FBRyxXQUFXLENBQUM7U0FBRTtRQUNsRSxJQUFJLFdBQVcsS0FBSyxTQUFTLEVBQUU7WUFBRSxJQUFJLENBQUMsV0FBVyxHQUFHLFdBQVcsQ0FBQztTQUFFO1FBQ2xFLElBQUksYUFBYSxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxhQUFhLEdBQUcsYUFBYSxDQUFDO1NBQUU7UUFDeEUsSUFBSSxhQUFhLEtBQUssU0FBUyxFQUFFO1lBQUUsSUFBSSxDQUFDLGFBQWEsR0FBRyxhQUFhLENBQUM7U0FBRTtRQUN4RSxJQUFJLGdCQUFnQixLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxnQkFBZ0IsR0FBRyxnQkFBZ0IsQ0FBQztTQUFFO1FBQ2pGLElBQUksZUFBZSxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxlQUFlLEdBQUcsZUFBZSxDQUFDO1NBQUU7UUFDOUUsSUFBSSx5QkFBeUIsS0FBSyxTQUFTLEVBQUU7WUFBRSxJQUFJLENBQUMseUJBQXlCLEdBQUcseUJBQXlCLENBQUM7U0FBRTtJQUNoSCxDQUFDO0NBRUoiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBJbnREaXN0cmlidXRpb24gfSBmcm9tICcuLi9lbnRpdGllcy9JbnREaXN0cmlidXRpb24nO1xuXG5cblxuLy8gTWFsaWNpb3VzSVBDYXJkIGlzIGEgZGF0YSBzdHJ1Y3R1cmUgcmVwcmVzZW50aW5nIG1hbGljaW91cyBJUCBjYXJkXG5leHBvcnQgY2xhc3MgTWFsaWNpb3VzSVBDYXJkIHtcbiBcbiAgICAvLyBUaGUgbWFsaWNpb3VzIElQIFxuICAgIHB1YmxpYyBtYWxpY2lvdXNJcDogc3RyaW5nO1xuIFxuICAgIC8vIENvdW50cnkgY29kZSBcbiAgICBwdWJsaWMgY291bnRyeUNvZGU6IHN0cmluZztcbiBcbiAgICAvLyBJcCBkZXNjcmlwdGlvbiBcbiAgICBwdWJsaWMgaXBEZXNjcmlwdGlvbjogc3RyaW5nO1xuIFxuICAgIC8vIExhc3QgRXZlbnQgVGltZSBcbiAgICBwdWJsaWMgbGFzdEV2ZW50VGltZTogbnVtYmVyO1xuIFxuICAgIC8vIEF0dGFjayBDYXRlZ29yaWVzIGxpc3QgXG4gICAgcHVibGljIGF0dGFja0NhdGVnb3JpZXM6IHN0cmluZ1tdO1xuIFxuICAgIC8vIE51bWJlciBPZiBEZXZpY2VzIFxuICAgIHB1YmxpYyBudW1iZXJPZkRldmljZXM6IG51bWJlcjtcbiBcbiAgICAvLyBFdmVudHMgQnkgU2V2ZXJpdHkgQnJlYWtkb3duIFxuICAgIHB1YmxpYyBldmVudHNCeVNldmVyaXR5QnJlYWtkb3duOiBJbnREaXN0cmlidXRpb247XG4gXG4gICAgIGNvbnN0cnVjdG9yKG1hbGljaW91c0lwPzogc3RyaW5nLCBjb3VudHJ5Q29kZT86IHN0cmluZywgaXBEZXNjcmlwdGlvbj86IHN0cmluZywgbGFzdEV2ZW50VGltZT86IG51bWJlciwgYXR0YWNrQ2F0ZWdvcmllcz86IHN0cmluZ1tdLCBudW1iZXJPZkRldmljZXM/OiBudW1iZXIsIGV2ZW50c0J5U2V2ZXJpdHlCcmVha2Rvd24/OiBJbnREaXN0cmlidXRpb24pIHsgXG4gICAgICAgIGlmIChtYWxpY2lvdXNJcCAhPT0gdW5kZWZpbmVkKSB7IHRoaXMubWFsaWNpb3VzSXAgPSBtYWxpY2lvdXNJcDsgfVxuICAgICAgICBpZiAoY291bnRyeUNvZGUgIT09IHVuZGVmaW5lZCkgeyB0aGlzLmNvdW50cnlDb2RlID0gY291bnRyeUNvZGU7IH1cbiAgICAgICAgaWYgKGlwRGVzY3JpcHRpb24gIT09IHVuZGVmaW5lZCkgeyB0aGlzLmlwRGVzY3JpcHRpb24gPSBpcERlc2NyaXB0aW9uOyB9XG4gICAgICAgIGlmIChsYXN0RXZlbnRUaW1lICE9PSB1bmRlZmluZWQpIHsgdGhpcy5sYXN0RXZlbnRUaW1lID0gbGFzdEV2ZW50VGltZTsgfVxuICAgICAgICBpZiAoYXR0YWNrQ2F0ZWdvcmllcyAhPT0gdW5kZWZpbmVkKSB7IHRoaXMuYXR0YWNrQ2F0ZWdvcmllcyA9IGF0dGFja0NhdGVnb3JpZXM7IH1cbiAgICAgICAgaWYgKG51bWJlck9mRGV2aWNlcyAhPT0gdW5kZWZpbmVkKSB7IHRoaXMubnVtYmVyT2ZEZXZpY2VzID0gbnVtYmVyT2ZEZXZpY2VzOyB9XG4gICAgICAgIGlmIChldmVudHNCeVNldmVyaXR5QnJlYWtkb3duICE9PSB1bmRlZmluZWQpIHsgdGhpcy5ldmVudHNCeVNldmVyaXR5QnJlYWtkb3duID0gZXZlbnRzQnlTZXZlcml0eUJyZWFrZG93bjsgfVxuICAgIH1cblxufVxuXG5cbiJdfQ==

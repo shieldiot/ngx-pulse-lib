@@ -1,13 +1,13 @@
-import { EventTypeCode } from '../enums/EventTypeCode';
-import { GeoData } from '../common/GeoData';
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { EventStatusCode } from '../enums/EventStatusCode';
 import { StringKeyValue } from '../common/StringKeyValue';
 import { EventCategoryCode } from '../enums/EventCategoryCode';
 import { EventOccurrence } from '../entities/EventOccurrence';
 import { BaseEntity } from '../entities/BaseEntity';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
-import { EventStatusCode } from '../enums/EventStatusCode';
+import { EventTypeCode } from '../enums/EventTypeCode';
 import { Indicator } from '../common/Indicator';
 import { RuleTypeCode } from '../enums/RuleTypeCode';
+import { GeoData } from '../common/GeoData';
 export declare class Event extends BaseEntity {
     accountId: string;
     streamId: string;
