@@ -16,5 +16,6 @@ export * from './MemberRoleCode';
 export * from './NetworkMapTypeCode';
 export * from './RuleTypeCode';
 export * from './SeverityTypeCode';
+export * from './TrafficDirectionCode';
 export * from './UserStatusCode';
 export * from './UserTypeCode';
