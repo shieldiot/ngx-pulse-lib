@@ -1,7 +1,7 @@
-import { Thresholds } from '../common/Thresholds';
 import { DataIngestion } from '../entities/DataIngestion';
 import { SessionTransform } from '../common/SessionTransform';
 import { UsageTransform } from '../common/UsageTransform';
+import { Thresholds } from '../common/Thresholds';
 export declare class StreamConfig {
     ingest: DataIngestion;
     sessionTransform: SessionTransform;
