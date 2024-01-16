@@ -1,9 +1,9 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { LoginParams } from '../common/LoginParams';
 import { AccountDTO } from '../entities/AccountDTO';
 import { Feature } from '../entities/Feature';
 import { UserMemberships } from '../entities/UserMemberships';
+import { LoginParams } from '../common/LoginParams';
 import * as i0 from "@angular/core";
 export declare class UserService {
     private config;
