@@ -7,12 +7,14 @@ export declare class UsageRecord extends BaseEntity {
     deviceIp: string;
     startTime: number;
     endTime: number;
-    srcPortsList: string;
+    srcPortsList: number[];
     srcPortsCount: number;
-    dstPortsList: string;
+    dstPortsList: number[];
     dstPortsCount: number;
-    endpointsList: string;
+    endpointsList: string[];
     endpointsCount: number;
+    srcEndpoints: string[];
+    dstEndpoints: string[];
     packetsIn: number;
     packetsOut: number;
     bytesIn: number;
