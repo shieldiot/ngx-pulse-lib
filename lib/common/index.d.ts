@@ -1,6 +1,7 @@
 export * from './AccountRole';
 export * from './ConsumptionData';
 export * from './ConsumptionTimeDataPoint';
+export * from './EventSeverityConfig';
 export * from './FloatKeyValue';
 export * from './GeoData';
 export * from './GraphSeries';
@@ -17,6 +18,8 @@ export * from './NetworkMap';
 export * from './Node';
 export * from './SeriesData';
 export * from './SessionTransform';
+export * from './SeverityIntervalTuple';
+export * from './ShieldexConfig';
 export * from './StringIntValue';
 export * from './StringKeyIntValue';
 export * from './StringKeyValue';

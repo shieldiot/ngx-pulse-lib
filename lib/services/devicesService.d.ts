@@ -1,17 +1,17 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { DeviceActionCode } from '../enums/DeviceActionCode';
-import { DeviceReport } from '../entities/DeviceReport';
-import { Device } from '../entities/Device';
-import { DeviceTypeCode } from '../enums/DeviceTypeCode';
 import { DeviceStatusCode } from '../enums/DeviceStatusCode';
-import { IntDistribution } from '../entities/IntDistribution';
-import { TimeSeriesOfDeviceReport } from '../entities/TimeSeriesOfDeviceReport';
-import { TimeSeriesOfDataConsumption } from '../common/TimeSeriesOfDataConsumption';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { DeviceWithEvents } from '../entities/DeviceWithEvents';
 import { NetworkMapTypeCode } from '../enums/NetworkMapTypeCode';
 import { NetworkMap } from '../common/NetworkMap';
+import { DeviceTypeCode } from '../enums/DeviceTypeCode';
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { IntDistribution } from '../entities/IntDistribution';
+import { DeviceActionCode } from '../enums/DeviceActionCode';
+import { TimeSeriesOfDeviceReport } from '../entities/TimeSeriesOfDeviceReport';
+import { DeviceReport } from '../entities/DeviceReport';
+import { TimeSeriesOfDataConsumption } from '../common/TimeSeriesOfDataConsumption';
+import { Device } from '../entities/Device';
 import * as i0 from "@angular/core";
 export declare class DevicesService {
     private config;
