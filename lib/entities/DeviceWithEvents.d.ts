@@ -1,9 +1,10 @@
+import { StringKeyValue } from '../common/StringKeyValue';
 import { DeviceActionCode } from '../enums/DeviceActionCode';
+import { SIM } from '../entities/SIM';
 import { Event } from '../entities/Event';
 import { BaseEntity } from '../entities/BaseEntity';
 import { DeviceTypeCode } from '../enums/DeviceTypeCode';
 import { DeviceStatusCode } from '../enums/DeviceStatusCode';
-import { StringKeyValue } from '../common/StringKeyValue';
 export declare class DeviceWithEvents extends BaseEntity {
     accountId: string;
     streamId: string;
@@ -26,5 +27,6 @@ export declare class DeviceWithEvents extends BaseEntity {
     actionApplied: DeviceActionCode;
     actionAppliedBy: string;
     actionAppliedOn: number;
+    simCards: SIM[];
     events: Event[];
 }

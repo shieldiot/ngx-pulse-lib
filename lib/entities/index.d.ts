@@ -25,6 +25,7 @@ export * from './Member';
 export * from './Radius';
 export * from './Rule';
 export * from './RuleTemplate';
+export * from './SIM';
 export * from './SessionRecord';
 export * from './Shieldex';
 export * from './Stream';

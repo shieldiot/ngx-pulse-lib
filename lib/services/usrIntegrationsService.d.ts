@@ -1,6 +1,5 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { Rule } from '../entities/Rule';
 import { Integration } from '../entities/Integration';
 import * as i0 from "@angular/core";
 export declare class UsrIntegrationsService {
@@ -11,11 +10,11 @@ export declare class UsrIntegrationsService {
     /**
      * Create new integration
      */
-    create(body?: Rule): import("rxjs").Observable<EntityResponse<Integration>>;
+    create(body?: Integration): import("rxjs").Observable<EntityResponse<Integration>>;
     /**
      * Update existing integration
      */
-    update(body?: Rule): import("rxjs").Observable<EntityResponse<Integration>>;
+    update(body?: Integration): import("rxjs").Observable<EntityResponse<Integration>>;
     /**
      * Delete integration from the system
      */
