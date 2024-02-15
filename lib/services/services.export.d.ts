@@ -1,4 +1,5 @@
 import { SysAccountsService } from './sysAccountsService';
+import { SysFeaturesService } from './sysFeaturesService';
 import { SysInsightsService } from './sysInsightsService';
 import { SysMembersService } from './sysMembersService';
 import { SysRuleTemplatesService } from './sysRuleTemplatesService';
@@ -11,4 +12,4 @@ import { UserService } from './userService';
 import { DevicesService } from './devicesService';
 import { EventsService } from './eventsService';
 import { ReportsService } from './reportsService';
-export declare const Services: (typeof SysAccountsService | typeof SysInsightsService | typeof SysMembersService | typeof SysRuleTemplatesService | typeof SysRulesService | typeof SysStreamsService | typeof SysUsersService | typeof UsrInsightsService | typeof UsrIntegrationsService | typeof UserService | typeof DevicesService | typeof EventsService | typeof ReportsService)[];
+export declare const Services: (typeof SysAccountsService | typeof SysFeaturesService | typeof SysInsightsService | typeof SysMembersService | typeof SysRuleTemplatesService | typeof SysRulesService | typeof SysStreamsService | typeof SysUsersService | typeof UsrInsightsService | typeof UsrIntegrationsService | typeof UserService | typeof DevicesService | typeof EventsService | typeof ReportsService)[];

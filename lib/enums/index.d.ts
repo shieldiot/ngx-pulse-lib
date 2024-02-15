@@ -9,6 +9,7 @@ export * from './EventCategoryCode';
 export * from './EventStatusCode';
 export * from './EventTypeCode';
 export * from './FeatureCode';
+export * from './HomePageViewCode';
 export * from './InsightStatusCode';
 export * from './InsightTypeCode';
 export * from './IntegrationTriggerCode';

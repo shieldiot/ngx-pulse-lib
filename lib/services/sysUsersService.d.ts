@@ -34,6 +34,10 @@ export declare class SysUsersService {
      * Create new user with all its accounts memberships
      */
     createMembership(body?: UserMemberships): import("rxjs").Observable<EntityResponse<UserMemberships>>;
+    /**
+     * Update user's default account
+     */
+    setDefaultAccount(id?: string, accountId?: string): import("rxjs").Observable<ActionResponse>;
     static ɵfac: i0.ɵɵFactoryDeclaration<SysUsersService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SysUsersService>;
 }

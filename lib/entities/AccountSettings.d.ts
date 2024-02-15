@@ -1,5 +1,6 @@
+import { HomePageViewCode } from '../enums/HomePageViewCode';
 export declare class AccountSettings {
     logo: string;
-    selectedHomePageView: string;
-    constructor(logo?: string, selectedHomePageView?: string);
+    defaultHomePageView: HomePageViewCode;
+    constructor(logo?: string, defaultHomePageView?: HomePageViewCode);
 }

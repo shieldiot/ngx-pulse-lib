@@ -10,6 +10,7 @@ export declare class RestUtil {
     get<T>(url: string, ...params: string[]): Observable<T>;
     post<T>(url: string, body?: string, ...params: string[]): Observable<T>;
     put<T>(url: string, body?: string, ...params: string[]): Observable<T>;
+    patch<T>(url: string, body?: string, ...params: string[]): Observable<T>;
     delete<T>(url: string, ...params: string[]): Observable<T>;
     private buildUrl;
     private getMimeType;
