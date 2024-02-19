@@ -1,7 +1,7 @@
-import { InsightTypeCode } from '../enums/InsightTypeCode';
-import { InsightStatusCode } from '../enums/InsightStatusCode';
 import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { BaseEntity } from '../entities/BaseEntity';
+import { InsightTypeCode } from '../enums/InsightTypeCode';
+import { InsightStatusCode } from '../enums/InsightStatusCode';
 export declare class Insight extends BaseEntity {
     accountId: string;
     streamId: string;

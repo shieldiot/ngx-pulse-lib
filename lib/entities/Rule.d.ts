@@ -1,5 +1,7 @@
 import { BaseEntity } from '../entities/BaseEntity';
 import { DeviceTypeCode } from '../enums/DeviceTypeCode';
+import { EventTypeCode } from '../enums/EventTypeCode';
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 export declare class Rule extends BaseEntity {
     accountId: string;
     streamId: string;
@@ -14,4 +16,6 @@ export declare class Rule extends BaseEntity {
     excludeTags: string[];
     excludeTypes: DeviceTypeCode[];
     timeWindowSec: number;
+    setEventType: EventTypeCode;
+    setEventSeverity: SeverityTypeCode;
 }
