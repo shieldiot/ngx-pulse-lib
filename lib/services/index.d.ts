@@ -3,6 +3,8 @@ export * from './eventsService';
 export * from './reportsService';
 export * from './services.export';
 export * from './sysAccountsService';
+export * from './sysAuditLogService';
+export * from './sysCheckpointsService';
 export * from './sysFeaturesService';
 export * from './sysInsightsService';
 export * from './sysMembersService';
