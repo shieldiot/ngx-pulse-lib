@@ -16,6 +16,8 @@ export declare enum EventTypeCode {
     DEVICE_TAKEOVER_ATTEMPT = 14,
     UNKNOWN_OPERATION = 15,
     CRYPTO_MINING = 16,
-    SUSPICIOUS_IP = 17
+    SUSPICIOUS_IP = 17,
+    ABNORMAL_OUTBOUND_PORTS = 18,
+    ABNORMAL_OUTBOUND_ENDPOINTS = 19
 }
 export declare function GetEventTypeCodes(): Map<EventTypeCode, string>;
