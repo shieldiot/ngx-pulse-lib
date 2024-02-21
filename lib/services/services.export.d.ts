@@ -14,4 +14,5 @@ import { UserService } from './userService';
 import { DevicesService } from './devicesService';
 import { EventsService } from './eventsService';
 import { ReportsService } from './reportsService';
-export declare const Services: (typeof SysAccountsService | typeof SysAuditLogService | typeof SysCheckpointsService | typeof SysFeaturesService | typeof SysInsightsService | typeof SysMembersService | typeof SysRuleTemplatesService | typeof SysRulesService | typeof SysStreamsService | typeof SysUsersService | typeof UsrInsightsService | typeof UsrIntegrationsService | typeof UserService | typeof DevicesService | typeof EventsService | typeof ReportsService)[];
+import { RulesService } from './rulesService';
+export declare const Services: (typeof SysAccountsService | typeof SysAuditLogService | typeof SysCheckpointsService | typeof SysFeaturesService | typeof SysInsightsService | typeof SysMembersService | typeof SysRuleTemplatesService | typeof SysRulesService | typeof SysStreamsService | typeof SysUsersService | typeof UsrInsightsService | typeof UsrIntegrationsService | typeof UserService | typeof DevicesService | typeof EventsService | typeof ReportsService | typeof RulesService)[];
