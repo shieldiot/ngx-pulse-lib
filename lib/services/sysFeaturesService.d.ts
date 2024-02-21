@@ -39,11 +39,11 @@ export declare class SysFeaturesService {
     /**
      * Delete features group from the system
      */
-    deleteFeaturesGroup(): import("rxjs").Observable<ActionResponse>;
+    deleteFeaturesGroup(id?: string): import("rxjs").Observable<ActionResponse>;
     /**
      * Get single features group by id
      */
-    getFeaturesGroup(): import("rxjs").Observable<EntityResponse<FeaturesGroup>>;
+    getFeaturesGroup(id?: string): import("rxjs").Observable<EntityResponse<FeaturesGroup>>;
     /**
      * Find list of features groups
      */
