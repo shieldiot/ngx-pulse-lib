@@ -16,3 +16,4 @@ export * from './sysUsersService';
 export * from './userService';
 export * from './usrInsightsService';
 export * from './usrIntegrationsService';
+export * from './usrMembersService';

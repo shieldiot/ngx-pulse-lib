@@ -1,9 +1,9 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { MemberRoleCode } from '../enums/MemberRoleCode';
 import { Member } from '../entities/Member';
+import { MemberRoleCode } from '../enums/MemberRoleCode';
 import * as i0 from "@angular/core";
-export declare class SysMembersService {
+export declare class UsrMembersService {
     private config;
     private rest;
     private baseUrl;
@@ -27,7 +27,7 @@ export declare class SysMembersService {
     /**
      * Find list of members by query
      */
-    find(accountId?: string, userId?: string, role?: MemberRoleCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<Member>>;
-    static ɵfac: i0.ɵɵFactoryDeclaration<SysMembersService, never>;
-    static ɵprov: i0.ɵɵInjectableDeclaration<SysMembersService>;
+    find(userId?: string, role?: MemberRoleCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<Member>>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<UsrMembersService, never>;
+    static ɵprov: i0.ɵɵInjectableDeclaration<UsrMembersService>;
 }
