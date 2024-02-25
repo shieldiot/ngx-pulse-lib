@@ -9,22 +9,6 @@ export declare class SysFeaturesService {
     private baseUrl;
     constructor(config: PulseConfig, rest: RestUtil);
     /**
-     * Create new feature
-     */
-    createFeature(body?: Feature): import("rxjs").Observable<EntityResponse<Feature>>;
-    /**
-     * Update existing feature
-     */
-    updateFeature(body?: Feature): import("rxjs").Observable<EntityResponse<Feature>>;
-    /**
-     * Delete feature from the system
-     */
-    deleteFeature(id?: string): import("rxjs").Observable<ActionResponse>;
-    /**
-     * Get single feature by id
-     */
-    getFeature(id?: string): import("rxjs").Observable<EntityResponse<Feature>>;
-    /**
      * Find list of feature
      */
     findFeatures(search?: string, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<Feature>>;
