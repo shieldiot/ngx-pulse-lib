@@ -7,6 +7,7 @@ export declare class Rule extends BaseEntity {
     streamId: string;
     name: string;
     description: string;
+    isEnabled: boolean;
     isSystemRule: boolean;
     isActiveRule: boolean;
     context: string;

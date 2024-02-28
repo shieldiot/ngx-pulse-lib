@@ -1,10 +1,10 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { Stream } from '../entities/Stream';
+import { UserMemberships } from '../entities/UserMemberships';
 import { LoginParams } from '../common/LoginParams';
 import { AccountDTO } from '../entities/AccountDTO';
 import { Feature } from '../entities/Feature';
-import { Stream } from '../entities/Stream';
-import { UserMemberships } from '../entities/UserMemberships';
 import * as i0 from "@angular/core";
 export declare class UsrUserService {
     private config;
