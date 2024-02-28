@@ -27,7 +27,7 @@ export declare class SysInsightsService {
     /**
      * Find list of insight queries
      */
-    findQueries(accountId?: string, streamId?: string, search?: string, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<InsightQuery>>;
+    findQueries(search?: string, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<InsightQuery>>;
     /**
      * Create new insight spec
      */
