@@ -48,6 +48,10 @@ export declare class SysInsightsService {
      * Find list of insight specs
      */
     findSpecs(accountId?: string, streamId?: string, search?: string, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<InsightSpec>>;
+    /**
+     * Find list of insight specs
+     */
+    findSpecsQueries(accountId?: string, streamId?: string, search?: string, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<InsightQuery>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<SysInsightsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SysInsightsService>;
 }
