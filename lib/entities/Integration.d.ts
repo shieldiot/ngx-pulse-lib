@@ -1,9 +1,9 @@
-import { BaseEntity } from '../entities/BaseEntity';
-import { IntegrationTypeCode } from '../enums/IntegrationTypeCode';
 import { IntegrationTriggerCode } from '../enums/IntegrationTriggerCode';
 import { StringKeyValue } from '../common/StringKeyValue';
 import { EventTypeCode } from '../enums/EventTypeCode';
 import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { BaseEntity } from '../entities/BaseEntity';
+import { IntegrationTypeCode } from '../enums/IntegrationTypeCode';
 export declare class Integration extends BaseEntity {
     accountId: string;
     streamId: string;
@@ -23,6 +23,6 @@ export declare class Integration extends BaseEntity {
     subject: string;
     body: string;
     eventTypes: EventTypeCode[];
-    ventSeverity: SeverityTypeCode;
+    eventSeverity: SeverityTypeCode;
     preventiveAction: string;
 }

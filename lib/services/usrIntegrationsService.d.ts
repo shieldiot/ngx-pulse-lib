@@ -27,6 +27,14 @@ export declare class UsrIntegrationsService {
      * Find list of integrations by query
      */
     find(accountId?: string, streamId?: string, search?: string, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<Integration>>;
+    /**
+     * Validate format of the templates in the fields
+     */
+    validate(body?: Integration): import("rxjs").Observable<EntityResponse<Integration>>;
+    /**
+     * Test the integration with pseudo data
+     */
+    test(body?: Integration): import("rxjs").Observable<EntityResponse<Integration>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<UsrIntegrationsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UsrIntegrationsService>;
 }
