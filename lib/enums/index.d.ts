@@ -10,6 +10,7 @@ export * from './EventStatusCode';
 export * from './EventTypeCode';
 export * from './FeatureCode';
 export * from './HomePageViewCode';
+export * from './HttpMethodCode';
 export * from './InsightStatusCode';
 export * from './InsightTypeCode';
 export * from './IntegrationTriggerCode';

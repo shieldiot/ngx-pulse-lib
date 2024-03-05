@@ -1,7 +1,3 @@
-import { UsrDevicesService } from './usrDevicesService';
-import { UsrEventsService } from './usrEventsService';
-import { UsrReportsService } from './usrReportsService';
-import { UsrRulesService } from './usrRulesService';
 import { SysAccountsService } from './sysAccountsService';
 import { SysAuditLogService } from './sysAuditLogService';
 import { SysCheckpointsService } from './sysCheckpointsService';
@@ -16,4 +12,8 @@ import { UsrInsightsService } from './usrInsightsService';
 import { UsrIntegrationsService } from './usrIntegrationsService';
 import { UsrMembersService } from './usrMembersService';
 import { UsrUserService } from './usrUserService';
-export declare const Services: (typeof UsrDevicesService | typeof UsrEventsService | typeof UsrReportsService | typeof UsrRulesService | typeof SysAccountsService | typeof SysAuditLogService | typeof SysCheckpointsService | typeof SysFeaturesService | typeof SysInsightsService | typeof SysMembersService | typeof SysRuleTemplatesService | typeof SysRulesService | typeof SysStreamsService | typeof SysUsersService | typeof UsrInsightsService | typeof UsrIntegrationsService | typeof UsrMembersService | typeof UsrUserService)[];
+import { UsrDevicesService } from './usrDevicesService';
+import { UsrEventsService } from './usrEventsService';
+import { UsrReportsService } from './usrReportsService';
+import { UsrRulesService } from './usrRulesService';
+export declare const Services: (typeof SysAccountsService | typeof SysAuditLogService | typeof SysCheckpointsService | typeof SysFeaturesService | typeof SysInsightsService | typeof SysMembersService | typeof SysRuleTemplatesService | typeof SysRulesService | typeof SysStreamsService | typeof SysUsersService | typeof UsrInsightsService | typeof UsrIntegrationsService | typeof UsrMembersService | typeof UsrUserService | typeof UsrDevicesService | typeof UsrEventsService | typeof UsrReportsService | typeof UsrRulesService)[];
