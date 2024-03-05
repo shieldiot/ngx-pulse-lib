@@ -1,6 +1,5 @@
 export * from './AccountStatusCode';
 export * from './AccountTypeCode';
-export * from './ActionTypeCode';
 export * from './DeviceActionCode';
 export * from './DeviceCreationCode';
 export * from './DeviceIdentityCode';
