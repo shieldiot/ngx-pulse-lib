@@ -1,7 +1,7 @@
 import { RestUtil, EntityResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { GraphSeries } from '../common/GraphSeries';
 import { TimeSeries } from '../common/TimeSeries';
+import { GraphSeries } from '../common/GraphSeries';
 import * as i0 from "@angular/core";
 export declare class UsrReportsService {
     private config;
