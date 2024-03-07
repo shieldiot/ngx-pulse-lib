@@ -1,16 +1,19 @@
-import { BaseEntity } from '../entities/BaseEntity';
 import { Condition } from '../entities/Condition';
 import { DeviceTypeCode } from '../enums/DeviceTypeCode';
 import { EventTypeCode } from '../enums/EventTypeCode';
 import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { BaseEntity } from '../entities/BaseEntity';
+import { RuleTypeCode } from '../enums/RuleTypeCode';
+import { DataSourceCode } from '../enums/DataSourceCode';
 export declare class Rule extends BaseEntity {
     accountId: string;
     streamId: string;
     name: string;
+    type: RuleTypeCode;
     description: string;
     isSystemRule: boolean;
     isActiveRule: boolean;
-    context: string;
+    context: DataSourceCode;
     matchAll: Condition[];
     matchAny: Condition[];
     excludeIDs: string[];
