@@ -1,7 +1,8 @@
+import { OperatorCode } from '../enums/OperatorCode';
 export declare class Condition {
     field: string;
-    operator: string;
+    operator: OperatorCode;
     values: number[];
     strings: string[];
-    constructor(field?: string, operator?: string, values?: number[], strings?: string[]);
+    constructor(field?: string, operator?: OperatorCode, values?: number[], strings?: string[]);
 }
