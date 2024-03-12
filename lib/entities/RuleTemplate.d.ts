@@ -1,7 +1,7 @@
+import { DataSourceCode } from '../enums/DataSourceCode';
 import { EventTypeCode } from '../enums/EventTypeCode';
 import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { BaseEntity } from '../entities/BaseEntity';
-import { DataSourceCode } from '../enums/DataSourceCode';
 export declare class RuleTemplate extends BaseEntity {
     name: string;
     description: string;
