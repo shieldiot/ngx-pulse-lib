@@ -11,6 +11,7 @@ export * from './DataPointOfDeviceReport';
 export * from './Device';
 export * from './DeviceReport';
 export * from './DeviceWithEvents';
+export * from './Distribution';
 export * from './Event';
 export * from './EventOccurrence';
 export * from './EventWithDevice';

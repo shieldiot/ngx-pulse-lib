@@ -36,5 +36,6 @@ export * from './TimeSeriesOf2D';
 export * from './TimeSeriesOfDataConsumption';
 export * from './TimeSeriesOfFloat';
 export * from './TokenData';
+export * from './Tuple';
 export * from './UsageTransform';
 export * from './ZScore';

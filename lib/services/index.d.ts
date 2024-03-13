@@ -7,6 +7,7 @@ export * from './sysInsightsService';
 export * from './sysMembersService';
 export * from './sysRuleTemplatesService';
 export * from './sysRulesService';
+export * from './sysStatisticsService';
 export * from './sysStreamsService';
 export * from './sysUsersService';
 export * from './usrDevicesService';
