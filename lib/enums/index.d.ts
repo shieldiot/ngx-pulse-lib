@@ -19,6 +19,7 @@ export * from './IntegrationTypeCode';
 export * from './MemberRoleCode';
 export * from './NetworkMapTypeCode';
 export * from './OperatorCode';
+export * from './ReportTypeCode';
 export * from './RuleTypeCode';
 export * from './SeverityTypeCode';
 export * from './TrafficDirectionCode';
