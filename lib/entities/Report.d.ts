@@ -8,6 +8,6 @@ export declare class Report extends BaseEntity {
     cron: string;
     recipients: string[];
     subject: string;
-    type: ReportTypeCode;
-    status: TimeFrame;
+    reportType: ReportTypeCode;
+    timeFrame: TimeFrame;
 }
