@@ -18,6 +18,7 @@ export * from './EventOccurrence';
 export * from './EventWithDevice';
 export * from './Feature';
 export * from './FeaturesGroup';
+export * from './Image';
 export * from './Insight';
 export * from './InsightQuery';
 export * from './InsightSpec';

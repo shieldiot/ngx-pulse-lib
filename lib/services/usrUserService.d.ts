@@ -1,10 +1,11 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { Image } from '../entities/Image';
+import { Feature } from '../entities/Feature';
 import { Stream } from '../entities/Stream';
 import { UserMemberships } from '../entities/UserMemberships';
 import { LoginParams } from '../common/LoginParams';
 import { AccountDTO } from '../entities/AccountDTO';
-import { Feature } from '../entities/Feature';
 import * as i0 from "@angular/core";
 export declare class UsrUserService {
     private config;
@@ -26,6 +27,10 @@ export declare class UsrUserService {
      */
     getAccount(): import("rxjs").Observable<EntityResponse<AccountDTO>>;
     /**
+     * Get user's current account logo
+     */
+    getAccountLogo(): import("rxjs").Observable<EntityResponse<Image>>;
+    /**
      * Get the user's current account features (aggregated list of all features in all the account's features groups)
      */
     getAccountFeatures(): import("rxjs").Observable<EntitiesResponse<Feature>>;
@@ -37,6 +42,22 @@ export declare class UsrUserService {
      * Get all the user memberships (all accounts that the current user has access to)
      */
     getMemberships(): import("rxjs").Observable<EntityResponse<UserMemberships>>;
+    /**
+     * Save user's avatar image
+     */
+    saveAvatar(body?: Image): import("rxjs").Observable<ActionResponse>;
+    /**
+     * Get user's avatar image
+     */
+    getAvatar(): import("rxjs").Observable<EntityResponse<Image>>;
+    /**
+     * Get arbitrary image by Id
+     */
+    getImage(id?: string): import("rxjs").Observable<EntityResponse<Image>>;
+    /**
+     * Get arbitrary image by Id as stream of bytes
+     */
+    getImageBytes(id?: string): import("rxjs").Observable<import("@angular/common/http").HttpEvent<Blob>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<UsrUserService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UsrUserService>;
 }
