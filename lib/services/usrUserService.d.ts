@@ -1,11 +1,12 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { LoginParams } from '../common/LoginParams';
+import { User } from '../entities/User';
+import { AccountDTO } from '../entities/AccountDTO';
 import { Image } from '../entities/Image';
 import { Feature } from '../entities/Feature';
 import { Stream } from '../entities/Stream';
 import { UserMemberships } from '../entities/UserMemberships';
-import { LoginParams } from '../common/LoginParams';
-import { AccountDTO } from '../entities/AccountDTO';
 import * as i0 from "@angular/core";
 export declare class UsrUserService {
     private config;
@@ -16,7 +17,7 @@ export declare class UsrUserService {
      * Authorize user, verify user exists in the system (user was already authenticated by OAuth provider)
      * The response includes access token valid for 20 minutes. The client side should renew the token before expiration using refresh-token method
      */
-    authorize(body?: LoginParams): import("rxjs").Observable<ActionResponse>;
+    authorize(body?: LoginParams): import("rxjs").Observable<EntityResponse<User>>;
     /**
      * Refresh token (set new expiration time) and associate with new account if required
      * The response includes the account details and the newly refreshed token in the HTTP header X-ACCESS-TOKEN
