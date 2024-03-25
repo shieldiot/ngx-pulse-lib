@@ -5,6 +5,7 @@ export declare class UsageRecord extends BaseEntity {
     streamId: string;
     deviceId: string;
     deviceIp: string;
+    simId: string;
     startTime: number;
     endTime: number;
     srcPortsList: number[];
@@ -26,10 +27,4 @@ export declare class UsageRecord extends BaseEntity {
     srcRstFlags: number;
     dstRstFlags: number;
     labels: string[];
-    zPacketsIn: number;
-    zPacketsOut: number;
-    zBytesIn: number;
-    zBytesOut: number;
-    zPortsCount: number;
-    zEndpointsCount: number;
 }

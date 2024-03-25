@@ -1,18 +1,18 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { EventTypeCode } from '../enums/EventTypeCode';
-import { RuleTypeCode } from '../enums/RuleTypeCode';
 import { MaliciousIPData } from '../common/MaliciousIPData';
-import { TimeSeriesOf2D } from '../common/TimeSeriesOf2D';
-import { TimeSeriesOfFloat } from '../common/TimeSeriesOfFloat';
 import { IntDistribution } from '../entities/IntDistribution';
-import { DeviceActionCode } from '../enums/DeviceActionCode';
-import { MaliciousIPCard } from '../common/MaliciousIPCard';
 import { Event } from '../entities/Event';
+import { EventTypeCode } from '../enums/EventTypeCode';
 import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { EventCategoryCode } from '../enums/EventCategoryCode';
 import { EventStatusCode } from '../enums/EventStatusCode';
+import { RuleTypeCode } from '../enums/RuleTypeCode';
+import { DeviceActionCode } from '../enums/DeviceActionCode';
+import { TimeSeriesOfFloat } from '../common/TimeSeriesOfFloat';
+import { MaliciousIPCard } from '../common/MaliciousIPCard';
 import { EventWithDevice } from '../entities/EventWithDevice';
+import { TimeSeriesOf2D } from '../common/TimeSeriesOf2D';
 import * as i0 from "@angular/core";
 export declare class UsrEventsService {
     private config;
