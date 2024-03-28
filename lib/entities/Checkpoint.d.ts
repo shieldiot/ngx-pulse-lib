@@ -13,6 +13,11 @@ export declare class Checkpoint extends BaseEntity {
     totalUsage: number;
     totalSession: number;
     totalRadius: number;
+    overlappedPackets: number;
+    failedPackets: number;
+    irrelevantPackets: number;
+    unmappedPackets: number;
+    processedPackets: number;
     state: number;
     processedBy: string;
 }
