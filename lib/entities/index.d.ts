@@ -30,6 +30,7 @@ export * from './Report';
 export * from './Rule';
 export * from './RuleTemplate';
 export * from './SIM';
+export * from './ServiceStatus';
 export * from './SessionRecord';
 export * from './Shieldex';
 export * from './Stream';

@@ -1,5 +1,5 @@
-import { Interval } from '../common/Interval';
 import { StringKeyIntValue } from '../common/StringKeyIntValue';
+import { Interval } from '../common/Interval';
 export declare class SeriesData {
     interval: Interval;
     values: StringKeyIntValue[];
