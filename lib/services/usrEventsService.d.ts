@@ -1,18 +1,19 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { Event } from '../entities/Event';
-import { EventTypeCode } from '../enums/EventTypeCode';
-import { EventCategoryCode } from '../enums/EventCategoryCode';
-import { EventStatusCode } from '../enums/EventStatusCode';
-import { RuleTypeCode } from '../enums/RuleTypeCode';
-import { MaliciousIPCard } from '../common/MaliciousIPCard';
+import { StringKeyValue } from '../common/StringKeyValue';
 import { SeverityTypeCode } from '../enums/SeverityTypeCode';
-import { EventWithDevice } from '../entities/EventWithDevice';
 import { MaliciousIPData } from '../common/MaliciousIPData';
+import { TimeSeriesOfFloat } from '../common/TimeSeriesOfFloat';
+import { TimeSeriesOf2D } from '../common/TimeSeriesOf2D';
+import { EventTypeCode } from '../enums/EventTypeCode';
 import { IntDistribution } from '../entities/IntDistribution';
 import { DeviceActionCode } from '../enums/DeviceActionCode';
-import { TimeSeriesOf2D } from '../common/TimeSeriesOf2D';
-import { TimeSeriesOfFloat } from '../common/TimeSeriesOfFloat';
+import { EventStatusCode } from '../enums/EventStatusCode';
+import { MaliciousIPCard } from '../common/MaliciousIPCard';
+import { EventWithDevice } from '../entities/EventWithDevice';
+import { Event } from '../entities/Event';
+import { EventCategoryCode } from '../enums/EventCategoryCode';
+import { RuleTypeCode } from '../enums/RuleTypeCode';
 import * as i0 from "@angular/core";
 export declare class UsrEventsService {
     private config;
@@ -99,6 +100,10 @@ export declare class UsrEventsService {
      * Get malicious IP data card for specific malicious IP
      */
     getMaliciousIpCard(streamId?: string, targetIp?: string, from?: number, to?: number): import("rxjs").Observable<EntityResponse<MaliciousIPCard>>;
+    /**
+     * Apply DNS lookup for each IP in the list
+     */
+    getIpLookup(ip?: string[]): import("rxjs").Observable<EntitiesResponse<StringKeyValue>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<UsrEventsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UsrEventsService>;
 }
