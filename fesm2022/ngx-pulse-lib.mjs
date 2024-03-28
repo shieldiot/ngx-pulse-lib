@@ -172,21 +172,21 @@ class RestUtil {
         }
         return contentType;
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: RestUtil, deps: [{ token: i1.HttpClient }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: RestUtil }); }
 }
-RestUtil.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: RestUtil, deps: [{ token: i1.HttpClient }], target: i0.ɵɵFactoryTarget.Injectable });
-RestUtil.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: RestUtil });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: RestUtil, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: RestUtil, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: i1.HttpClient }]; } });
+        }], ctorParameters: () => [{ type: i1.HttpClient }] });
 
 class PulseConfig {
     constructor() {
         this.api = '';
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: PulseConfig, deps: [], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: PulseConfig }); }
 }
-PulseConfig.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PulseConfig, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
-PulseConfig.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PulseConfig });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: PulseConfig, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: PulseConfig, decorators: [{
             type: Injectable
         }] });
 
@@ -561,15 +561,15 @@ class UsrDevicesService {
         }
         return this.rest.post(`${this.baseUrl}/upload`, typeof file === 'object' ? JSON.stringify(file) : file, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrDevicesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrDevicesService }); }
 }
-UsrDevicesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrDevicesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrDevicesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrDevicesService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrDevicesService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrDevicesService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of events related actions for the operator 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -1222,15 +1222,15 @@ class UsrEventsService {
         }
         return this.rest.get(`${this.baseUrl}/ip-lookup`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrEventsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrEventsService }); }
 }
-UsrEventsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrEventsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrEventsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrEventsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrEventsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrEventsService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of events related actions for the operator 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -1354,15 +1354,15 @@ class UsrReportsService {
         }
         return this.rest.get(`${this.baseUrl}/device-groups-by-communication-frequency`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrReportsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrReportsService }); }
 }
-UsrReportsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrReportsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrReportsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrReportsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrReportsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrReportsService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of rules related actions 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -1441,15 +1441,15 @@ class UsrRulesService {
         }
         return this.rest.post(`${this.baseUrl}/analyze`, typeof body === 'object' ? JSON.stringify(body) : body, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrRulesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrRulesService }); }
 }
-UsrRulesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrRulesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrRulesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrRulesService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrRulesService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrRulesService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of account related actions for system administrator only 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -1512,15 +1512,15 @@ class SysAccountsService {
         }
         return this.rest.get(`${this.baseUrl}`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysAccountsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysAccountsService }); }
 }
-SysAccountsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAccountsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysAccountsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAccountsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAccountsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysAccountsService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of audit log queries for system administrator only 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -1583,15 +1583,15 @@ class SysAuditLogService {
         }
         return this.rest.get(`${this.baseUrl}`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysAuditLogService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysAuditLogService }); }
 }
-SysAuditLogService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAuditLogService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysAuditLogService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAuditLogService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAuditLogService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysAuditLogService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of checkpoints queries for system administrator only 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -1642,15 +1642,15 @@ class SysCheckpointsService {
         }
         return this.rest.get(`${this.baseUrl}`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysCheckpointsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysCheckpointsService }); }
 }
-SysCheckpointsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysCheckpointsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysCheckpointsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysCheckpointsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysCheckpointsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysCheckpointsService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of features actions for system administrator only 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -1726,15 +1726,15 @@ class SysFeaturesService {
         }
         return this.rest.get(`${this.baseUrl}/groups`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysFeaturesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysFeaturesService }); }
 }
-SysFeaturesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysFeaturesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysFeaturesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysFeaturesService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysFeaturesService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysFeaturesService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of insight queries related actions for system administrator only 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -1865,15 +1865,15 @@ class SysInsightsService {
         }
         return this.rest.get(`${this.baseUrl}/spec-queries`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysInsightsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysInsightsService }); }
 }
-SysInsightsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysInsightsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysInsightsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysInsightsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysInsightsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysInsightsService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of members related actions for system administrator only 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -1936,15 +1936,15 @@ class SysMembersService {
         }
         return this.rest.get(`${this.baseUrl}`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysMembersService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysMembersService }); }
 }
-SysMembersService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysMembersService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysMembersService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysMembersService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysMembersService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysMembersService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of rule templates related actions for system administrator only 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -2001,15 +2001,15 @@ class SysRuleTemplatesService {
         }
         return this.rest.get(`${this.baseUrl}`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysRuleTemplatesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysRuleTemplatesService }); }
 }
-SysRuleTemplatesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRuleTemplatesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysRuleTemplatesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRuleTemplatesService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRuleTemplatesService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysRuleTemplatesService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of rules related actions for system administrator only 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -2091,15 +2091,15 @@ class SysRulesService {
         }
         return this.rest.post(`${this.baseUrl}/analyze`, typeof body === 'object' ? JSON.stringify(body) : body, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysRulesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysRulesService }); }
 }
-SysRulesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRulesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysRulesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRulesService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRulesService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysRulesService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of system statistics information for system administrator only 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -2137,15 +2137,15 @@ class SysStatisticsService {
     getUsersCount(field) {
         return this.rest.get(`${this.baseUrl}/users/${field}`);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysStatisticsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysStatisticsService }); }
 }
-SysStatisticsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStatisticsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysStatisticsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStatisticsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStatisticsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysStatisticsService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of stream related actions for system administrator only 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -2205,15 +2205,15 @@ class SysStreamsService {
         }
         return this.rest.get(`${this.baseUrl}`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysStreamsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysStreamsService }); }
 }
-SysStreamsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStreamsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysStreamsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStreamsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStreamsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysStreamsService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of users related actions for system administrator only 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -2288,15 +2288,15 @@ class SysUsersService {
     setDefaultAccount(id, accountId) {
         return this.rest.patch(`${this.baseUrl}/${id}/${accountId}`, '');
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysUsersService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysUsersService }); }
 }
-SysUsersService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysUsersService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysUsersService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysUsersService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysUsersService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: SysUsersService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of integrations related actions for the operator 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -2316,15 +2316,15 @@ class UsrInsightsService {
     getDailyInsights(dayId) {
         return this.rest.get(`${this.baseUrl}/daily/${dayId}`);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrInsightsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrInsightsService }); }
 }
-UsrInsightsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrInsightsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrInsightsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrInsightsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrInsightsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrInsightsService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of integrations related actions for the operator 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -2399,15 +2399,15 @@ class UsrIntegrationsService {
     test(body) {
         return this.rest.put(`${this.baseUrl}/test`, typeof body === 'object' ? JSON.stringify(body) : body);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrIntegrationsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrIntegrationsService }); }
 }
-UsrIntegrationsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrIntegrationsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrIntegrationsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrIntegrationsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrIntegrationsService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrIntegrationsService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of members related actions for account administrator only 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -2483,15 +2483,15 @@ class UsrMembersService {
         }
         return this.rest.get(`${this.baseUrl}/emails`, ...params);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrMembersService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrMembersService }); }
 }
-UsrMembersService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrMembersService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrMembersService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrMembersService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrMembersService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrMembersService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 // List of user related actions 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
@@ -2573,15 +2573,15 @@ class UsrUserService {
     getImageBytes(id) {
         return this.rest.download(`usr-user`, `${this.baseUrl}/image-bytes`);
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrUserService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrUserService }); }
 }
-UsrUserService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrUserService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrUserService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrUserService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrUserService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: UsrUserService, decorators: [{
             type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+        }], ctorParameters: () => [{ type: PulseConfig, decorators: [{
                     type: Inject,
                     args: ['config']
-                }] }, { type: RestUtil }]; } });
+                }] }, { type: RestUtil }] });
 
 const Services = [
     UsrDevicesService,
@@ -2616,11 +2616,11 @@ class NgxPulseLibModule {
             ]
         };
     }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: NgxPulseLibModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule }); }
+    static { this.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "17.3.1", ngImport: i0, type: NgxPulseLibModule, imports: [CommonModule, HttpClientModule] }); }
+    static { this.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: NgxPulseLibModule, imports: [CommonModule, HttpClientModule] }); }
 }
-NgxPulseLibModule.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: NgxPulseLibModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
-NgxPulseLibModule.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "15.2.10", ngImport: i0, type: NgxPulseLibModule, imports: [CommonModule, HttpClientModule] });
-NgxPulseLibModule.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: NgxPulseLibModule, imports: [CommonModule, HttpClientModule] });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: NgxPulseLibModule, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.1", ngImport: i0, type: NgxPulseLibModule, decorators: [{
             type: NgModule,
             args: [{
                     imports: [CommonModule, HttpClientModule]
