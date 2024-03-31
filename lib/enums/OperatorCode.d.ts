@@ -9,6 +9,7 @@ export declare enum OperatorCode {
     IN = 7,
     NOTIN = 8,
     RANGE = 9,
-    LIKE = 10
+    LIKE = 10,
+    CONTAINS = 11
 }
 export declare function GetOperatorCodes(): Map<OperatorCode, string>;
