@@ -6,6 +6,7 @@ export * from './DeviceCreationCode';
 export * from './DeviceIdentityCode';
 export * from './DeviceStatusCode';
 export * from './DeviceTypeCode';
+export * from './DirectionContextCode';
 export * from './EventCategoryCode';
 export * from './EventStatusCode';
 export * from './EventTypeCode';
