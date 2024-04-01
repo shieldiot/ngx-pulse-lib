@@ -1,6 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse } from '../../utils';
 import { PulseConfig } from '../../config';
 import { AuditLog } from '../entities/AuditLog';
+import { TimeSeriesOfFloat } from '../common/TimeSeriesOfFloat';
 import * as i0 from "@angular/core";
 export declare class SysAuditLogService {
     private config;
@@ -15,6 +16,10 @@ export declare class SysAuditLogService {
      * Find list of log entries by query
      */
     find(from?: number, to?: number, accountId?: string, userId?: string, action?: string, itemType?: string, itemId?: string, itemName?: string, search?: string, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<AuditLog>>;
+    /**
+     * Get histogram of audit log entries over time
+     */
+    getTimeline(from?: number, to?: number, accountId?: string, userId?: string, action?: string, itemType?: string, itemId?: string, itemName?: string, search?: string, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntityResponse<TimeSeriesOfFloat>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<SysAuditLogService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SysAuditLogService>;
 }

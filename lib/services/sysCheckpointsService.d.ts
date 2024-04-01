@@ -1,6 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse } from '../../utils';
 import { PulseConfig } from '../../config';
 import { Checkpoint } from '../entities/Checkpoint';
+import { TimeSeriesOfFloat } from '../common/TimeSeriesOfFloat';
 import * as i0 from "@angular/core";
 export declare class SysCheckpointsService {
     private config;
@@ -15,6 +16,10 @@ export declare class SysCheckpointsService {
      * Find a list of checkpoint entries by query
      */
     find(from?: number, to?: number, accountId?: string, streamId?: string, search?: string, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<Checkpoint>>;
+    /**
+     * Get histogram of checkpoints over time
+     */
+    checkpointsTimeline(from?: number, to?: number, accountId?: string, streamId?: string, field?: string, timeField?: string): import("rxjs").Observable<EntityResponse<TimeSeriesOfFloat>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<SysCheckpointsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SysCheckpointsService>;
 }
