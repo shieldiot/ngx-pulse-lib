@@ -1,10 +1,10 @@
+import { BaseEntity } from '../entities/BaseEntity';
+import { RuleTypeCode } from '../enums/RuleTypeCode';
 import { DataSourceCode } from '../enums/DataSourceCode';
 import { Condition } from '../entities/Condition';
 import { DeviceTypeCode } from '../enums/DeviceTypeCode';
 import { EventTypeCode } from '../enums/EventTypeCode';
 import { SeverityTypeCode } from '../enums/SeverityTypeCode';
-import { BaseEntity } from '../entities/BaseEntity';
-import { RuleTypeCode } from '../enums/RuleTypeCode';
 export declare class Rule extends BaseEntity {
     accountId: string;
     streamId: string;

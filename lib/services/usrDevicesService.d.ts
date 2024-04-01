@@ -1,17 +1,17 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { DeviceTypeCode } from '../enums/DeviceTypeCode';
 import { DeviceStatusCode } from '../enums/DeviceStatusCode';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
-import { IntDistribution } from '../entities/IntDistribution';
-import { TimeSeriesOfDeviceReport } from '../entities/TimeSeriesOfDeviceReport';
+import { DeviceActionCode } from '../enums/DeviceActionCode';
+import { NetworkMap } from '../common/NetworkMap';
 import { DeviceReport } from '../entities/DeviceReport';
 import { TimeSeriesOfDataConsumption } from '../common/TimeSeriesOfDataConsumption';
 import { Device } from '../entities/Device';
-import { DeviceTypeCode } from '../enums/DeviceTypeCode';
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { DeviceWithEvents } from '../entities/DeviceWithEvents';
-import { DeviceActionCode } from '../enums/DeviceActionCode';
+import { IntDistribution } from '../entities/IntDistribution';
 import { NetworkMapTypeCode } from '../enums/NetworkMapTypeCode';
-import { NetworkMap } from '../common/NetworkMap';
+import { TimeSeriesOfDeviceReport } from '../entities/TimeSeriesOfDeviceReport';
 import * as i0 from "@angular/core";
 export declare class UsrDevicesService {
     private config;
@@ -94,6 +94,10 @@ export declare class UsrDevicesService {
      * Upload list of devices
      */
     uploadDevices(streamId?: string, deviceIdCol?: string, file?: string): import("rxjs").Observable<ActionResponse>;
+    /**
+     * Find list of devices by Insight id query
+     */
+    findByInsightContext(streamId?: string, insightId?: string, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<Device>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<UsrDevicesService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UsrDevicesService>;
 }
