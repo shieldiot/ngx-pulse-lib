@@ -1,17 +1,17 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
-import { IntDistribution } from '../entities/IntDistribution';
+import { DeviceActionCode } from '../enums/DeviceActionCode';
 import { NetworkMapTypeCode } from '../enums/NetworkMapTypeCode';
 import { TimeSeriesOfDeviceReport } from '../entities/TimeSeriesOfDeviceReport';
-import { DeviceReport } from '../entities/DeviceReport';
 import { Device } from '../entities/Device';
 import { DeviceTypeCode } from '../enums/DeviceTypeCode';
-import { DeviceStatusCode } from '../enums/DeviceStatusCode';
 import { DeviceWithEvents } from '../entities/DeviceWithEvents';
-import { DeviceActionCode } from '../enums/DeviceActionCode';
-import { NetworkMap } from '../common/NetworkMap';
+import { IntDistribution } from '../entities/IntDistribution';
 import { TimeSeriesOfDataConsumption } from '../common/TimeSeriesOfDataConsumption';
+import { DeviceStatusCode } from '../enums/DeviceStatusCode';
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { NetworkMap } from '../common/NetworkMap';
+import { DeviceReport } from '../entities/DeviceReport';
 import * as i0 from "@angular/core";
 export declare class UsrDevicesService {
     private config;
@@ -93,7 +93,7 @@ export declare class UsrDevicesService {
     /**
      * Upload list of devices
      */
-    uploadDevices(streamId?: string, ip?: string, iccid?: string, imsi?: string, msisdn?: string, imei?: string, name?: string, operator?: string, label?: string[], tag?: string[], file?: string): import("rxjs").Observable<ActionResponse>;
+    uploadDevices(file: File, streamId?: string, ip?: string, iccid?: string, imsi?: string, msisdn?: string, imei?: string, name?: string, operator?: string, label?: string[], tag?: string[]): import("rxjs").Observable<import("@angular/common/http").HttpEvent<unknown>>;
     /**
      * Find list of devices by Insight id query
      */
