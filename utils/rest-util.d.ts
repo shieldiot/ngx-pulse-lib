@@ -4,7 +4,7 @@ import * as i0 from "@angular/core";
 export declare class RestUtil {
     private http;
     constructor(http: HttpClient);
-    upload(file: File, url: string, ...params: string[]): Observable<import("@angular/common/http").HttpEvent<unknown>>;
+    upload<T>(file: File, url: string, ...params: string[]): Observable<import("@angular/common/http").HttpEvent<T>>;
     download(fileName: string, url: string, ...params: string[]): Observable<import("@angular/common/http").HttpEvent<Blob>>;
     download2(fileName: string, url: string, ...params: string[]): void;
     get<T>(url: string, ...params: string[]): Observable<T>;
