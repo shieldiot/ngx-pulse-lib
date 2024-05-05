@@ -5,6 +5,7 @@ export * from './Action';
 export * from './AuditLog';
 export * from './BaseEntity';
 export * from './Checkpoint';
+export * from './ComplianceReportSettings';
 export * from './Condition';
 export * from './DNSRecord';
 export * from './DataIngestion';

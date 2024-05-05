@@ -1,11 +1,11 @@
+import { DeviceActionCode } from '../enums/DeviceActionCode';
+import { BaseEntity } from '../entities/BaseEntity';
+import { IntegrationTypeCode } from '../enums/IntegrationTypeCode';
 import { IntegrationTriggerCode } from '../enums/IntegrationTriggerCode';
 import { HttpMethodCode } from '../enums/HttpMethodCode';
 import { StringKeyValue } from '../common/StringKeyValue';
 import { EventTypeCode } from '../enums/EventTypeCode';
 import { SeverityTypeCode } from '../enums/SeverityTypeCode';
-import { DeviceActionCode } from '../enums/DeviceActionCode';
-import { BaseEntity } from '../entities/BaseEntity';
-import { IntegrationTypeCode } from '../enums/IntegrationTypeCode';
 export declare class Integration extends BaseEntity {
     accountId: string;
     streamId: string;
