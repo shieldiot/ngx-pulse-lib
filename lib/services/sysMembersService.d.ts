@@ -1,7 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { MemberRoleCode } from '../enums/MemberRoleCode';
 import { Member } from '../entities/Member';
+import { MemberRoleCode } from '../enums/MemberRoleCode';
 import * as i0 from "@angular/core";
 export declare class SysMembersService {
     private config;
