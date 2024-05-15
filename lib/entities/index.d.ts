@@ -2,6 +2,7 @@ export * from './Account';
 export * from './AccountDTO';
 export * from './AccountSettings';
 export * from './Action';
+export * from './ApiKey';
 export * from './AuditLog';
 export * from './BaseEntity';
 export * from './Checkpoint';

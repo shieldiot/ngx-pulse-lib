@@ -4,6 +4,7 @@ export * from './sysAuditLogService';
 export * from './sysCheckpointsService';
 export * from './sysFeaturesService';
 export * from './sysInsightsService';
+export * from './sysKeysService';
 export * from './sysMembersService';
 export * from './sysRuleTemplatesService';
 export * from './sysRulesService';
