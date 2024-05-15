@@ -1,6 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
 import { Account } from '../entities/Account';
+import { AccountSettings } from '../entities/AccountSettings';
 import { AccountTypeCode } from '../enums/AccountTypeCode';
 import { AccountStatusCode } from '../enums/AccountStatusCode';
 import * as i0 from "@angular/core";
@@ -17,6 +18,10 @@ export declare class SysAccountsService {
      * Update existing account in the system
      */
     update(body?: Account): import("rxjs").Observable<EntityResponse<Account>>;
+    /**
+     * Update existing account settings in the system
+     */
+    updateSettings(body?: AccountSettings): import("rxjs").Observable<ActionResponse>;
     /**
      * Delete account from the system and all its related content
      */
