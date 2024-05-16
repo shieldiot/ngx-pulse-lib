@@ -1,5 +1,5 @@
-import { HomePageViewCode } from '../enums/HomePageViewCode';
 import { ComplianceReportSettings } from '../entities/ComplianceReportSettings';
+import { HomePageViewCode } from '../enums/HomePageViewCode';
 export declare class AccountSettings {
     logo: string;
     defaultHomePageView: HomePageViewCode;

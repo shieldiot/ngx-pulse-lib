@@ -1,6 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
 import { ApiKey } from '../entities/ApiKey';
+import { StringIntValue } from '../common/StringIntValue';
 import * as i0 from "@angular/core";
 export declare class SysKeysService {
     private config;
@@ -27,6 +28,10 @@ export declare class SysKeysService {
      * Find list of API keys by free test search
      */
     find(search?: string, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<ApiKey>>;
+    /**
+     * Get list of services for the ACL
+     */
+    listServices(): import("rxjs").Observable<EntitiesResponse<StringIntValue>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<SysKeysService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SysKeysService>;
 }
