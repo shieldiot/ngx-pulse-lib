@@ -1,9 +1,9 @@
-import { StringKeyValue } from '../common/StringKeyValue';
+import { StringKeyIntValue } from '../common/StringKeyIntValue';
 import { BaseEntity } from '../entities/BaseEntity';
 export declare class ApiKey extends BaseEntity {
     name: string;
     ttl: number;
-    acl: StringKeyValue[];
+    acl: StringKeyIntValue[];
     version: number;
     systemKey: boolean;
     enabled: boolean;
