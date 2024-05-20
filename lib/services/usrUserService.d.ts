@@ -1,12 +1,12 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { LoginParams } from '../common/LoginParams';
-import { User } from '../entities/User';
-import { AccountDTO } from '../entities/AccountDTO';
 import { Image } from '../entities/Image';
 import { Feature } from '../entities/Feature';
 import { Stream } from '../entities/Stream';
 import { UserMemberships } from '../entities/UserMemberships';
+import { LoginParams } from '../common/LoginParams';
+import { User } from '../entities/User';
+import { AccountDTO } from '../entities/AccountDTO';
 import * as i0 from "@angular/core";
 export declare class UsrUserService {
     private config;
@@ -59,6 +59,10 @@ export declare class UsrUserService {
      * Get arbitrary image by Id as stream of bytes
      */
     getImageBytes(id?: string): import("rxjs").Observable<import("@angular/common/http").HttpEvent<Blob>>;
+    /**
+     * Get personal access token
+     */
+    getAccessToken(): import("rxjs").Observable<ActionResponse>;
     static ɵfac: i0.ɵɵFactoryDeclaration<UsrUserService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UsrUserService>;
 }
