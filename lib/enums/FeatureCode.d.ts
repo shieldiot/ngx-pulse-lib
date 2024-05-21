@@ -1,9 +1,14 @@
 export declare enum FeatureCode {
     UNDEFINED = 0,
-    NETWORK_MAP_VIEW = 1,
-    NETWORK_MAP_MODULE = 2,
-    HOME_PAGE_V2 = 3,
-    COMPLIANCE_REPORT = 4,
-    COMPLIANCE_REPORT_MODULE = 5
+    EVENTS_EXPORT = 1,
+    EVENT_SOURCE_FILES = 2,
+    EVENT_ACTION = 3,
+    DEVICES_EXPORT = 4,
+    DEVICE_NETWORK_MAP = 5,
+    DEVICE_ACTIONS = 6,
+    NETWORK_MAP = 7,
+    COMPLIANCE_REPORTS = 8,
+    CUSTOM_RULES = 9,
+    INTEGRATIONS = 10
 }
 export declare function GetFeatureCodes(): Map<FeatureCode, string>;

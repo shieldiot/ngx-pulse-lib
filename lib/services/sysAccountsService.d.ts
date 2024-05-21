@@ -1,9 +1,10 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { AccountTypeCode } from '../enums/AccountTypeCode';
 import { AccountStatusCode } from '../enums/AccountStatusCode';
+import { Image } from '../entities/Image';
 import { Account } from '../entities/Account';
 import { AccountSettings } from '../entities/AccountSettings';
-import { AccountTypeCode } from '../enums/AccountTypeCode';
 import * as i0 from "@angular/core";
 export declare class SysAccountsService {
     private config;
@@ -34,6 +35,14 @@ export declare class SysAccountsService {
      * Find list of accounts by query
      */
     find(search?: string, type?: AccountTypeCode[], status?: AccountStatusCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<Account>>;
+    /**
+     * Save account's logo image
+     */
+    saveLogo(): import("rxjs").Observable<ActionResponse>;
+    /**
+     * Get account's logo image
+     */
+    getLogo(id?: string): import("rxjs").Observable<EntityResponse<Image>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<SysAccountsService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SysAccountsService>;
 }
