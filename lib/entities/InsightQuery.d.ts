@@ -6,4 +6,5 @@ export declare class InsightQuery extends BaseEntity {
     description: string;
     query: string;
     insightDirectionContext: DirectionContextCode;
+    uIQuery: string;
 }
