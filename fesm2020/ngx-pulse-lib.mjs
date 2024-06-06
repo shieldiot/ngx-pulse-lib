@@ -191,1307 +191,6 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImpo
             type: Injectable
         }] });
 
-// List of account related actions for system administrator only 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class SysAccountsService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/sys/accounts';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Create new account
-     */
-    create(body) {
-        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update existing account in the system
-     */
-    update(body) {
-        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update existing account settings in the system
-     */
-    updateSettings(body) {
-        return this.rest.patch(`${this.baseUrl}/{id}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Delete account from the system and all its related content
-     */
-    delete(id) {
-        return this.rest.delete(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Get single account by id
-     */
-    get(id) {
-        return this.rest.get(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Find list of accounts by query
-     */
-    find(search, type, status, sort, page, size) {
-        const params = [];
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-    /**
-     * Save account's logo image
-     */
-    saveLogo() {
-        return this.rest.patch(`${this.baseUrl}/logo`, '');
-    }
-    /**
-     * Get account's logo image
-     */
-    getLogo(id) {
-        return this.rest.get(`${this.baseUrl}/logo`);
-    }
-}
-SysAccountsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAccountsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysAccountsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAccountsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAccountsService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
-// List of audit log queries for system administrator only 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class SysAuditLogService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/sys/audit-log';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Get single log entry by id
-     */
-    get(id) {
-        return this.rest.get(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Find list of log entries by query
-     */
-    find(from, to, accountId, userId, action, itemType, itemId, itemName, search, sort, page, size) {
-        const params = [];
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (accountId != null) {
-            params.push(`accountId=${accountId}`);
-        }
-        if (userId != null) {
-            params.push(`userId=${userId}`);
-        }
-        if (action != null) {
-            params.push(`action=${action}`);
-        }
-        if (itemType != null) {
-            params.push(`itemType=${itemType}`);
-        }
-        if (itemId != null) {
-            params.push(`itemId=${itemId}`);
-        }
-        if (itemName != null) {
-            params.push(`itemName=${itemName}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-    /**
-     * Get histogram of audit log entries over time
-     */
-    getTimeline(from, to, accountId, userId, action, itemType, itemId, itemName, search, sort, page, size) {
-        const params = [];
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (accountId != null) {
-            params.push(`accountId=${accountId}`);
-        }
-        if (userId != null) {
-            params.push(`userId=${userId}`);
-        }
-        if (action != null) {
-            params.push(`action=${action}`);
-        }
-        if (itemType != null) {
-            params.push(`itemType=${itemType}`);
-        }
-        if (itemId != null) {
-            params.push(`itemId=${itemId}`);
-        }
-        if (itemName != null) {
-            params.push(`itemName=${itemName}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}/timeline`, ...params);
-    }
-}
-SysAuditLogService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAuditLogService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysAuditLogService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAuditLogService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAuditLogService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
-// List of checkpoints queries for system administrator only 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class SysCheckpointsService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/sys/checkpoints';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Get a single checkpoint entry by id
-     */
-    get(id) {
-        return this.rest.get(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Find a list of checkpoint entries by query
-     */
-    find(from, to, accountId, streamId, search, sort, page, size) {
-        const params = [];
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (accountId != null) {
-            params.push(`accountId=${accountId}`);
-        }
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-    /**
-     * Get histogram of checkpoints over time
-     */
-    checkpointsTimeline(from, to, accountId, streamId, field, timeField) {
-        const params = [];
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (accountId != null) {
-            params.push(`accountId=${accountId}`);
-        }
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (field != null) {
-            params.push(`field=${field}`);
-        }
-        if (timeField != null) {
-            params.push(`timeField=${timeField}`);
-        }
-        return this.rest.get(`${this.baseUrl}/timeline`, ...params);
-    }
-}
-SysCheckpointsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysCheckpointsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysCheckpointsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysCheckpointsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysCheckpointsService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
-// List of features actions for system administrator only 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class SysFeaturesService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/sys/features';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Find list of feature
-     */
-    findFeatures(search, sort, page, size) {
-        const params = [];
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-    /**
-     * Create new features group
-     */
-    createFeaturesGroup(body) {
-        return this.rest.put(`${this.baseUrl}/groups`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update existing features group
-     */
-    updateFeaturesGroup(body) {
-        return this.rest.patch(`${this.baseUrl}/groups`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Delete features group from the system
-     */
-    deleteFeaturesGroup(id) {
-        return this.rest.delete(`${this.baseUrl}/groups/${id}`);
-    }
-    /**
-     * Get single features group by id
-     */
-    getFeaturesGroup(id) {
-        return this.rest.get(`${this.baseUrl}/groups/${id}`);
-    }
-    /**
-     * Find list of features groups
-     */
-    findFeaturesGroups(search, sort, page, size) {
-        const params = [];
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}/groups`, ...params);
-    }
-}
-SysFeaturesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysFeaturesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysFeaturesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysFeaturesService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysFeaturesService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
-// List of insight queries related actions for system administrator only 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class SysInsightsService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/sys/insights';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Create new insight query
-     */
-    createQuery(body) {
-        return this.rest.put(`${this.baseUrl}/query`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update existing insight query
-     */
-    updateQuery(body) {
-        return this.rest.patch(`${this.baseUrl}/query`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Delete insight query from the system
-     */
-    deleteQuery(id) {
-        return this.rest.delete(`${this.baseUrl}/query/${id}`);
-    }
-    /**
-     * Get single insight query by id
-     */
-    getQuery(id) {
-        return this.rest.get(`${this.baseUrl}/query/${id}`);
-    }
-    /**
-     * Find list of insight queries
-     */
-    findQueries(search, sort, page, size) {
-        const params = [];
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}/query`, ...params);
-    }
-    /**
-     * Create new insight spec
-     */
-    createSpec(body) {
-        return this.rest.put(`${this.baseUrl}/spec`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update existing insight spec
-     */
-    updateSpec(body) {
-        return this.rest.patch(`${this.baseUrl}/spec`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Delete insight spec from the system
-     */
-    deleteSpec(id) {
-        return this.rest.delete(`${this.baseUrl}/spec/${id}`);
-    }
-    /**
-     * Get single insight spec by id
-     */
-    getSpec(id) {
-        return this.rest.get(`${this.baseUrl}/spec/${id}`);
-    }
-    /**
-     * Find list of insight specs
-     */
-    findSpecs(accountId, streamId, search, sort, page, size) {
-        const params = [];
-        if (accountId != null) {
-            params.push(`accountId=${accountId}`);
-        }
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}/spec`, ...params);
-    }
-    /**
-     * Find list of insight specs
-     */
-    findSpecsQueries(accountId, streamId, search, sort, page, size) {
-        const params = [];
-        if (accountId != null) {
-            params.push(`accountId=${accountId}`);
-        }
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}/spec-queries`, ...params);
-    }
-}
-SysInsightsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysInsightsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysInsightsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysInsightsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysInsightsService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
-// List of API keys related actions for system administrator only 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class SysKeysService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/sys/keys';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Create new API key
-     */
-    create(body) {
-        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update existing API key in the system
-     */
-    update(body) {
-        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Delete API key from the system
-     */
-    delete(id) {
-        return this.rest.delete(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Get single API key by id
-     */
-    get(id) {
-        return this.rest.get(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Find list of API keys by free test search
-     */
-    find(search, sort, page, size) {
-        const params = [];
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-    /**
-     * Get list of services for the ACL
-     */
-    listServices() {
-        return this.rest.get(`${this.baseUrl}/services`);
-    }
-}
-SysKeysService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysKeysService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysKeysService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysKeysService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysKeysService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
-// List of members related actions for system administrator only 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class SysMembersService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/sys/members';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Create new member
-     */
-    create(body) {
-        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update existing member in the system
-     */
-    update(body) {
-        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Delete member from the system
-     */
-    delete(id) {
-        return this.rest.delete(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Get single member by id
-     */
-    get(id) {
-        return this.rest.get(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Find list of members by query
-     */
-    find(accountId, userId, role, sort, page, size) {
-        const params = [];
-        if (accountId != null) {
-            params.push(`accountId=${accountId}`);
-        }
-        if (userId != null) {
-            params.push(`userId=${userId}`);
-        }
-        if (role != null) {
-            params.push(`role=${role}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-}
-SysMembersService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysMembersService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysMembersService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysMembersService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysMembersService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
-// List of rule templates related actions for system administrator only 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class SysRuleTemplatesService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/sys/rule-templates';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Create new rule template
-     */
-    create(body) {
-        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update existing rule template
-     */
-    update(body) {
-        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Delete a rule template from the system
-     */
-    delete(id) {
-        return this.rest.delete(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Get single rule template by id
-     */
-    get(id) {
-        return this.rest.get(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Find list of rule templates by query
-     */
-    find(search, sort, page, size) {
-        const params = [];
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-}
-SysRuleTemplatesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRuleTemplatesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysRuleTemplatesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRuleTemplatesService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRuleTemplatesService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
-// List of rules related actions for system administrator only 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class SysRulesService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/sys/rules';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Create new rule
-     */
-    create(body) {
-        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update existing rule in the system
-     */
-    update(body) {
-        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Delete a rule from the system
-     */
-    delete(id) {
-        return this.rest.delete(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Get single rule by id
-     */
-    get(id) {
-        return this.rest.get(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Find list of rules by query
-     */
-    find(accountId, streamId, search, sort, page, size) {
-        const params = [];
-        if (accountId != null) {
-            params.push(`accountId=${accountId}`);
-        }
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-    /**
-     * Analyze rule configuration against historic data
-     */
-    analyze(from, to, interval, size, body) {
-        const params = [];
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (interval != null) {
-            params.push(`interval=${interval}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.post(`${this.baseUrl}/analyze`, typeof body === 'object' ? JSON.stringify(body) : body, ...params);
-    }
-}
-SysRulesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRulesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysRulesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRulesService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRulesService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
-// List of system statistics information for system administrator only 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class SysStatisticsService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/sys/statistics';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Get accounts distribution by field
-     */
-    getAccountsCount(field) {
-        return this.rest.get(`${this.baseUrl}/accounts/${field}`);
-    }
-    /**
-     * Get streams distribution by field
-     */
-    getStreamsCount(field) {
-        return this.rest.get(`${this.baseUrl}/streams/${field}`);
-    }
-    /**
-     * Get devices distribution by field
-     */
-    getDevicesCount(field) {
-        return this.rest.get(`${this.baseUrl}/devices/${field}`);
-    }
-    /**
-     * Get users distribution by field
-     */
-    getUsersCount(field) {
-        return this.rest.get(`${this.baseUrl}/users/${field}`);
-    }
-}
-SysStatisticsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStatisticsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysStatisticsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStatisticsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStatisticsService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
-// List of stream related actions for system administrator only 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class SysStreamsService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/sys/streams';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Create new stream
-     */
-    create(body) {
-        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update existing stream in the system
-     */
-    update(body) {
-        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Delete a stream from the system
-     */
-    delete(id) {
-        return this.rest.delete(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Get single stream by id
-     */
-    get(id) {
-        return this.rest.get(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Find list of streams by query
-     */
-    find(accountId, search, sort, page, size) {
-        const params = [];
-        if (accountId != null) {
-            params.push(`accountId=${accountId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-}
-SysStreamsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStreamsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysStreamsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStreamsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStreamsService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
-// List of users related actions for system administrator only 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class SysUsersService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/sys/users';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Create new user
-     */
-    create(body) {
-        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update existing user in the system
-     */
-    update(body) {
-        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Delete a user from the system
-     */
-    delete(id) {
-        return this.rest.delete(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Get single user by id
-     */
-    get(id) {
-        return this.rest.get(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Find list of users by query
-     */
-    find(search, type, status, sort, page, size) {
-        const params = [];
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-    /**
-     * Create new user with all its accounts memberships
-     */
-    createMembership(body) {
-        return this.rest.post(`${this.baseUrl}/memberships`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update user's default account
-     */
-    setDefaultAccount(id, accountId) {
-        return this.rest.patch(`${this.baseUrl}/${id}/${accountId}`, '');
-    }
-    /**
-     * Update access token
-     */
-    getAccessToken(id) {
-        return this.rest.get(`${this.baseUrl}/${id}/access-token`);
-    }
-}
-SysUsersService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysUsersService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-SysUsersService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysUsersService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysUsersService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
-// List of integrations related actions for the operator 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class UsrInsightsService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/insights';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Find list of insights by day
-     */
-    getDailyInsights(dayId) {
-        return this.rest.get(`${this.baseUrl}/daily/${dayId}`);
-    }
-}
-UsrInsightsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrInsightsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrInsightsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrInsightsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrInsightsService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
-// List of integrations related actions for the operator 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class UsrIntegrationsService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/integrations';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Create new integration
-     */
-    create(body) {
-        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update existing integration
-     */
-    update(body) {
-        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Delete integration from the system
-     */
-    delete(id) {
-        return this.rest.delete(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Get single integration by id
-     */
-    get(id) {
-        return this.rest.get(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Find list of integrations by query
-     */
-    find(accountId, streamId, search, sort, page, size) {
-        const params = [];
-        if (accountId != null) {
-            params.push(`accountId=${accountId}`);
-        }
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-    /**
-     * Validate format of the templates in the fields
-     */
-    validate(body) {
-        return this.rest.post(`${this.baseUrl}/validate`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Test the integration with pseudo data
-     */
-    test(body) {
-        return this.rest.post(`${this.baseUrl}/test`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-}
-UsrIntegrationsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrIntegrationsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrIntegrationsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrIntegrationsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrIntegrationsService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
-// List of members related actions for account administrator only 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class UsrMembersService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/members';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Create new member
-     */
-    create(body) {
-        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update existing member in the system
-     */
-    update(body) {
-        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Delete member from the system
-     */
-    delete(id) {
-        return this.rest.delete(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Get single member by id
-     */
-    get(id) {
-        return this.rest.get(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Find list of members by query
-     */
-    find(userId, role, sort, page, size) {
-        const params = [];
-        if (userId != null) {
-            params.push(`userId=${userId}`);
-        }
-        if (role != null) {
-            params.push(`role=${role}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-    /**
-     * Find list of registered emails by query
-     */
-    findEmails(search, page, size) {
-        const params = [];
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}/emails`, ...params);
-    }
-}
-UsrMembersService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrMembersService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrMembersService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrMembersService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrMembersService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
-// List of user related actions 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class UsrUserService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/user';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Authorize user, verify user exists in the system (user was already authenticated by OAuth provider)
-     * The response includes access token valid for 20 minutes. The client side should renew the token before expiration using refresh-token method
-     */
-    authorize(body) {
-        return this.rest.post(`${this.baseUrl}/authorize`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Refresh token (set new expiration time) and associate with new account if required
-     * The response includes the account details and the newly refreshed token in the HTTP header X-ACCESS-TOKEN
-     */
-    setAccount(id) {
-        return this.rest.post(`${this.baseUrl}/set-account/${id}`, '');
-    }
-    /**
-     * Get the user's current account details
-     */
-    getAccount() {
-        return this.rest.get(`${this.baseUrl}/get-account`);
-    }
-    /**
-     * Get user's current account logo
-     */
-    getAccountLogo() {
-        return this.rest.get(`${this.baseUrl}/get-account-logo`);
-    }
-    /**
-     * Get the user's current account features (aggregated list of all features in all the account's features groups)
-     */
-    getAccountFeatures() {
-        return this.rest.get(`${this.baseUrl}/get-account-features`);
-    }
-    /**
-     * Get the user's current account streams (accessible by the user)
-     */
-    getAccountStreams() {
-        return this.rest.get(`${this.baseUrl}/get-account-streams`);
-    }
-    /**
-     * Get all the user memberships (all accounts that the current user has access to)
-     */
-    getMemberships() {
-        return this.rest.get(`${this.baseUrl}/memberships`);
-    }
-    /**
-     * Save user's avatar image
-     */
-    saveAvatar(body) {
-        return this.rest.patch(`${this.baseUrl}/avatar`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Get user's avatar image
-     */
-    getAvatar() {
-        return this.rest.get(`${this.baseUrl}/avatar`);
-    }
-    /**
-     * Get arbitrary image by Id
-     */
-    getImage(id) {
-        return this.rest.get(`${this.baseUrl}/images`);
-    }
-    /**
-     * Get arbitrary image by Id as stream of bytes
-     */
-    getImageBytes(id) {
-        return this.rest.download(`usr-user`, `${this.baseUrl}/image-bytes`);
-    }
-    /**
-     * Get personal access token
-     */
-    getAccessToken() {
-        return this.rest.get(`${this.baseUrl}/access-token`);
-    }
-}
-UsrUserService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrUserService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrUserService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrUserService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrUserService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
-                    type: Inject,
-                    args: ['config']
-                }] }, { type: RestUtil }]; } });
-
 // List of device related actions for the operator 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
 // @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
@@ -2805,7 +1504,1312 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImpo
                     args: ['config']
                 }] }, { type: RestUtil }]; } });
 
+// List of account related actions for system administrator only 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class SysAccountsService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/sys/accounts';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Create new account
+     */
+    create(body) {
+        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update existing account in the system
+     */
+    update(body) {
+        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update existing account settings in the system
+     */
+    updateSettings(body) {
+        return this.rest.patch(`${this.baseUrl}/{id}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Delete account from the system and all its related content
+     */
+    delete(id) {
+        return this.rest.delete(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Get single account by id
+     */
+    get(id) {
+        return this.rest.get(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Find list of accounts by query
+     */
+    find(search, type, status, sort, page, size) {
+        const params = [];
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+    /**
+     * Save account's logo image
+     */
+    saveLogo() {
+        return this.rest.patch(`${this.baseUrl}/logo`, '');
+    }
+    /**
+     * Get account's logo image
+     */
+    getLogo(id) {
+        return this.rest.get(`${this.baseUrl}/logo`);
+    }
+}
+SysAccountsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAccountsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+SysAccountsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAccountsService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAccountsService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
+// List of audit log queries for system administrator only 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class SysAuditLogService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/sys/audit-log';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Get single log entry by id
+     */
+    get(id) {
+        return this.rest.get(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Find list of log entries by query
+     */
+    find(from, to, accountId, userId, action, itemType, itemId, itemName, search, sort, page, size) {
+        const params = [];
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (accountId != null) {
+            params.push(`accountId=${accountId}`);
+        }
+        if (userId != null) {
+            params.push(`userId=${userId}`);
+        }
+        if (action != null) {
+            params.push(`action=${action}`);
+        }
+        if (itemType != null) {
+            params.push(`itemType=${itemType}`);
+        }
+        if (itemId != null) {
+            params.push(`itemId=${itemId}`);
+        }
+        if (itemName != null) {
+            params.push(`itemName=${itemName}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+    /**
+     * Get histogram of audit log entries over time
+     */
+    getTimeline(from, to, accountId, userId, action, itemType, itemId, itemName, search, sort, page, size) {
+        const params = [];
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (accountId != null) {
+            params.push(`accountId=${accountId}`);
+        }
+        if (userId != null) {
+            params.push(`userId=${userId}`);
+        }
+        if (action != null) {
+            params.push(`action=${action}`);
+        }
+        if (itemType != null) {
+            params.push(`itemType=${itemType}`);
+        }
+        if (itemId != null) {
+            params.push(`itemId=${itemId}`);
+        }
+        if (itemName != null) {
+            params.push(`itemName=${itemName}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}/timeline`, ...params);
+    }
+}
+SysAuditLogService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAuditLogService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+SysAuditLogService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAuditLogService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysAuditLogService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
+// List of checkpoints queries for system administrator only 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class SysCheckpointsService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/sys/checkpoints';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Get a single checkpoint entry by id
+     */
+    get(id) {
+        return this.rest.get(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Find a list of checkpoint entries by query
+     */
+    find(from, to, accountId, streamId, search, sort, page, size) {
+        const params = [];
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (accountId != null) {
+            params.push(`accountId=${accountId}`);
+        }
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+    /**
+     * Get histogram of checkpoints over time
+     */
+    checkpointsTimeline(from, to, accountId, streamId, field, timeField) {
+        const params = [];
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (accountId != null) {
+            params.push(`accountId=${accountId}`);
+        }
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (field != null) {
+            params.push(`field=${field}`);
+        }
+        if (timeField != null) {
+            params.push(`timeField=${timeField}`);
+        }
+        return this.rest.get(`${this.baseUrl}/timeline`, ...params);
+    }
+}
+SysCheckpointsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysCheckpointsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+SysCheckpointsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysCheckpointsService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysCheckpointsService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
+// List of features actions for system administrator only 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class SysFeaturesService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/sys/features';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Find list of feature
+     */
+    findFeatures(search, sort, page, size) {
+        const params = [];
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+    /**
+     * Create new features group
+     */
+    createFeaturesGroup(body) {
+        return this.rest.put(`${this.baseUrl}/groups`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update existing features group
+     */
+    updateFeaturesGroup(body) {
+        return this.rest.patch(`${this.baseUrl}/groups`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Delete features group from the system
+     */
+    deleteFeaturesGroup(id) {
+        return this.rest.delete(`${this.baseUrl}/groups/${id}`);
+    }
+    /**
+     * Get single features group by id
+     */
+    getFeaturesGroup(id) {
+        return this.rest.get(`${this.baseUrl}/groups/${id}`);
+    }
+    /**
+     * Find list of features groups
+     */
+    findFeaturesGroups(search, sort, page, size) {
+        const params = [];
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}/groups`, ...params);
+    }
+}
+SysFeaturesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysFeaturesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+SysFeaturesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysFeaturesService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysFeaturesService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
+// List of insight queries related actions for system administrator only 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class SysInsightsService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/sys/insights';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Create new insight query
+     */
+    createQuery(body) {
+        return this.rest.put(`${this.baseUrl}/query`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update existing insight query
+     */
+    updateQuery(body) {
+        return this.rest.patch(`${this.baseUrl}/query`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Delete insight query from the system
+     */
+    deleteQuery(id) {
+        return this.rest.delete(`${this.baseUrl}/query/${id}`);
+    }
+    /**
+     * Get single insight query by id
+     */
+    getQuery(id) {
+        return this.rest.get(`${this.baseUrl}/query/${id}`);
+    }
+    /**
+     * Find list of insight queries
+     */
+    findQueries(search, sort, page, size) {
+        const params = [];
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}/query`, ...params);
+    }
+    /**
+     * Create new insight spec
+     */
+    createSpec(body) {
+        return this.rest.put(`${this.baseUrl}/spec`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update existing insight spec
+     */
+    updateSpec(body) {
+        return this.rest.patch(`${this.baseUrl}/spec`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Delete insight spec from the system
+     */
+    deleteSpec(id) {
+        return this.rest.delete(`${this.baseUrl}/spec/${id}`);
+    }
+    /**
+     * Get single insight spec by id
+     */
+    getSpec(id) {
+        return this.rest.get(`${this.baseUrl}/spec/${id}`);
+    }
+    /**
+     * Find list of insight specs
+     */
+    findSpecs(accountId, streamId, search, sort, page, size) {
+        const params = [];
+        if (accountId != null) {
+            params.push(`accountId=${accountId}`);
+        }
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}/spec`, ...params);
+    }
+    /**
+     * Find list of insight specs
+     */
+    findSpecsQueries(accountId, streamId, search, sort, page, size) {
+        const params = [];
+        if (accountId != null) {
+            params.push(`accountId=${accountId}`);
+        }
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}/spec-queries`, ...params);
+    }
+}
+SysInsightsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysInsightsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+SysInsightsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysInsightsService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysInsightsService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
+// List of API keys related actions for system administrator only 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class SysKeysService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/sys/keys';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Create new API key
+     */
+    create(body) {
+        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update existing API key in the system
+     */
+    update(body) {
+        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Delete API key from the system
+     */
+    delete(id) {
+        return this.rest.delete(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Get single API key by id
+     */
+    get(id) {
+        return this.rest.get(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Find list of API keys by free test search
+     */
+    find(search, sort, page, size) {
+        const params = [];
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+    /**
+     * Get list of services for the ACL
+     */
+    listServices() {
+        return this.rest.get(`${this.baseUrl}/services`);
+    }
+}
+SysKeysService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysKeysService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+SysKeysService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysKeysService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysKeysService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
+// List of members related actions for system administrator only 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class SysMembersService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/sys/members';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Create new member
+     */
+    create(body) {
+        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update existing member in the system
+     */
+    update(body) {
+        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Delete member from the system
+     */
+    delete(id) {
+        return this.rest.delete(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Get single member by id
+     */
+    get(id) {
+        return this.rest.get(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Find list of members by query
+     */
+    find(accountId, userId, role, sort, page, size) {
+        const params = [];
+        if (accountId != null) {
+            params.push(`accountId=${accountId}`);
+        }
+        if (userId != null) {
+            params.push(`userId=${userId}`);
+        }
+        if (role != null) {
+            params.push(`role=${role}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+}
+SysMembersService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysMembersService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+SysMembersService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysMembersService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysMembersService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
+// List of rule templates related actions for system administrator only 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class SysRuleTemplatesService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/sys/rule-templates';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Create new rule template
+     */
+    create(body) {
+        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update existing rule template
+     */
+    update(body) {
+        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Delete a rule template from the system
+     */
+    delete(id) {
+        return this.rest.delete(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Get single rule template by id
+     */
+    get(id) {
+        return this.rest.get(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Find list of rule templates by query
+     */
+    find(search, sort, page, size) {
+        const params = [];
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+}
+SysRuleTemplatesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRuleTemplatesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+SysRuleTemplatesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRuleTemplatesService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRuleTemplatesService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
+// List of rules related actions for system administrator only 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class SysRulesService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/sys/rules';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Create new rule
+     */
+    create(body) {
+        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update existing rule in the system
+     */
+    update(body) {
+        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Delete a rule from the system
+     */
+    delete(id) {
+        return this.rest.delete(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Get single rule by id
+     */
+    get(id) {
+        return this.rest.get(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Find list of rules by query
+     */
+    find(accountId, streamId, search, sort, page, size) {
+        const params = [];
+        if (accountId != null) {
+            params.push(`accountId=${accountId}`);
+        }
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+    /**
+     * Analyze rule configuration against historic data
+     */
+    analyze(from, to, interval, size, body) {
+        const params = [];
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (interval != null) {
+            params.push(`interval=${interval}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.post(`${this.baseUrl}/analyze`, typeof body === 'object' ? JSON.stringify(body) : body, ...params);
+    }
+}
+SysRulesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRulesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+SysRulesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRulesService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysRulesService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
+// List of system statistics information for system administrator only 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class SysStatisticsService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/sys/statistics';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Get accounts distribution by field
+     */
+    getAccountsCount(field) {
+        return this.rest.get(`${this.baseUrl}/accounts/${field}`);
+    }
+    /**
+     * Get streams distribution by field
+     */
+    getStreamsCount(field) {
+        return this.rest.get(`${this.baseUrl}/streams/${field}`);
+    }
+    /**
+     * Get devices distribution by field
+     */
+    getDevicesCount(field) {
+        return this.rest.get(`${this.baseUrl}/devices/${field}`);
+    }
+    /**
+     * Get users distribution by field
+     */
+    getUsersCount(field) {
+        return this.rest.get(`${this.baseUrl}/users/${field}`);
+    }
+}
+SysStatisticsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStatisticsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+SysStatisticsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStatisticsService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStatisticsService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
+// List of stream related actions for system administrator only 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class SysStreamsService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/sys/streams';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Create new stream
+     */
+    create(body) {
+        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update existing stream in the system
+     */
+    update(body) {
+        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Delete a stream from the system
+     */
+    delete(id) {
+        return this.rest.delete(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Get single stream by id
+     */
+    get(id) {
+        return this.rest.get(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Find list of streams by query
+     */
+    find(accountId, search, sort, page, size) {
+        const params = [];
+        if (accountId != null) {
+            params.push(`accountId=${accountId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+}
+SysStreamsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStreamsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+SysStreamsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStreamsService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysStreamsService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
+// List of users related actions for system administrator only 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class SysUsersService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/sys/users';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Create new user
+     */
+    create(body) {
+        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update existing user in the system
+     */
+    update(body) {
+        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Delete a user from the system
+     */
+    delete(id) {
+        return this.rest.delete(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Get single user by id
+     */
+    get(id) {
+        return this.rest.get(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Find list of users by query
+     */
+    find(search, type, status, sort, page, size) {
+        const params = [];
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+    /**
+     * Create new user with all its accounts memberships
+     */
+    createMembership(body) {
+        return this.rest.post(`${this.baseUrl}/memberships`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update user's default account
+     */
+    setDefaultAccount(id, accountId) {
+        return this.rest.patch(`${this.baseUrl}/${id}/${accountId}`, '');
+    }
+    /**
+     * Update access token
+     */
+    getAccessToken(id) {
+        return this.rest.get(`${this.baseUrl}/${id}/access-token`);
+    }
+}
+SysUsersService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysUsersService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+SysUsersService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysUsersService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: SysUsersService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
+// List of integrations related actions for the operator 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class UsrInsightsService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/insights';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Find list of insights by day
+     */
+    getDailyInsights(dayId) {
+        return this.rest.get(`${this.baseUrl}/daily/${dayId}`);
+    }
+}
+UsrInsightsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrInsightsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+UsrInsightsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrInsightsService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrInsightsService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
+// List of integrations related actions for the operator 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class UsrIntegrationsService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/integrations';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Create new integration
+     */
+    create(body) {
+        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update existing integration
+     */
+    update(body) {
+        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Delete integration from the system
+     */
+    delete(id) {
+        return this.rest.delete(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Get single integration by id
+     */
+    get(id) {
+        return this.rest.get(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Find list of integrations by query
+     */
+    find(accountId, streamId, search, sort, page, size) {
+        const params = [];
+        if (accountId != null) {
+            params.push(`accountId=${accountId}`);
+        }
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+    /**
+     * Validate format of the templates in the fields
+     */
+    validate(body) {
+        return this.rest.post(`${this.baseUrl}/validate`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Test the integration with pseudo data
+     */
+    test(body) {
+        return this.rest.post(`${this.baseUrl}/test`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+}
+UsrIntegrationsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrIntegrationsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+UsrIntegrationsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrIntegrationsService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrIntegrationsService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
+// List of members related actions for account administrator only 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class UsrMembersService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/members';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Create new member
+     */
+    create(body) {
+        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update existing member in the system
+     */
+    update(body) {
+        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Delete member from the system
+     */
+    delete(id) {
+        return this.rest.delete(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Get single member by id
+     */
+    get(id) {
+        return this.rest.get(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Find list of members by query
+     */
+    find(userId, role, sort, page, size) {
+        const params = [];
+        if (userId != null) {
+            params.push(`userId=${userId}`);
+        }
+        if (role != null) {
+            params.push(`role=${role}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+    /**
+     * Find list of registered emails by query
+     */
+    findEmails(search, page, size) {
+        const params = [];
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}/emails`, ...params);
+    }
+}
+UsrMembersService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrMembersService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+UsrMembersService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrMembersService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrMembersService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
+// List of user related actions 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class UsrUserService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/user';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Authorize user, verify user exists in the system (user was already authenticated by OAuth provider)
+     * The response includes access token valid for 20 minutes. The client side should renew the token before expiration using refresh-token method
+     */
+    authorize(body) {
+        return this.rest.post(`${this.baseUrl}/authorize`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Refresh token (set new expiration time) and associate with new account if required
+     * The response includes the account details and the newly refreshed token in the HTTP header X-ACCESS-TOKEN
+     */
+    setAccount(id) {
+        return this.rest.post(`${this.baseUrl}/set-account/${id}`, '');
+    }
+    /**
+     * Get the user's current account details
+     */
+    getAccount() {
+        return this.rest.get(`${this.baseUrl}/get-account`);
+    }
+    /**
+     * Get user's current account logo
+     */
+    getAccountLogo() {
+        return this.rest.get(`${this.baseUrl}/get-account-logo`);
+    }
+    /**
+     * Get the user's current account features (aggregated list of all features in all the account's features groups)
+     */
+    getAccountFeatures() {
+        return this.rest.get(`${this.baseUrl}/get-account-features`);
+    }
+    /**
+     * Get the user's current account streams (accessible by the user)
+     */
+    getAccountStreams() {
+        return this.rest.get(`${this.baseUrl}/get-account-streams`);
+    }
+    /**
+     * Get all the user memberships (all accounts that the current user has access to)
+     */
+    getMemberships() {
+        return this.rest.get(`${this.baseUrl}/memberships`);
+    }
+    /**
+     * Save user's avatar image
+     */
+    saveAvatar(body) {
+        return this.rest.patch(`${this.baseUrl}/avatar`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Get user's avatar image
+     */
+    getAvatar() {
+        return this.rest.get(`${this.baseUrl}/avatar`);
+    }
+    /**
+     * Get arbitrary image by Id
+     */
+    getImage(id) {
+        return this.rest.get(`${this.baseUrl}/images`);
+    }
+    /**
+     * Get arbitrary image by Id as stream of bytes
+     */
+    getImageBytes(id) {
+        return this.rest.download(`usr-user`, `${this.baseUrl}/image-bytes`);
+    }
+    /**
+     * Get personal access token
+     */
+    getAccessToken() {
+        return this.rest.get(`${this.baseUrl}/access-token`);
+    }
+}
+UsrUserService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrUserService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+UsrUserService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrUserService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrUserService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () { return [{ type: PulseConfig, decorators: [{
+                    type: Inject,
+                    args: ['config']
+                }] }, { type: RestUtil }]; } });
+
 const Services = [
+    UsrDevicesService,
+    UsrEventsService,
+    UsrReportsService,
+    UsrRulesService,
     SysAccountsService,
     SysAuditLogService,
     SysCheckpointsService,
@@ -2822,10 +2826,6 @@ const Services = [
     UsrIntegrationsService,
     UsrMembersService,
     UsrUserService,
-    UsrDevicesService,
-    UsrEventsService,
-    UsrReportsService,
-    UsrRulesService,
 ];
 
 class NgxPulseLibModule {

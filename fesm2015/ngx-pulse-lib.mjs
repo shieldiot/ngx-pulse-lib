@@ -191,6 +191,1327 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImpo
             type: Injectable
         }] });
 
+// List of device related actions for the operator 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class UsrDevicesService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/devices';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Create new device
+     */
+    create() {
+        return this.rest.put(`${this.baseUrl}`, '');
+    }
+    /**
+     * Update existing device in the system
+     */
+    update(body) {
+        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Delete device from the system
+     */
+    delete(id) {
+        return this.rest.delete(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Get single device by id
+     */
+    get(id) {
+        return this.rest.get(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Find list of devices by query
+     */
+    find(streamId, search, type, status, risk, scoreRange, sort, page, size) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (risk != null) {
+            params.push(`risk=${risk}`);
+        }
+        if (scoreRange != null) {
+            params.push(`scoreRange=${scoreRange}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+    /**
+     * Export list of devices by query to a file with the specified format
+     */
+    exportFormat(format, streamId, search, type, status, risk, sort, page, size) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (risk != null) {
+            params.push(`risk=${risk}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.download(`devices`, `${this.baseUrl}/export/${format}`, ...params);
+    }
+    /**
+     * Find top 10 devices by their score filter by query
+     */
+    findTop(streamId, search, type, status, risk, scoreRange, sort, page, size) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (risk != null) {
+            params.push(`risk=${risk}`);
+        }
+        if (scoreRange != null) {
+            params.push(`scoreRange=${scoreRange}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}/top`, ...params);
+    }
+    /**
+     * Find device distribution by type filtered by query
+     */
+    countByType(streamId, search, type, status, risk, scoreRange, sort, page, size) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (risk != null) {
+            params.push(`risk=${risk}`);
+        }
+        if (scoreRange != null) {
+            params.push(`scoreRange=${scoreRange}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}/count/by-type`, ...params);
+    }
+    /**
+     * Find device distribution by status filtered by query
+     */
+    countByStatus(streamId, search, type, status, risk, scoreRange, sort, page, size) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (risk != null) {
+            params.push(`risk=${risk}`);
+        }
+        if (scoreRange != null) {
+            params.push(`scoreRange=${scoreRange}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}/count/by-status`, ...params);
+    }
+    /**
+     * Find device distribution by action filtered by query
+     */
+    countByAction(streamId, search, type, status, risk, scoreRange, sort, page, size) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (risk != null) {
+            params.push(`risk=${risk}`);
+        }
+        if (scoreRange != null) {
+            params.push(`scoreRange=${scoreRange}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}/count/by-action`, ...params);
+    }
+    /**
+     * Add tag to a device
+     */
+    addTag(id, tag) {
+        return this.rest.post(`${this.baseUrl}/${id}/tags/${tag}`, '');
+    }
+    /**
+     * Delete a tag from the device
+     */
+    deleteTag(id, tag) {
+        return this.rest.delete(`${this.baseUrl}/${id}/tags/${tag}`);
+    }
+    /**
+     * Apply action on a device
+     */
+    applyAction(id, action) {
+        return this.rest.post(`${this.baseUrl}/${id}/actions/${action}`, '');
+    }
+    /**
+     * Get network map of devices
+     */
+    getNetworkMap(streamId, from, to, type, tag, id, mapType, ips) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (tag != null) {
+            params.push(`tag=${tag}`);
+        }
+        if (id != null) {
+            params.push(`id=${id}`);
+        }
+        if (mapType != null) {
+            params.push(`mapType=${mapType}`);
+        }
+        if (ips != null) {
+            params.push(`ips=${ips}`);
+        }
+        return this.rest.get(`${this.baseUrl}/network-map`, ...params);
+    }
+    /**
+     * Get daily device report over time (daily device report includes: total devices, active devices, devices at risk)
+     */
+    getDeviceReportTimeline(streamId, from, to) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        return this.rest.get(`${this.baseUrl}/report/timeline`, ...params);
+    }
+    /**
+     * Get latest device report, the Key contains latest devices at risk number (works in account level)
+     */
+    getLatestDeviceReport() {
+        return this.rest.get(`${this.baseUrl}/report/latest`);
+    }
+    /**
+     * Get device / group of devices consumption over time
+     */
+    getConsumptionTimeline(streamId, from, to, type, tag, id) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (tag != null) {
+            params.push(`tag=${tag}`);
+        }
+        if (id != null) {
+            params.push(`id=${id}`);
+        }
+        return this.rest.get(`${this.baseUrl}/consumption/timeline`, ...params);
+    }
+    /**
+     * Get device / group of devices consumption over time
+     */
+    getConsumptionTrend(streamId, from, to, type, tag, id) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (tag != null) {
+            params.push(`tag=${tag}`);
+        }
+        if (id != null) {
+            params.push(`id=${id}`);
+        }
+        return this.rest.get(`${this.baseUrl}/consumption/trend`, ...params);
+    }
+    /**
+     * Upload list of devices
+     */
+    uploadDevices(file, streamId, ip, iccid, imsi, msisdn, imei, name, operator, label, tag) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (ip != null) {
+            params.push(`ip=${ip}`);
+        }
+        if (iccid != null) {
+            params.push(`iccid=${iccid}`);
+        }
+        if (imsi != null) {
+            params.push(`imsi=${imsi}`);
+        }
+        if (msisdn != null) {
+            params.push(`msisdn=${msisdn}`);
+        }
+        if (imei != null) {
+            params.push(`imei=${imei}`);
+        }
+        if (name != null) {
+            params.push(`name=${name}`);
+        }
+        if (operator != null) {
+            params.push(`operator=${operator}`);
+        }
+        if (label != null) {
+            params.push(`label=${label}`);
+        }
+        if (tag != null) {
+            params.push(`tag=${tag}`);
+        }
+        return this.rest.upload(file, `${this.baseUrl}/upload`, ...params);
+    }
+    /**
+     * Find list of devices by Insight id query
+     */
+    findByInsightContext(streamId, insightId, sort, page, size) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (insightId != null) {
+            params.push(`insightId=${insightId}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}/find-by-insight-context`, ...params);
+    }
+}
+UsrDevicesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrDevicesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+UsrDevicesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrDevicesService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrDevicesService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () {
+        return [{ type: PulseConfig, decorators: [{
+                        type: Inject,
+                        args: ['config']
+                    }] }, { type: RestUtil }];
+    } });
+
+// List of events related actions for the operator 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class UsrEventsService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/events';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Get single event by id
+     */
+    get(id) {
+        return this.rest.get(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Find list of events by query
+     */
+    find(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size, withoutOccurrences) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (deviceId != null) {
+            params.push(`deviceId=${deviceId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (severity != null) {
+            params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (targetIp != null) {
+            params.push(`targetIp=${targetIp}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        if (withoutOccurrences != null) {
+            params.push(`withoutOccurrences=${withoutOccurrences}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+    /**
+     * Export list of events by query to a file with the specified format
+     */
+    exportFormat(format, streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (deviceId != null) {
+            params.push(`deviceId=${deviceId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (severity != null) {
+            params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (targetIp != null) {
+            params.push(`targetIp=${targetIp}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.download(`events`, `${this.baseUrl}/export/${format}`, ...params);
+    }
+    /**
+     * Find top 10 events by their severity filter by query
+     */
+    getTop(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size, withoutOccurrences) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (deviceId != null) {
+            params.push(`deviceId=${deviceId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (severity != null) {
+            params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (targetIp != null) {
+            params.push(`targetIp=${targetIp}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        if (withoutOccurrences != null) {
+            params.push(`withoutOccurrences=${withoutOccurrences}`);
+        }
+        return this.rest.get(`${this.baseUrl}/top`, ...params);
+    }
+    /**
+     * Get top malicious IPs
+     */
+    getTopMaliciousIPs(streamId, top, from, to) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (top != null) {
+            params.push(`top=${top}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        return this.rest.get(`${this.baseUrl}/top-malicious-ips`, ...params);
+    }
+    /**
+     * Find events distribution by type filtered by query
+     */
+    countByType(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size, withoutOccurrences) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (deviceId != null) {
+            params.push(`deviceId=${deviceId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (severity != null) {
+            params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (targetIp != null) {
+            params.push(`targetIp=${targetIp}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        if (withoutOccurrences != null) {
+            params.push(`withoutOccurrences=${withoutOccurrences}`);
+        }
+        return this.rest.get(`${this.baseUrl}/count/by-type`, ...params);
+    }
+    /**
+     * Find events distribution by status filtered by query
+     */
+    countByStatus(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size, withoutOccurrences) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (deviceId != null) {
+            params.push(`deviceId=${deviceId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (severity != null) {
+            params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (targetIp != null) {
+            params.push(`targetIp=${targetIp}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        if (withoutOccurrences != null) {
+            params.push(`withoutOccurrences=${withoutOccurrences}`);
+        }
+        return this.rest.get(`${this.baseUrl}/count/by-status`, ...params);
+    }
+    /**
+     * Find events distribution by severity filtered by query
+     */
+    countBySeverity(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size, withoutOccurrences) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (deviceId != null) {
+            params.push(`deviceId=${deviceId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (severity != null) {
+            params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (targetIp != null) {
+            params.push(`targetIp=${targetIp}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        if (withoutOccurrences != null) {
+            params.push(`withoutOccurrences=${withoutOccurrences}`);
+        }
+        return this.rest.get(`${this.baseUrl}/count/by-severity`, ...params);
+    }
+    /**
+     * Find events distribution by rule filtered by query
+     */
+    countByRule(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size, withoutOccurrences) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (deviceId != null) {
+            params.push(`deviceId=${deviceId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (severity != null) {
+            params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (targetIp != null) {
+            params.push(`targetIp=${targetIp}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        if (withoutOccurrences != null) {
+            params.push(`withoutOccurrences=${withoutOccurrences}`);
+        }
+        return this.rest.get(`${this.baseUrl}/count/by-rule`, ...params);
+    }
+    /**
+     * Find events distribution by category filtered by query
+     */
+    countByCategory(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size, withoutOccurrences) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (deviceId != null) {
+            params.push(`deviceId=${deviceId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (severity != null) {
+            params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (targetIp != null) {
+            params.push(`targetIp=${targetIp}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        if (withoutOccurrences != null) {
+            params.push(`withoutOccurrences=${withoutOccurrences}`);
+        }
+        return this.rest.get(`${this.baseUrl}/count/by-category`, ...params);
+    }
+    /**
+     * Add tag to an event
+     */
+    addTag(id, tag) {
+        return this.rest.post(`${this.baseUrl}/${id}/tags/${tag}`, '');
+    }
+    /**
+     * Delete a tag from the event
+     */
+    deleteTag(id, tag) {
+        return this.rest.delete(`${this.baseUrl}/${id}/tags/${tag}`);
+    }
+    /**
+     * Apply action on an event
+     */
+    applyAction(id, action) {
+        return this.rest.post(`${this.baseUrl}/${id}/actions/${action}`, '');
+    }
+    /**
+     * Set event status
+     */
+    setStatus(id, status) {
+        return this.rest.post(`${this.baseUrl}/${id}/status/${status}`, '');
+    }
+    /**
+     * Get current shieldex value as ActionResponse, the Key contains the shield index and the data includes the trend
+     */
+    getShieldex() {
+        return this.rest.get(`${this.baseUrl}/shieldex`);
+    }
+    /**
+     * Get histogram of events over time by dimension (type | severity | status | ruleType | category)
+     */
+    eventsTimeline(streamId, deviceId, dimension, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (deviceId != null) {
+            params.push(`deviceId=${deviceId}`);
+        }
+        if (dimension != null) {
+            params.push(`dimension=${dimension}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (severity != null) {
+            params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (targetIp != null) {
+            params.push(`targetIp=${targetIp}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}/timeline`, ...params);
+    }
+    /**
+     * Get histogram of shieldex values over time
+     */
+    shieldexTimeline(streamId, from, to) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        return this.rest.get(`${this.baseUrl}/shieldex/timeline`, ...params);
+    }
+    /**
+     * Export event source file
+     */
+    exportSource(id, timestamp) {
+        const params = [];
+        if (timestamp != null) {
+            params.push(`timestamp=${timestamp}`);
+        }
+        return this.rest.download(`events`, `${this.baseUrl}/${id}/export_source`, ...params);
+    }
+    /**
+     * Get total number devices at risk (affected by the events matching the query)
+     */
+    getTotalDevicesAtRisk(streamId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (type != null) {
+            params.push(`type=${type}`);
+        }
+        if (severity != null) {
+            params.push(`severity=${severity}`);
+        }
+        if (category != null) {
+            params.push(`category=${category}`);
+        }
+        if (status != null) {
+            params.push(`status=${status}`);
+        }
+        if (ruleId != null) {
+            params.push(`ruleId=${ruleId}`);
+        }
+        if (targetIp != null) {
+            params.push(`targetIp=${targetIp}`);
+        }
+        if (ruleType != null) {
+            params.push(`ruleType=${ruleType}`);
+        }
+        return this.rest.get(`${this.baseUrl}/devices-at-risk`, ...params);
+    }
+    /**
+     * Get malicious IP data card for specific malicious IP
+     */
+    getMaliciousIpCard(streamId, targetIp, from, to) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (targetIp != null) {
+            params.push(`targetIp=${targetIp}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        return this.rest.get(`${this.baseUrl}/malicious-ip-card`, ...params);
+    }
+    /**
+     * Apply DNS lookup for each IP in the list
+     */
+    getIpLookup(ip) {
+        const params = [];
+        if (ip != null) {
+            params.push(`ip=${ip}`);
+        }
+        return this.rest.get(`${this.baseUrl}/ip-lookup`, ...params);
+    }
+    /**
+     * Find list of events by insight id query
+     */
+    findByInsightContext() {
+        return this.rest.get(`${this.baseUrl}/find-by-insight-context`);
+    }
+}
+UsrEventsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrEventsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+UsrEventsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrEventsService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrEventsService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () {
+        return [{ type: PulseConfig, decorators: [{
+                        type: Inject,
+                        args: ['config']
+                    }] }, { type: RestUtil }];
+    } });
+
+// List of events related actions for the operator 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class UsrReportsService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/reports';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Create new report
+     */
+    create(body) {
+        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update existing report in the system
+     */
+    update(body) {
+        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Delete a report from the system
+     */
+    delete(id) {
+        return this.rest.delete(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Get single report by id
+     */
+    get(id) {
+        return this.rest.get(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Find list of reports by query
+     */
+    find(accountId, search, sort, page, size) {
+        const params = [];
+        if (accountId != null) {
+            params.push(`accountId=${accountId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+    /**
+     * Get compliance report
+     */
+    getComplianceReport(streamId, from, to) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        return this.rest.download(`reports`, `${this.baseUrl}/compliance`, ...params);
+    }
+    /**
+     * Get histogram of network activity over time
+     */
+    getNetworkActivityOverTime(streamId, from, to) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        return this.rest.get(`${this.baseUrl}/network-activity-over-time`, ...params);
+    }
+    /**
+     * Get histogram of device distribution by number of destinations
+     */
+    getDeviceDistributionByNumberOfDestinations(streamId, from, to) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        return this.rest.get(`${this.baseUrl}/device-distribution-by-number-of-destinations`, ...params);
+    }
+    /**
+     * Get histogram of device distribution by communication frequency
+     */
+    getDeviceGroupsByCommunicationFrequency(streamId, from, to) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        return this.rest.get(`${this.baseUrl}/device-groups-by-communication-frequency`, ...params);
+    }
+}
+UsrReportsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrReportsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+UsrReportsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrReportsService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrReportsService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () {
+        return [{ type: PulseConfig, decorators: [{
+                        type: Inject,
+                        args: ['config']
+                    }] }, { type: RestUtil }];
+    } });
+
+// List of rules related actions 
+// @RequestHeader X-API-KEY The key to identify the application (console) 
+// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
+class UsrRulesService {
+    // Class constructor
+    constructor(config, rest) {
+        this.config = config;
+        this.rest = rest;
+        // URL to web api
+        this.baseUrl = '/rules';
+        this.baseUrl = this.config.api + this.baseUrl;
+    }
+    /**
+     * Create new rule
+     */
+    create(body) {
+        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Update existing rule in the system
+     */
+    update(body) {
+        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
+    }
+    /**
+     * Delete a rule from the system
+     */
+    delete(id) {
+        return this.rest.delete(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Get single rule by id
+     */
+    get(id) {
+        return this.rest.get(`${this.baseUrl}/${id}`);
+    }
+    /**
+     * Find list of rules by query
+     */
+    find(streamId, search, sort, page, size) {
+        const params = [];
+        if (streamId != null) {
+            params.push(`streamId=${streamId}`);
+        }
+        if (search != null) {
+            params.push(`search=${search}`);
+        }
+        if (sort != null) {
+            params.push(`sort=${sort}`);
+        }
+        if (page != null) {
+            params.push(`page=${page}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.get(`${this.baseUrl}`, ...params);
+    }
+    /**
+     * Analyze rule configuration against historic data
+     */
+    analyze(from, to, interval, size, body) {
+        const params = [];
+        if (from != null) {
+            params.push(`from=${from}`);
+        }
+        if (to != null) {
+            params.push(`to=${to}`);
+        }
+        if (interval != null) {
+            params.push(`interval=${interval}`);
+        }
+        if (size != null) {
+            params.push(`size=${size}`);
+        }
+        return this.rest.post(`${this.baseUrl}/analyze`, typeof body === 'object' ? JSON.stringify(body) : body, ...params);
+    }
+}
+UsrRulesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrRulesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
+UsrRulesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrRulesService });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrRulesService, decorators: [{
+            type: Injectable
+        }], ctorParameters: function () {
+        return [{ type: PulseConfig, decorators: [{
+                        type: Inject,
+                        args: ['config']
+                    }] }, { type: RestUtil }];
+    } });
+
 // List of account related actions for system administrator only 
 // @RequestHeader X-API-KEY The key to identify the application (console) 
 // @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
@@ -1524,1328 +2845,11 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImpo
                     }] }, { type: RestUtil }];
     } });
 
-// List of device related actions for the operator 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class UsrDevicesService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/devices';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Create new device
-     */
-    create() {
-        return this.rest.put(`${this.baseUrl}`, '');
-    }
-    /**
-     * Update existing device in the system
-     */
-    update(body) {
-        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Delete device from the system
-     */
-    delete(id) {
-        return this.rest.delete(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Get single device by id
-     */
-    get(id) {
-        return this.rest.get(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Find list of devices by query
-     */
-    find(streamId, search, type, status, risk, scoreRange, sort, page, size) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (risk != null) {
-            params.push(`risk=${risk}`);
-        }
-        if (scoreRange != null) {
-            params.push(`scoreRange=${scoreRange}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-    /**
-     * Export list of devices by query to a file with the specified format
-     */
-    exportFormat(format, streamId, search, type, status, risk, sort, page, size) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (risk != null) {
-            params.push(`risk=${risk}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.download(`devices`, `${this.baseUrl}/export/${format}`, ...params);
-    }
-    /**
-     * Find top 10 devices by their score filter by query
-     */
-    findTop(streamId, search, type, status, risk, scoreRange, sort, page, size) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (risk != null) {
-            params.push(`risk=${risk}`);
-        }
-        if (scoreRange != null) {
-            params.push(`scoreRange=${scoreRange}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}/top`, ...params);
-    }
-    /**
-     * Find device distribution by type filtered by query
-     */
-    countByType(streamId, search, type, status, risk, scoreRange, sort, page, size) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (risk != null) {
-            params.push(`risk=${risk}`);
-        }
-        if (scoreRange != null) {
-            params.push(`scoreRange=${scoreRange}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}/count/by-type`, ...params);
-    }
-    /**
-     * Find device distribution by status filtered by query
-     */
-    countByStatus(streamId, search, type, status, risk, scoreRange, sort, page, size) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (risk != null) {
-            params.push(`risk=${risk}`);
-        }
-        if (scoreRange != null) {
-            params.push(`scoreRange=${scoreRange}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}/count/by-status`, ...params);
-    }
-    /**
-     * Find device distribution by action filtered by query
-     */
-    countByAction(streamId, search, type, status, risk, scoreRange, sort, page, size) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (risk != null) {
-            params.push(`risk=${risk}`);
-        }
-        if (scoreRange != null) {
-            params.push(`scoreRange=${scoreRange}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}/count/by-action`, ...params);
-    }
-    /**
-     * Add tag to a device
-     */
-    addTag(id, tag) {
-        return this.rest.post(`${this.baseUrl}/${id}/tags/${tag}`, '');
-    }
-    /**
-     * Delete a tag from the device
-     */
-    deleteTag(id, tag) {
-        return this.rest.delete(`${this.baseUrl}/${id}/tags/${tag}`);
-    }
-    /**
-     * Apply action on a device
-     */
-    applyAction(id, action) {
-        return this.rest.post(`${this.baseUrl}/${id}/actions/${action}`, '');
-    }
-    /**
-     * Get network map of devices
-     */
-    getNetworkMap(streamId, from, to, type, tag, id, mapType, ips) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (tag != null) {
-            params.push(`tag=${tag}`);
-        }
-        if (id != null) {
-            params.push(`id=${id}`);
-        }
-        if (mapType != null) {
-            params.push(`mapType=${mapType}`);
-        }
-        if (ips != null) {
-            params.push(`ips=${ips}`);
-        }
-        return this.rest.get(`${this.baseUrl}/network-map`, ...params);
-    }
-    /**
-     * Get daily device report over time (daily device report includes: total devices, active devices, devices at risk)
-     */
-    getDeviceReportTimeline(streamId, from, to) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        return this.rest.get(`${this.baseUrl}/report/timeline`, ...params);
-    }
-    /**
-     * Get latest device report, the Key contains latest devices at risk number (works in account level)
-     */
-    getLatestDeviceReport() {
-        return this.rest.get(`${this.baseUrl}/report/latest`);
-    }
-    /**
-     * Get device / group of devices consumption over time
-     */
-    getConsumptionTimeline(streamId, from, to, type, tag, id) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (tag != null) {
-            params.push(`tag=${tag}`);
-        }
-        if (id != null) {
-            params.push(`id=${id}`);
-        }
-        return this.rest.get(`${this.baseUrl}/consumption/timeline`, ...params);
-    }
-    /**
-     * Get device / group of devices consumption over time
-     */
-    getConsumptionTrend(streamId, from, to, type, tag, id) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (tag != null) {
-            params.push(`tag=${tag}`);
-        }
-        if (id != null) {
-            params.push(`id=${id}`);
-        }
-        return this.rest.get(`${this.baseUrl}/consumption/trend`, ...params);
-    }
-    /**
-     * Upload list of devices
-     */
-    uploadDevices(file, streamId, ip, iccid, imsi, msisdn, imei, name, operator, label, tag) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (ip != null) {
-            params.push(`ip=${ip}`);
-        }
-        if (iccid != null) {
-            params.push(`iccid=${iccid}`);
-        }
-        if (imsi != null) {
-            params.push(`imsi=${imsi}`);
-        }
-        if (msisdn != null) {
-            params.push(`msisdn=${msisdn}`);
-        }
-        if (imei != null) {
-            params.push(`imei=${imei}`);
-        }
-        if (name != null) {
-            params.push(`name=${name}`);
-        }
-        if (operator != null) {
-            params.push(`operator=${operator}`);
-        }
-        if (label != null) {
-            params.push(`label=${label}`);
-        }
-        if (tag != null) {
-            params.push(`tag=${tag}`);
-        }
-        return this.rest.upload(file, `${this.baseUrl}/upload`, ...params);
-    }
-    /**
-     * Find list of devices by Insight id query
-     */
-    findByInsightContext(streamId, insightId, sort, page, size) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (insightId != null) {
-            params.push(`insightId=${insightId}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}/find-by-insight-context`, ...params);
-    }
-}
-UsrDevicesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrDevicesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrDevicesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrDevicesService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrDevicesService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () {
-        return [{ type: PulseConfig, decorators: [{
-                        type: Inject,
-                        args: ['config']
-                    }] }, { type: RestUtil }];
-    } });
-
-// List of events related actions for the operator 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class UsrEventsService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/events';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Get single event by id
-     */
-    get(id) {
-        return this.rest.get(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Find list of events by query
-     */
-    find(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size, withoutOccurrences) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (deviceId != null) {
-            params.push(`deviceId=${deviceId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (severity != null) {
-            params.push(`severity=${severity}`);
-        }
-        if (category != null) {
-            params.push(`category=${category}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (ruleId != null) {
-            params.push(`ruleId=${ruleId}`);
-        }
-        if (targetIp != null) {
-            params.push(`targetIp=${targetIp}`);
-        }
-        if (ruleType != null) {
-            params.push(`ruleType=${ruleType}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        if (withoutOccurrences != null) {
-            params.push(`withoutOccurrences=${withoutOccurrences}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-    /**
-     * Export list of events by query to a file with the specified format
-     */
-    exportFormat(format, streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (deviceId != null) {
-            params.push(`deviceId=${deviceId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (severity != null) {
-            params.push(`severity=${severity}`);
-        }
-        if (category != null) {
-            params.push(`category=${category}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (ruleId != null) {
-            params.push(`ruleId=${ruleId}`);
-        }
-        if (targetIp != null) {
-            params.push(`targetIp=${targetIp}`);
-        }
-        if (ruleType != null) {
-            params.push(`ruleType=${ruleType}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.download(`events`, `${this.baseUrl}/export/${format}`, ...params);
-    }
-    /**
-     * Find top 10 events by their severity filter by query
-     */
-    getTop(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size, withoutOccurrences) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (deviceId != null) {
-            params.push(`deviceId=${deviceId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (severity != null) {
-            params.push(`severity=${severity}`);
-        }
-        if (category != null) {
-            params.push(`category=${category}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (ruleId != null) {
-            params.push(`ruleId=${ruleId}`);
-        }
-        if (targetIp != null) {
-            params.push(`targetIp=${targetIp}`);
-        }
-        if (ruleType != null) {
-            params.push(`ruleType=${ruleType}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        if (withoutOccurrences != null) {
-            params.push(`withoutOccurrences=${withoutOccurrences}`);
-        }
-        return this.rest.get(`${this.baseUrl}/top`, ...params);
-    }
-    /**
-     * Get top malicious IPs
-     */
-    getTopMaliciousIPs(streamId, top, from, to) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (top != null) {
-            params.push(`top=${top}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        return this.rest.get(`${this.baseUrl}/top-malicious-ips`, ...params);
-    }
-    /**
-     * Find events distribution by type filtered by query
-     */
-    countByType(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size, withoutOccurrences) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (deviceId != null) {
-            params.push(`deviceId=${deviceId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (severity != null) {
-            params.push(`severity=${severity}`);
-        }
-        if (category != null) {
-            params.push(`category=${category}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (ruleId != null) {
-            params.push(`ruleId=${ruleId}`);
-        }
-        if (targetIp != null) {
-            params.push(`targetIp=${targetIp}`);
-        }
-        if (ruleType != null) {
-            params.push(`ruleType=${ruleType}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        if (withoutOccurrences != null) {
-            params.push(`withoutOccurrences=${withoutOccurrences}`);
-        }
-        return this.rest.get(`${this.baseUrl}/count/by-type`, ...params);
-    }
-    /**
-     * Find events distribution by status filtered by query
-     */
-    countByStatus(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size, withoutOccurrences) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (deviceId != null) {
-            params.push(`deviceId=${deviceId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (severity != null) {
-            params.push(`severity=${severity}`);
-        }
-        if (category != null) {
-            params.push(`category=${category}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (ruleId != null) {
-            params.push(`ruleId=${ruleId}`);
-        }
-        if (targetIp != null) {
-            params.push(`targetIp=${targetIp}`);
-        }
-        if (ruleType != null) {
-            params.push(`ruleType=${ruleType}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        if (withoutOccurrences != null) {
-            params.push(`withoutOccurrences=${withoutOccurrences}`);
-        }
-        return this.rest.get(`${this.baseUrl}/count/by-status`, ...params);
-    }
-    /**
-     * Find events distribution by severity filtered by query
-     */
-    countBySeverity(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size, withoutOccurrences) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (deviceId != null) {
-            params.push(`deviceId=${deviceId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (severity != null) {
-            params.push(`severity=${severity}`);
-        }
-        if (category != null) {
-            params.push(`category=${category}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (ruleId != null) {
-            params.push(`ruleId=${ruleId}`);
-        }
-        if (targetIp != null) {
-            params.push(`targetIp=${targetIp}`);
-        }
-        if (ruleType != null) {
-            params.push(`ruleType=${ruleType}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        if (withoutOccurrences != null) {
-            params.push(`withoutOccurrences=${withoutOccurrences}`);
-        }
-        return this.rest.get(`${this.baseUrl}/count/by-severity`, ...params);
-    }
-    /**
-     * Find events distribution by rule filtered by query
-     */
-    countByRule(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size, withoutOccurrences) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (deviceId != null) {
-            params.push(`deviceId=${deviceId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (severity != null) {
-            params.push(`severity=${severity}`);
-        }
-        if (category != null) {
-            params.push(`category=${category}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (ruleId != null) {
-            params.push(`ruleId=${ruleId}`);
-        }
-        if (targetIp != null) {
-            params.push(`targetIp=${targetIp}`);
-        }
-        if (ruleType != null) {
-            params.push(`ruleType=${ruleType}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        if (withoutOccurrences != null) {
-            params.push(`withoutOccurrences=${withoutOccurrences}`);
-        }
-        return this.rest.get(`${this.baseUrl}/count/by-rule`, ...params);
-    }
-    /**
-     * Find events distribution by category filtered by query
-     */
-    countByCategory(streamId, deviceId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size, withoutOccurrences) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (deviceId != null) {
-            params.push(`deviceId=${deviceId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (severity != null) {
-            params.push(`severity=${severity}`);
-        }
-        if (category != null) {
-            params.push(`category=${category}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (ruleId != null) {
-            params.push(`ruleId=${ruleId}`);
-        }
-        if (targetIp != null) {
-            params.push(`targetIp=${targetIp}`);
-        }
-        if (ruleType != null) {
-            params.push(`ruleType=${ruleType}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        if (withoutOccurrences != null) {
-            params.push(`withoutOccurrences=${withoutOccurrences}`);
-        }
-        return this.rest.get(`${this.baseUrl}/count/by-category`, ...params);
-    }
-    /**
-     * Add tag to an event
-     */
-    addTag(id, tag) {
-        return this.rest.post(`${this.baseUrl}/${id}/tags/${tag}`, '');
-    }
-    /**
-     * Delete a tag from the event
-     */
-    deleteTag(id, tag) {
-        return this.rest.delete(`${this.baseUrl}/${id}/tags/${tag}`);
-    }
-    /**
-     * Apply action on an event
-     */
-    applyAction(id, action) {
-        return this.rest.post(`${this.baseUrl}/${id}/actions/${action}`, '');
-    }
-    /**
-     * Set event status
-     */
-    setStatus(id, status) {
-        return this.rest.post(`${this.baseUrl}/${id}/status/${status}`, '');
-    }
-    /**
-     * Get current shieldex value as ActionResponse, the Key contains the shield index and the data includes the trend
-     */
-    getShieldex() {
-        return this.rest.get(`${this.baseUrl}/shieldex`);
-    }
-    /**
-     * Get histogram of events over time by dimension (type | severity | status | ruleType | category)
-     */
-    eventsTimeline(streamId, deviceId, dimension, from, to, type, severity, category, status, ruleId, targetIp, ruleType, sort, page, size) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (deviceId != null) {
-            params.push(`deviceId=${deviceId}`);
-        }
-        if (dimension != null) {
-            params.push(`dimension=${dimension}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (severity != null) {
-            params.push(`severity=${severity}`);
-        }
-        if (category != null) {
-            params.push(`category=${category}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (ruleId != null) {
-            params.push(`ruleId=${ruleId}`);
-        }
-        if (targetIp != null) {
-            params.push(`targetIp=${targetIp}`);
-        }
-        if (ruleType != null) {
-            params.push(`ruleType=${ruleType}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}/timeline`, ...params);
-    }
-    /**
-     * Get histogram of shieldex values over time
-     */
-    shieldexTimeline(streamId, from, to) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        return this.rest.get(`${this.baseUrl}/shieldex/timeline`, ...params);
-    }
-    /**
-     * Export event source file
-     */
-    exportSource(id, timestamp) {
-        const params = [];
-        if (timestamp != null) {
-            params.push(`timestamp=${timestamp}`);
-        }
-        return this.rest.download(`events`, `${this.baseUrl}/${id}/export_source`, ...params);
-    }
-    /**
-     * Get total number devices at risk (affected by the events matching the query)
-     */
-    getTotalDevicesAtRisk(streamId, search, from, to, type, severity, category, status, ruleId, targetIp, ruleType) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (type != null) {
-            params.push(`type=${type}`);
-        }
-        if (severity != null) {
-            params.push(`severity=${severity}`);
-        }
-        if (category != null) {
-            params.push(`category=${category}`);
-        }
-        if (status != null) {
-            params.push(`status=${status}`);
-        }
-        if (ruleId != null) {
-            params.push(`ruleId=${ruleId}`);
-        }
-        if (targetIp != null) {
-            params.push(`targetIp=${targetIp}`);
-        }
-        if (ruleType != null) {
-            params.push(`ruleType=${ruleType}`);
-        }
-        return this.rest.get(`${this.baseUrl}/devices-at-risk`, ...params);
-    }
-    /**
-     * Get malicious IP data card for specific malicious IP
-     */
-    getMaliciousIpCard(streamId, targetIp, from, to) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (targetIp != null) {
-            params.push(`targetIp=${targetIp}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        return this.rest.get(`${this.baseUrl}/malicious-ip-card`, ...params);
-    }
-    /**
-     * Apply DNS lookup for each IP in the list
-     */
-    getIpLookup(ip) {
-        const params = [];
-        if (ip != null) {
-            params.push(`ip=${ip}`);
-        }
-        return this.rest.get(`${this.baseUrl}/ip-lookup`, ...params);
-    }
-    /**
-     * Find list of events by insight id query
-     */
-    findByInsightContext() {
-        return this.rest.get(`${this.baseUrl}/find-by-insight-context`);
-    }
-}
-UsrEventsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrEventsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrEventsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrEventsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrEventsService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () {
-        return [{ type: PulseConfig, decorators: [{
-                        type: Inject,
-                        args: ['config']
-                    }] }, { type: RestUtil }];
-    } });
-
-// List of events related actions for the operator 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class UsrReportsService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/reports';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Create new report
-     */
-    create(body) {
-        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update existing report in the system
-     */
-    update(body) {
-        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Delete a report from the system
-     */
-    delete(id) {
-        return this.rest.delete(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Get single report by id
-     */
-    get(id) {
-        return this.rest.get(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Find list of reports by query
-     */
-    find(accountId, search, sort, page, size) {
-        const params = [];
-        if (accountId != null) {
-            params.push(`accountId=${accountId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-    /**
-     * Get compliance report
-     */
-    getComplianceReport(streamId, from, to) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        return this.rest.download(`reports`, `${this.baseUrl}/compliance`, ...params);
-    }
-    /**
-     * Get histogram of network activity over time
-     */
-    getNetworkActivityOverTime(streamId, from, to) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        return this.rest.get(`${this.baseUrl}/network-activity-over-time`, ...params);
-    }
-    /**
-     * Get histogram of device distribution by number of destinations
-     */
-    getDeviceDistributionByNumberOfDestinations(streamId, from, to) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        return this.rest.get(`${this.baseUrl}/device-distribution-by-number-of-destinations`, ...params);
-    }
-    /**
-     * Get histogram of device distribution by communication frequency
-     */
-    getDeviceGroupsByCommunicationFrequency(streamId, from, to) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        return this.rest.get(`${this.baseUrl}/device-groups-by-communication-frequency`, ...params);
-    }
-}
-UsrReportsService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrReportsService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrReportsService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrReportsService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrReportsService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () {
-        return [{ type: PulseConfig, decorators: [{
-                        type: Inject,
-                        args: ['config']
-                    }] }, { type: RestUtil }];
-    } });
-
-// List of rules related actions 
-// @RequestHeader X-API-KEY The key to identify the application (console) 
-// @RequestHeader X-ACCESS-TOKEN The token to identify the logged-in user 
-class UsrRulesService {
-    // Class constructor
-    constructor(config, rest) {
-        this.config = config;
-        this.rest = rest;
-        // URL to web api
-        this.baseUrl = '/rules';
-        this.baseUrl = this.config.api + this.baseUrl;
-    }
-    /**
-     * Create new rule
-     */
-    create(body) {
-        return this.rest.put(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Update existing rule in the system
-     */
-    update(body) {
-        return this.rest.patch(`${this.baseUrl}`, typeof body === 'object' ? JSON.stringify(body) : body);
-    }
-    /**
-     * Delete a rule from the system
-     */
-    delete(id) {
-        return this.rest.delete(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Get single rule by id
-     */
-    get(id) {
-        return this.rest.get(`${this.baseUrl}/${id}`);
-    }
-    /**
-     * Find list of rules by query
-     */
-    find(streamId, search, sort, page, size) {
-        const params = [];
-        if (streamId != null) {
-            params.push(`streamId=${streamId}`);
-        }
-        if (search != null) {
-            params.push(`search=${search}`);
-        }
-        if (sort != null) {
-            params.push(`sort=${sort}`);
-        }
-        if (page != null) {
-            params.push(`page=${page}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.get(`${this.baseUrl}`, ...params);
-    }
-    /**
-     * Analyze rule configuration against historic data
-     */
-    analyze(from, to, interval, size, body) {
-        const params = [];
-        if (from != null) {
-            params.push(`from=${from}`);
-        }
-        if (to != null) {
-            params.push(`to=${to}`);
-        }
-        if (interval != null) {
-            params.push(`interval=${interval}`);
-        }
-        if (size != null) {
-            params.push(`size=${size}`);
-        }
-        return this.rest.post(`${this.baseUrl}/analyze`, typeof body === 'object' ? JSON.stringify(body) : body, ...params);
-    }
-}
-UsrRulesService.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrRulesService, deps: [{ token: 'config' }, { token: RestUtil }], target: i0.ɵɵFactoryTarget.Injectable });
-UsrRulesService.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrRulesService });
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.10", ngImport: i0, type: UsrRulesService, decorators: [{
-            type: Injectable
-        }], ctorParameters: function () {
-        return [{ type: PulseConfig, decorators: [{
-                        type: Inject,
-                        args: ['config']
-                    }] }, { type: RestUtil }];
-    } });
-
 const Services = [
+    UsrDevicesService,
+    UsrEventsService,
+    UsrReportsService,
+    UsrRulesService,
     SysAccountsService,
     SysAuditLogService,
     SysCheckpointsService,
@@ -2862,10 +2866,6 @@ const Services = [
     UsrIntegrationsService,
     UsrMembersService,
     UsrUserService,
-    UsrDevicesService,
-    UsrEventsService,
-    UsrReportsService,
-    UsrRulesService,
 ];
 
 class NgxPulseLibModule {
