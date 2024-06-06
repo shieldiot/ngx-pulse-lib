@@ -5,4 +5,5 @@ export declare class DeviceReport extends BaseEntity {
     totalDevices: number;
     activeDevices: number;
     devicesAtRisk: number;
+    affectedDevices: number;
 }

@@ -37,6 +37,7 @@ export * from './SessionRecord';
 export * from './Shieldex';
 export * from './Stream';
 export * from './StreamConfig';
+export * from './TeaserPopUpSettings';
 export * from './TimeSeriesOfDeviceReport';
 export * from './UsageRecord';
 export * from './User';

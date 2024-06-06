@@ -1,12 +1,12 @@
-import { BaseEntity } from '../entities/BaseEntity';
 import { EventTypeCode } from '../enums/EventTypeCode';
 import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { RuleTypeCode } from '../enums/RuleTypeCode';
+import { GeoData } from '../common/GeoData';
+import { TrafficDirectionCode } from '../enums/TrafficDirectionCode';
+import { BaseEntity } from '../entities/BaseEntity';
 import { EventStatusCode } from '../enums/EventStatusCode';
 import { Indicator } from '../common/Indicator';
-import { RuleTypeCode } from '../enums/RuleTypeCode';
 import { StringKeyValue } from '../common/StringKeyValue';
-import { TrafficDirectionCode } from '../enums/TrafficDirectionCode';
-import { GeoData } from '../common/GeoData';
 import { EventCategoryCode } from '../enums/EventCategoryCode';
 import { EventOccurrence } from '../entities/EventOccurrence';
 export declare class Event extends BaseEntity {
