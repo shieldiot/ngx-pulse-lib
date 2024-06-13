@@ -1,17 +1,18 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { TimeSeriesOfDeviceReport } from '../entities/TimeSeriesOfDeviceReport';
-import { Device } from '../entities/Device';
-import { DeviceTypeCode } from '../enums/DeviceTypeCode';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
-import { IntDistribution } from '../entities/IntDistribution';
 import { DeviceActionCode } from '../enums/DeviceActionCode';
 import { NetworkMapTypeCode } from '../enums/NetworkMapTypeCode';
-import { NetworkMap } from '../common/NetworkMap';
-import { TimeSeriesOfDataConsumption } from '../common/TimeSeriesOfDataConsumption';
 import { DeviceStatusCode } from '../enums/DeviceStatusCode';
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { DeviceWithEvents } from '../entities/DeviceWithEvents';
+import { IntDistribution } from '../entities/IntDistribution';
+import { NetworkMap } from '../common/NetworkMap';
+import { TimeSeriesOfDeviceReport } from '../entities/TimeSeriesOfDeviceReport';
 import { DeviceReport } from '../entities/DeviceReport';
+import { TimeSeriesOfDataConsumption } from '../common/TimeSeriesOfDataConsumption';
+import { Device } from '../entities/Device';
+import { BulkDevices } from '../entities/BulkDevices';
+import { DeviceTypeCode } from '../enums/DeviceTypeCode';
 import * as i0 from "@angular/core";
 export declare class UsrDevicesService {
     private config;
@@ -21,11 +22,19 @@ export declare class UsrDevicesService {
     /**
      * Create new device
      */
-    create(): import("rxjs").Observable<EntityResponse<Device>>;
+    create(body?: Device): import("rxjs").Observable<EntityResponse<Device>>;
+    /**
+     * Create bulk of new device, returns list of inserted items
+     */
+    bulkCreate(body?: BulkDevices): import("rxjs").Observable<EntitiesResponse<Device>>;
     /**
      * Update existing device in the system
      */
     update(body?: Device): import("rxjs").Observable<EntityResponse<Device>>;
+    /**
+     * Update bulk of device, returns list of updated items
+     */
+    bulkUpdate(body?: BulkDevices): import("rxjs").Observable<EntitiesResponse<Device>>;
     /**
      * Delete device from the system
      */
