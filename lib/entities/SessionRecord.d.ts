@@ -5,21 +5,18 @@ export declare class SessionRecord extends BaseEntity {
     accountId: string;
     streamId: string;
     deviceId: string;
-    deviceIp: string;
+    simId: string;
     startTime: number;
     endTime: number;
-    srcIP: string;
-    srcPort: number;
+    deviceIp: string;
+    devicePort: number;
     dstIP: string;
     dstPort: number;
+    dstDns: string;
     protocol: string;
     packetsIn: number;
     packetsOut: number;
     bytesIn: number;
     bytesOut: number;
     labels: string[];
-    zPacketsIn: number;
-    zPacketsOut: number;
-    zBytesIn: number;
-    zBytesOut: number;
 }
