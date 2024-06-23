@@ -15,7 +15,9 @@ export declare class UsageRecord extends BaseEntity {
     endpointsList: string[];
     endpointsCount: number;
     srcEndpoints: string[];
+    srcEndpointsCount: number;
     dstEndpoints: string[];
+    dstEndpointsCount: number;
     packetsIn: number;
     packetsOut: number;
     bytesIn: number;
