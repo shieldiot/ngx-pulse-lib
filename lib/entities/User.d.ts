@@ -12,4 +12,5 @@ export declare class User extends BaseEntity {
     defaultAccount: string;
     lastSignIn: number;
     labels: StringKeyValue[];
+    groups: string;
 }
