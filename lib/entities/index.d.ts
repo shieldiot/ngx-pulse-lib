@@ -11,6 +11,7 @@ export * from './BulkDevices';
 export * from './Checkpoint';
 export * from './ComplianceReportSettings';
 export * from './Condition';
+export * from './ConfigParam';
 export * from './DNSRecord';
 export * from './DataIngestion';
 export * from './DataPointOfDeviceReport';
