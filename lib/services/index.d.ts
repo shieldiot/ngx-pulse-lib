@@ -3,6 +3,7 @@ export * from './sysAccountsService';
 export * from './sysAuditLogService';
 export * from './sysCheckpointsService';
 export * from './sysFeaturesService';
+export * from './sysGroupsService';
 export * from './sysInsightsService';
 export * from './sysKeysService';
 export * from './sysMembersService';

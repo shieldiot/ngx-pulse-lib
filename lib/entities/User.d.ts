@@ -1,7 +1,7 @@
-import { StringKeyValue } from '../common/StringKeyValue';
-import { BaseEntity } from '../entities/BaseEntity';
 import { UserTypeCode } from '../enums/UserTypeCode';
 import { UserStatusCode } from '../enums/UserStatusCode';
+import { StringKeyValue } from '../common/StringKeyValue';
+import { BaseEntity } from '../entities/BaseEntity';
 export declare class User extends BaseEntity {
     name: string;
     externalId: string;
