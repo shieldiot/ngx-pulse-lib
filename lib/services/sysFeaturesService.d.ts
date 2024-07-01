@@ -1,8 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { FeaturesGroup } from '../entities/FeaturesGroup';
 import { Feature } from '../entities/Feature';
-import { Group } from '../entities/Group';
+import { FeaturesGroup } from '../entities/FeaturesGroup';
 import * as i0 from "@angular/core";
 export declare class SysFeaturesService {
     private config;
@@ -16,11 +15,11 @@ export declare class SysFeaturesService {
     /**
      * Create new features group
      */
-    createFeaturesGroup(body?: Group): import("rxjs").Observable<EntityResponse<FeaturesGroup>>;
+    createFeaturesGroup(body?: FeaturesGroup): import("rxjs").Observable<EntityResponse<FeaturesGroup>>;
     /**
      * Update existing features group
      */
-    updateFeaturesGroup(body?: Group): import("rxjs").Observable<EntityResponse<FeaturesGroup>>;
+    updateFeaturesGroup(body?: FeaturesGroup): import("rxjs").Observable<EntityResponse<FeaturesGroup>>;
     /**
      * Delete features group from the system
      */
