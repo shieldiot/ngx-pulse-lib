@@ -1,10 +1,10 @@
-import { EventTypeCode } from '../enums/EventTypeCode';
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { EventStatusCode } from '../enums/EventStatusCode';
 import { StringKeyValue } from '../common/StringKeyValue';
-import { TrafficDirectionCode } from '../enums/TrafficDirectionCode';
 import { Device } from '../entities/Device';
+import { TrafficDirectionCode } from '../enums/TrafficDirectionCode';
 import { BaseEntity } from '../entities/BaseEntity';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { EventTypeCode } from '../enums/EventTypeCode';
 import { RuleTypeCode } from '../enums/RuleTypeCode';
 import { GeoData } from '../common/GeoData';
 import { EventCategoryCode } from '../enums/EventCategoryCode';

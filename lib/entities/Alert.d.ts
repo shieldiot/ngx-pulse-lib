@@ -1,14 +1,12 @@
-import { EventStatusCode } from '../enums/EventStatusCode';
-import { Indicator } from '../common/Indicator';
-import { StringKeyValue } from '../common/StringKeyValue';
-import { TrafficDirectionCode } from '../enums/TrafficDirectionCode';
-import { BaseEntity } from '../entities/BaseEntity';
 import { EventTypeCode } from '../enums/EventTypeCode';
 import { SeverityTypeCode } from '../enums/SeverityTypeCode';
-import { RuleTypeCode } from '../enums/RuleTypeCode';
 import { GeoData } from '../common/GeoData';
+import { StringKeyValue } from '../common/StringKeyValue';
 import { EventCategoryCode } from '../enums/EventCategoryCode';
-import { EventOccurrence } from '../entities/EventOccurrence';
+import { EventStatusCode } from '../enums/EventStatusCode';
+import { RuleTypeCode } from '../enums/RuleTypeCode';
+import { TrafficDirectionCode } from '../enums/TrafficDirectionCode';
+import { BaseEntity } from '../entities/BaseEntity';
 export declare class Alert extends BaseEntity {
     accountId: string;
     streamId: string;
@@ -20,7 +18,6 @@ export declare class Alert extends BaseEntity {
     score: number;
     probability: number;
     status: EventStatusCode;
-    indicators: Indicator[];
     ruleType: RuleTypeCode;
     ruleId: string;
     sourceIp: string;
@@ -31,7 +28,6 @@ export declare class Alert extends BaseEntity {
     labels: StringKeyValue[];
     category: EventCategoryCode;
     recommendedAction: string;
-    occurrences: EventOccurrence[];
     trafficDirection: TrafficDirectionCode;
     confidenceScore: number;
     occurrencesCount: boolean;

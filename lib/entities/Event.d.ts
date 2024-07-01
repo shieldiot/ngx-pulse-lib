@@ -1,12 +1,14 @@
-import { EventTypeCode } from '../enums/EventTypeCode';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
-import { GeoData } from '../common/GeoData';
 import { EventStatusCode } from '../enums/EventStatusCode';
-import { RuleTypeCode } from '../enums/RuleTypeCode';
+import { Indicator } from '../common/Indicator';
+import { GeoData } from '../common/GeoData';
 import { StringKeyValue } from '../common/StringKeyValue';
 import { EventCategoryCode } from '../enums/EventCategoryCode';
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { RuleTypeCode } from '../enums/RuleTypeCode';
+import { EventOccurrence } from '../entities/EventOccurrence';
 import { TrafficDirectionCode } from '../enums/TrafficDirectionCode';
 import { BaseEntity } from '../entities/BaseEntity';
+import { EventTypeCode } from '../enums/EventTypeCode';
 export declare class Event extends BaseEntity {
     accountId: string;
     streamId: string;
@@ -18,6 +20,7 @@ export declare class Event extends BaseEntity {
     score: number;
     probability: number;
     status: EventStatusCode;
+    indicators: Indicator[];
     ruleType: RuleTypeCode;
     ruleId: string;
     sourceIp: string;
@@ -28,6 +31,7 @@ export declare class Event extends BaseEntity {
     labels: StringKeyValue[];
     category: EventCategoryCode;
     recommendedAction: string;
+    occurrences: EventOccurrence[];
     trafficDirection: TrafficDirectionCode;
     confidenceScore: number;
     occurrencesCount: boolean;
