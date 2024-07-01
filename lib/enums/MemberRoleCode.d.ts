@@ -1,8 +1,8 @@
 export declare enum MemberRoleCode {
     UNDEFINED = 0,
     ADMIN = 1,
-    OPERATOR = 2,
-    VIEWER = 3,
-    REGULATORY = 4
+    SUPERVISOR = 2,
+    OPERATOR = 3,
+    VIEWER = 4
 }
 export declare function GetMemberRoleCodes(): Map<MemberRoleCode, string>;

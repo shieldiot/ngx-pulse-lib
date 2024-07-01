@@ -41,6 +41,7 @@ export * from './ServiceStatus';
 export * from './SessionRecord';
 export * from './Shieldex';
 export * from './Stream';
+export * from './StreamAnalyticsConfig';
 export * from './StreamConfig';
 export * from './TeaserPopUpSettings';
 export * from './TimeSeriesOfDeviceReport';

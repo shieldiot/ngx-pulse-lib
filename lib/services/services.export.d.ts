@@ -1,6 +1,8 @@
+import { SupportStreamAnalyticsConfig } from './supportStreamAnalyticsConfig';
 import { SysAccountsService } from './sysAccountsService';
 import { SysAuditLogService } from './sysAuditLogService';
 import { SysCheckpointsService } from './sysCheckpointsService';
+import { SysConfigService } from './sysConfigService';
 import { SysFeaturesService } from './sysFeaturesService';
 import { SysGroupsService } from './sysGroupsService';
 import { SysInsightsService } from './sysInsightsService';
@@ -20,4 +22,4 @@ import { UsrEventsService } from './usrEventsService';
 import { UsrNetworkService } from './usrNetworkService';
 import { UsrReportsService } from './usrReportsService';
 import { UsrRulesService } from './usrRulesService';
-export declare const Services: (typeof SysAccountsService | typeof SysAuditLogService | typeof SysCheckpointsService | typeof SysFeaturesService | typeof SysGroupsService | typeof SysInsightsService | typeof SysKeysService | typeof SysMembersService | typeof SysRuleTemplatesService | typeof SysRulesService | typeof SysStatisticsService | typeof SysStreamsService | typeof SysUsersService | typeof UsrInsightsService | typeof UsrIntegrationsService | typeof UsrMembersService | typeof UsrUserService | typeof UsrDevicesService | typeof UsrEventsService | typeof UsrNetworkService | typeof UsrReportsService | typeof UsrRulesService)[];
+export declare const Services: (typeof SupportStreamAnalyticsConfig | typeof SysAccountsService | typeof SysAuditLogService | typeof SysCheckpointsService | typeof SysConfigService | typeof SysFeaturesService | typeof SysGroupsService | typeof SysInsightsService | typeof SysKeysService | typeof SysMembersService | typeof SysRuleTemplatesService | typeof SysRulesService | typeof SysStatisticsService | typeof SysStreamsService | typeof SysUsersService | typeof UsrInsightsService | typeof UsrIntegrationsService | typeof UsrMembersService | typeof UsrUserService | typeof UsrDevicesService | typeof UsrEventsService | typeof UsrNetworkService | typeof UsrReportsService | typeof UsrRulesService)[];
