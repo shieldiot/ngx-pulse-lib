@@ -14,6 +14,7 @@ export * from './sysRulesService';
 export * from './sysStatisticsService';
 export * from './sysStreamsService';
 export * from './sysUsersService';
+export * from './usrAlertsService';
 export * from './usrDevicesService';
 export * from './usrEventsService';
 export * from './usrInsightsService';
