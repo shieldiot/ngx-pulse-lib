@@ -1,19 +1,19 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { EventCategoryCode } from '../enums/EventCategoryCode';
+import { DeviceActionCode } from '../enums/DeviceActionCode';
+import { StringKeyValue } from '../common/StringKeyValue';
+import { Alert } from '../entities/Alert';
+import { RuleTypeCode } from '../enums/RuleTypeCode';
+import { TimeSeriesOf2D } from '../common/TimeSeriesOf2D';
 import { TimeSeriesOfFloat } from '../common/TimeSeriesOfFloat';
 import { MaliciousIPCard } from '../common/MaliciousIPCard';
-import { EventTypeCode } from '../enums/EventTypeCode';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { EventStatusCode } from '../enums/EventStatusCode';
-import { RuleTypeCode } from '../enums/RuleTypeCode';
-import { IntDistribution } from '../entities/IntDistribution';
-import { TimeSeriesOf2D } from '../common/TimeSeriesOf2D';
-import { StringKeyValue } from '../common/StringKeyValue';
-import { DeviceActionCode } from '../enums/DeviceActionCode';
-import { Alert } from '../entities/Alert';
-import { EventCategoryCode } from '../enums/EventCategoryCode';
-import { AlertWithDevice } from '../entities/AlertWithDevice';
 import { MaliciousIPData } from '../common/MaliciousIPData';
+import { IntDistribution } from '../entities/IntDistribution';
+import { EventTypeCode } from '../enums/EventTypeCode';
+import { AlertWithDevice } from '../entities/AlertWithDevice';
 import * as i0 from "@angular/core";
 export declare class UsrAlertsService {
     private config;
@@ -91,7 +91,7 @@ export declare class UsrAlertsService {
     /**
      * Export alert source file
      */
-    exportSource(id?: string, timestamp?: number): import("rxjs").Observable<import("@angular/common/http").HttpEvent<Blob>>;
+    exportSource(id?: string): import("rxjs").Observable<import("@angular/common/http").HttpEvent<Blob>>;
     /**
      * Get total number devices at risk (affected by the alerts matching the query)
      */
