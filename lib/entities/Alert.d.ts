@@ -1,12 +1,12 @@
-import { EventCategoryCode } from '../enums/EventCategoryCode';
-import { TrafficDirectionCode } from '../enums/TrafficDirectionCode';
-import { BaseEntity } from '../entities/BaseEntity';
+import { EventTypeCode } from '../enums/EventTypeCode';
 import { EventStatusCode } from '../enums/EventStatusCode';
+import { TrafficDirectionCode } from '../enums/TrafficDirectionCode';
+import { EventCategoryCode } from '../enums/EventCategoryCode';
+import { BaseEntity } from '../entities/BaseEntity';
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 import { RuleTypeCode } from '../enums/RuleTypeCode';
 import { GeoData } from '../common/GeoData';
 import { StringKeyValue } from '../common/StringKeyValue';
-import { EventTypeCode } from '../enums/EventTypeCode';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
 export declare class Alert extends BaseEntity {
     accountId: string;
     streamId: string;

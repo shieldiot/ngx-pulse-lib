@@ -1,18 +1,18 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { EventCategoryCode } from '../enums/EventCategoryCode';
+import { TimeSeriesOfFloat } from '../common/TimeSeriesOfFloat';
+import { EventTypeCode } from '../enums/EventTypeCode';
+import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { TimeSeriesOf2D } from '../common/TimeSeriesOf2D';
+import { RuleTypeCode } from '../enums/RuleTypeCode';
 import { EventWithDevice } from '../entities/EventWithDevice';
 import { MaliciousIPData } from '../common/MaliciousIPData';
 import { IntDistribution } from '../entities/IntDistribution';
 import { MaliciousIPCard } from '../common/MaliciousIPCard';
-import { TimeSeriesOfFloat } from '../common/TimeSeriesOfFloat';
-import { StringKeyValue } from '../common/StringKeyValue';
 import { Event } from '../entities/Event';
-import { EventTypeCode } from '../enums/EventTypeCode';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { EventCategoryCode } from '../enums/EventCategoryCode';
 import { EventStatusCode } from '../enums/EventStatusCode';
-import { RuleTypeCode } from '../enums/RuleTypeCode';
-import { TimeSeriesOf2D } from '../common/TimeSeriesOf2D';
+import { StringKeyValue } from '../common/StringKeyValue';
 import * as i0 from "@angular/core";
 export declare class UsrEventsService {
     private config;
@@ -26,7 +26,7 @@ export declare class UsrEventsService {
     /**
      * Find list of events by query
      */
-    find(streamId?: string, deviceId?: string, alertId?: string, search?: string, from?: number, to?: number, type?: EventTypeCode[], severity?: SeverityTypeCode[], category?: EventCategoryCode[], status?: EventStatusCode[], ruleId?: string[], targetIp?: string, ruleType?: RuleTypeCode[], sort?: string, page?: number, size?: number, withoutOccurrences?: boolean): import("rxjs").Observable<EntitiesResponse<Event>>;
+    find(streamId?: string, deviceId?: string, alertId?: string, search?: string, from?: number, to?: number, type?: EventTypeCode[], severity?: SeverityTypeCode[], category?: EventCategoryCode[], status?: EventStatusCode[], ruleId?: string[], targetIp?: string, ruleType?: RuleTypeCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<Event>>;
     /**
      * Export list of events by query to a file with the specified format
      */
@@ -34,7 +34,7 @@ export declare class UsrEventsService {
     /**
      * Find top 10 events by their severity filter by query
      */
-    getTop(streamId?: string, deviceId?: string, alertId?: string, search?: string, from?: number, to?: number, type?: EventTypeCode[], severity?: SeverityTypeCode[], category?: EventCategoryCode[], status?: EventStatusCode[], ruleId?: string[], targetIp?: string, ruleType?: RuleTypeCode[], sort?: string, page?: number, size?: number, withoutOccurrences?: boolean): import("rxjs").Observable<EntitiesResponse<EventWithDevice>>;
+    getTop(streamId?: string, deviceId?: string, alertId?: string, search?: string, from?: number, to?: number, type?: EventTypeCode[], severity?: SeverityTypeCode[], category?: EventCategoryCode[], status?: EventStatusCode[], ruleId?: string[], targetIp?: string, ruleType?: RuleTypeCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<EventWithDevice>>;
     /**
      * Get top malicious IPs
      */
@@ -42,23 +42,23 @@ export declare class UsrEventsService {
     /**
      * Find events distribution by type filtered by query
      */
-    countByType(streamId?: string, deviceId?: string, alertId?: string, search?: string, from?: number, to?: number, type?: EventTypeCode[], severity?: SeverityTypeCode[], category?: EventCategoryCode[], status?: EventStatusCode[], ruleId?: string[], targetIp?: string, ruleType?: RuleTypeCode[], sort?: string, page?: number, size?: number, withoutOccurrences?: boolean): import("rxjs").Observable<EntityResponse<IntDistribution>>;
+    countByType(streamId?: string, deviceId?: string, alertId?: string, search?: string, from?: number, to?: number, type?: EventTypeCode[], severity?: SeverityTypeCode[], category?: EventCategoryCode[], status?: EventStatusCode[], ruleId?: string[], targetIp?: string, ruleType?: RuleTypeCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntityResponse<IntDistribution>>;
     /**
      * Find events distribution by status filtered by query
      */
-    countByStatus(streamId?: string, deviceId?: string, alertId?: string, search?: string, from?: number, to?: number, type?: EventTypeCode[], severity?: SeverityTypeCode[], category?: EventCategoryCode[], status?: EventStatusCode[], ruleId?: string[], targetIp?: string, ruleType?: RuleTypeCode[], sort?: string, page?: number, size?: number, withoutOccurrences?: boolean): import("rxjs").Observable<EntityResponse<IntDistribution>>;
+    countByStatus(streamId?: string, deviceId?: string, alertId?: string, search?: string, from?: number, to?: number, type?: EventTypeCode[], severity?: SeverityTypeCode[], category?: EventCategoryCode[], status?: EventStatusCode[], ruleId?: string[], targetIp?: string, ruleType?: RuleTypeCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntityResponse<IntDistribution>>;
     /**
      * Find events distribution by severity filtered by query
      */
-    countBySeverity(streamId?: string, deviceId?: string, alertId?: string, search?: string, from?: number, to?: number, type?: EventTypeCode[], severity?: SeverityTypeCode[], category?: EventCategoryCode[], status?: EventStatusCode[], ruleId?: string[], targetIp?: string, ruleType?: RuleTypeCode[], sort?: string, page?: number, size?: number, withoutOccurrences?: boolean): import("rxjs").Observable<EntityResponse<IntDistribution>>;
+    countBySeverity(streamId?: string, deviceId?: string, alertId?: string, search?: string, from?: number, to?: number, type?: EventTypeCode[], severity?: SeverityTypeCode[], category?: EventCategoryCode[], status?: EventStatusCode[], ruleId?: string[], targetIp?: string, ruleType?: RuleTypeCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntityResponse<IntDistribution>>;
     /**
      * Find events distribution by rule filtered by query
      */
-    countByRule(streamId?: string, deviceId?: string, alertId?: string, search?: string, from?: number, to?: number, type?: EventTypeCode[], severity?: SeverityTypeCode[], category?: EventCategoryCode[], status?: EventStatusCode[], ruleId?: string[], targetIp?: string, ruleType?: RuleTypeCode[], sort?: string, page?: number, size?: number, withoutOccurrences?: boolean): import("rxjs").Observable<EntityResponse<IntDistribution>>;
+    countByRule(streamId?: string, deviceId?: string, alertId?: string, search?: string, from?: number, to?: number, type?: EventTypeCode[], severity?: SeverityTypeCode[], category?: EventCategoryCode[], status?: EventStatusCode[], ruleId?: string[], targetIp?: string, ruleType?: RuleTypeCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntityResponse<IntDistribution>>;
     /**
      * Find events distribution by category filtered by query
      */
-    countByCategory(streamId?: string, deviceId?: string, alertId?: string, search?: string, from?: number, to?: number, type?: EventTypeCode[], severity?: SeverityTypeCode[], category?: EventCategoryCode[], status?: EventStatusCode[], ruleId?: string[], targetIp?: string, ruleType?: RuleTypeCode[], sort?: string, page?: number, size?: number, withoutOccurrences?: boolean): import("rxjs").Observable<EntityResponse<IntDistribution>>;
+    countByCategory(streamId?: string, deviceId?: string, alertId?: string, search?: string, from?: number, to?: number, type?: EventTypeCode[], severity?: SeverityTypeCode[], category?: EventCategoryCode[], status?: EventStatusCode[], ruleId?: string[], targetIp?: string, ruleType?: RuleTypeCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntityResponse<IntDistribution>>;
     /**
      * Get current shieldex value as ActionResponse, the Key contains the shield index and the data includes the trend
      */
@@ -74,7 +74,7 @@ export declare class UsrEventsService {
     /**
      * Export event source file
      */
-    exportSource(id?: string, timestamp?: number): import("rxjs").Observable<import("@angular/common/http").HttpEvent<Blob>>;
+    exportSource(id?: string): import("rxjs").Observable<import("@angular/common/http").HttpEvent<Blob>>;
     /**
      * Get total number devices at risk (affected by the events matching the query)
      */
