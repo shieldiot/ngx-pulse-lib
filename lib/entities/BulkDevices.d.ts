@@ -1,4 +1,4 @@
-import { Device } from '../entities/Device';
+import { Device } from '../entities';
 export declare class BulkDevices {
     values: Device[];
     constructor(values?: Device[]);

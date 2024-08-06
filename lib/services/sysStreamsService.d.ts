@@ -1,6 +1,6 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { Stream } from '../entities/Stream';
+import { Stream } from '../entities';
 import * as i0 from "@angular/core";
 export declare class SysStreamsService {
     private config;

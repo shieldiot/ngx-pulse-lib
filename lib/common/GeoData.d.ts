@@ -1,4 +1,4 @@
-import { Location } from '../common/Location';
+import { Location } from '../common';
 export declare class GeoData {
     country_iso_code: string;
     country_name: string;

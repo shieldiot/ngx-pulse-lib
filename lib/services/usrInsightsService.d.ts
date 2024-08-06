@@ -1,6 +1,6 @@
 import { RestUtil, EntitiesResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { Insight } from '../entities/Insight';
+import { Insight } from '../entities';
 import * as i0 from "@angular/core";
 export declare class UsrInsightsService {
     private config;

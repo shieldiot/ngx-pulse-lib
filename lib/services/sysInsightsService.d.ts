@@ -1,7 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { InsightQuery } from '../entities/InsightQuery';
-import { InsightSpec } from '../entities/InsightSpec';
+import { InsightQuery } from '../entities';
+import { InsightSpec } from '../entities';
 import * as i0 from "@angular/core";
 export declare class SysInsightsService {
     private config;

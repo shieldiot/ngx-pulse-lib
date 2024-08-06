@@ -6,7 +6,6 @@ export * from './Alert';
 export * from './AlertWithDevice';
 export * from './ApiKey';
 export * from './AuditLog';
-export * from './BaseEntity';
 export * from './BulkDevices';
 export * from './Checkpoint';
 export * from './ComplianceReportSettings';

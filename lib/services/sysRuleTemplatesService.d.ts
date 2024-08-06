@@ -1,6 +1,6 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { RuleTemplate } from '../entities/RuleTemplate';
+import { RuleTemplate } from '../entities';
 import * as i0 from "@angular/core";
 export declare class SysRuleTemplatesService {
     private config;

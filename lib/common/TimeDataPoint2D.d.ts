@@ -1,4 +1,4 @@
-import { FloatKeyValue } from '../common/FloatKeyValue';
+import { FloatKeyValue } from '../common';
 export declare class TimeDataPoint2D {
     timestamp: number;
     value: FloatKeyValue[];

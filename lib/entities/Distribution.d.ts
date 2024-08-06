@@ -1,4 +1,4 @@
-import { Tuple } from '../common/Tuple';
+import { Tuple } from '../common';
 export declare class Distribution {
     name: string;
     total: number;

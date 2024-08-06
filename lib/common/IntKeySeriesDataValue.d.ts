@@ -1,4 +1,4 @@
-import { SeriesData } from '../common/SeriesData';
+import { SeriesData } from '../common';
 export declare class IntKeySeriesDataValue {
     key: number;
     value: SeriesData;

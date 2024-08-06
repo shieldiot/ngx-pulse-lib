@@ -1,0 +1,9 @@
+// BulkDevices list of devices for bulk operations
+export class BulkDevices {
+    constructor(values) {
+        if (values !== undefined) {
+            this.values = values;
+        }
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQnVsa0RldmljZXMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9uZ3gtcHVsc2UtbGliL3NyYy9saWIvZW50aXRpZXMvQnVsa0RldmljZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBSUEsa0RBQWtEO0FBQ2xELE1BQU0sT0FBTyxXQUFXO0lBS25CLFlBQVksTUFBaUI7UUFDMUIsSUFBSSxNQUFNLEtBQUssU0FBUyxFQUFFO1lBQUUsSUFBSSxDQUFDLE1BQU0sR0FBRyxNQUFNLENBQUM7U0FBRTtJQUN2RCxDQUFDO0NBRUoiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBEZXZpY2UgfSBmcm9tICcuLi9lbnRpdGllcyc7XG5cblxuXG4vLyBCdWxrRGV2aWNlcyBsaXN0IG9mIGRldmljZXMgZm9yIGJ1bGsgb3BlcmF0aW9uc1xuZXhwb3J0IGNsYXNzIEJ1bGtEZXZpY2VzIHtcbiBcbiAgICAvLyBMaXN0IG9mIGRldmljZXMgXG4gICAgcHVibGljIHZhbHVlczogRGV2aWNlW107XG4gXG4gICAgIGNvbnN0cnVjdG9yKHZhbHVlcz86IERldmljZVtdKSB7IFxuICAgICAgICBpZiAodmFsdWVzICE9PSB1bmRlZmluZWQpIHsgdGhpcy52YWx1ZXMgPSB2YWx1ZXM7IH1cbiAgICB9XG5cbn1cblxuXG4iXX0=

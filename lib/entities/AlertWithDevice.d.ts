@@ -1,13 +1,13 @@
-import { EventStatusCode } from '../enums/EventStatusCode';
-import { RuleTypeCode } from '../enums/RuleTypeCode';
-import { GeoData } from '../common/GeoData';
-import { EventCategoryCode } from '../enums/EventCategoryCode';
-import { TrafficDirectionCode } from '../enums/TrafficDirectionCode';
-import { Device } from '../entities/Device';
-import { BaseEntity } from '../entities/BaseEntity';
-import { EventTypeCode } from '../enums/EventTypeCode';
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
-import { StringKeyValue } from '../common/StringKeyValue';
+import { SeverityTypeCode } from '../enums';
+import { Device } from '../entities';
+import { GeoData } from '../common';
+import { StringKeyValue } from '../common';
+import { EventCategoryCode } from '../enums';
+import { TrafficDirectionCode } from '../enums';
+import { BaseEntity } from '../base';
+import { EventTypeCode } from '../enums';
+import { EventStatusCode } from '../enums';
+import { RuleTypeCode } from '../enums';
 export declare class AlertWithDevice extends BaseEntity {
     accountId: string;
     streamId: string;

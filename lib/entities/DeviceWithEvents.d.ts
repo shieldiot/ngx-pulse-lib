@@ -1,10 +1,10 @@
-import { DeviceActionCode } from '../enums/DeviceActionCode';
-import { SIM } from '../entities/SIM';
-import { Event } from '../entities/Event';
-import { BaseEntity } from '../entities/BaseEntity';
-import { DeviceTypeCode } from '../enums/DeviceTypeCode';
-import { DeviceStatusCode } from '../enums/DeviceStatusCode';
-import { StringKeyValue } from '../common/StringKeyValue';
+import { Event } from '../entities';
+import { BaseEntity } from '../base';
+import { DeviceTypeCode } from '../enums';
+import { DeviceStatusCode } from '../enums';
+import { StringKeyValue } from '../common';
+import { DeviceActionCode } from '../enums';
+import { SIM } from '../entities';
 export declare class DeviceWithEvents extends BaseEntity {
     accountId: string;
     streamId: string;

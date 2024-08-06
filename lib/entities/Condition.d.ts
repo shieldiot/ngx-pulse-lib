@@ -1,4 +1,4 @@
-import { OperatorCode } from '../enums/OperatorCode';
+import { OperatorCode } from '../enums';
 export declare class Condition {
     field: string;
     operator: OperatorCode;

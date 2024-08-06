@@ -1,5 +1,5 @@
-import { FeatureCode } from '../enums/FeatureCode';
-import { BaseEntity } from '../entities/BaseEntity';
+import { FeatureCode } from '../enums';
+import { BaseEntity } from '../base';
 export declare class FeaturesGroup extends BaseEntity {
     name: string;
     features: FeatureCode[];

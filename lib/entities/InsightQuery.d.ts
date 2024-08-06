@@ -1,6 +1,6 @@
-import { InsightTypeCode } from '../enums/InsightTypeCode';
-import { DirectionContextCode } from '../enums/DirectionContextCode';
-import { BaseEntity } from '../entities/BaseEntity';
+import { DirectionContextCode } from '../enums';
+import { BaseEntity } from '../base';
+import { InsightTypeCode } from '../enums';
 export declare class InsightQuery extends BaseEntity {
     type: InsightTypeCode;
     description: string;

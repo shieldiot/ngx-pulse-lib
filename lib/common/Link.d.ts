@@ -1,4 +1,4 @@
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
+import { SeverityTypeCode } from '../enums';
 export declare class Link {
     id: string;
     name: string;

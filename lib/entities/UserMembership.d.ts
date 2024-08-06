@@ -1,7 +1,7 @@
-import { UserStatusCode } from '../enums/UserStatusCode';
-import { AccountRole } from '../common/AccountRole';
-import { BaseEntity } from '../entities/BaseEntity';
-import { UserTypeCode } from '../enums/UserTypeCode';
+import { UserTypeCode } from '../enums';
+import { UserStatusCode } from '../enums';
+import { AccountRole } from '../common';
+import { BaseEntity } from '../base';
 export declare class UserMembership extends BaseEntity {
     name: string;
     email: string;

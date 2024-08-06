@@ -1,8 +1,8 @@
-import { Thresholds } from '../common/Thresholds';
-import { ShieldexConfig } from '../common/ShieldexConfig';
-import { EventSeverityConfig } from '../common/EventSeverityConfig';
-import { DeviceConfig } from '../common/DeviceConfig';
-import { BaseEntity } from '../entities/BaseEntity';
+import { Thresholds } from '../common';
+import { ShieldexConfig } from '../common';
+import { EventSeverityConfig } from '../common';
+import { DeviceConfig } from '../common';
+import { BaseEntity } from '../base';
 export declare class StreamAnalyticsConfig extends BaseEntity {
     accountId: string;
     thresholds: Thresholds;

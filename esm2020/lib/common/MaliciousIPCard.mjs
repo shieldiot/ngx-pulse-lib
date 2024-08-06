@@ -1,0 +1,30 @@
+// MaliciousIPCard is a data structure representing malicious IP card
+export class MaliciousIPCard {
+    constructor(maliciousIp, maliciousIpDns, countryCode, ipDescription, lastEventTime, attackCategories, numberOfDevices, eventsBySeverityBreakdown) {
+        if (maliciousIp !== undefined) {
+            this.maliciousIp = maliciousIp;
+        }
+        if (maliciousIpDns !== undefined) {
+            this.maliciousIpDns = maliciousIpDns;
+        }
+        if (countryCode !== undefined) {
+            this.countryCode = countryCode;
+        }
+        if (ipDescription !== undefined) {
+            this.ipDescription = ipDescription;
+        }
+        if (lastEventTime !== undefined) {
+            this.lastEventTime = lastEventTime;
+        }
+        if (attackCategories !== undefined) {
+            this.attackCategories = attackCategories;
+        }
+        if (numberOfDevices !== undefined) {
+            this.numberOfDevices = numberOfDevices;
+        }
+        if (eventsBySeverityBreakdown !== undefined) {
+            this.eventsBySeverityBreakdown = eventsBySeverityBreakdown;
+        }
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTWFsaWNpb3VzSVBDYXJkLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvbmd4LXB1bHNlLWxpYi9zcmMvbGliL2NvbW1vbi9NYWxpY2lvdXNJUENhcmQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBSUEscUVBQXFFO0FBQ3JFLE1BQU0sT0FBTyxlQUFlO0lBMEJ2QixZQUFZLFdBQW9CLEVBQUUsY0FBdUIsRUFBRSxXQUFvQixFQUFFLGFBQXNCLEVBQUUsYUFBc0IsRUFBRSxnQkFBMkIsRUFBRSxlQUF3QixFQUFFLHlCQUEyQztRQUNoTyxJQUFJLFdBQVcsS0FBSyxTQUFTLEVBQUU7WUFBRSxJQUFJLENBQUMsV0FBVyxHQUFHLFdBQVcsQ0FBQztTQUFFO1FBQ2xFLElBQUksY0FBYyxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxjQUFjLEdBQUcsY0FBYyxDQUFDO1NBQUU7UUFDM0UsSUFBSSxXQUFXLEtBQUssU0FBUyxFQUFFO1lBQUUsSUFBSSxDQUFDLFdBQVcsR0FBRyxXQUFXLENBQUM7U0FBRTtRQUNsRSxJQUFJLGFBQWEsS0FBSyxTQUFTLEVBQUU7WUFBRSxJQUFJLENBQUMsYUFBYSxHQUFHLGFBQWEsQ0FBQztTQUFFO1FBQ3hFLElBQUksYUFBYSxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxhQUFhLEdBQUcsYUFBYSxDQUFDO1NBQUU7UUFDeEUsSUFBSSxnQkFBZ0IsS0FBSyxTQUFTLEVBQUU7WUFBRSxJQUFJLENBQUMsZ0JBQWdCLEdBQUcsZ0JBQWdCLENBQUM7U0FBRTtRQUNqRixJQUFJLGVBQWUsS0FBSyxTQUFTLEVBQUU7WUFBRSxJQUFJLENBQUMsZUFBZSxHQUFHLGVBQWUsQ0FBQztTQUFFO1FBQzlFLElBQUkseUJBQXlCLEtBQUssU0FBUyxFQUFFO1lBQUUsSUFBSSxDQUFDLHlCQUF5QixHQUFHLHlCQUF5QixDQUFDO1NBQUU7SUFDaEgsQ0FBQztDQUVKIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgSW50RGlzdHJpYnV0aW9uIH0gZnJvbSAnLi4vZW50aXRpZXMnO1xuXG5cblxuLy8gTWFsaWNpb3VzSVBDYXJkIGlzIGEgZGF0YSBzdHJ1Y3R1cmUgcmVwcmVzZW50aW5nIG1hbGljaW91cyBJUCBjYXJkXG5leHBvcnQgY2xhc3MgTWFsaWNpb3VzSVBDYXJkIHtcbiBcbiAgICAvLyBUaGUgbWFsaWNpb3VzIElQIFxuICAgIHB1YmxpYyBtYWxpY2lvdXNJcDogc3RyaW5nO1xuIFxuICAgIC8vIFRoZSBtYWxpY2lvdXMgSVAgRE5TIG5hbWUgKGNhbiBiZSBjb21tYS1zZXBhcmF0ZWQgbGlzdCBvZiBuYW1lcykgXG4gICAgcHVibGljIG1hbGljaW91c0lwRG5zOiBzdHJpbmc7XG4gXG4gICAgLy8gQ291bnRyeSBjb2RlIFxuICAgIHB1YmxpYyBjb3VudHJ5Q29kZTogc3RyaW5nO1xuIFxuICAgIC8vIElwIGRlc2NyaXB0aW9uIFxuICAgIHB1YmxpYyBpcERlc2NyaXB0aW9uOiBzdHJpbmc7XG4gXG4gICAgLy8gTGFzdCBFdmVudCBUaW1lIFxuICAgIHB1YmxpYyBsYXN0RXZlbnRUaW1lOiBudW1iZXI7XG4gXG4gICAgLy8gQXR0YWNrIENhdGVnb3JpZXMgbGlzdCBcbiAgICBwdWJsaWMgYXR0YWNrQ2F0ZWdvcmllczogc3RyaW5nW107XG4gXG4gICAgLy8gTnVtYmVyIE9mIERldmljZXMgXG4gICAgcHVibGljIG51bWJlck9mRGV2aWNlczogbnVtYmVyO1xuIFxuICAgIC8vIEV2ZW50cyBCeSBTZXZlcml0eSBCcmVha2Rvd24gXG4gICAgcHVibGljIGV2ZW50c0J5U2V2ZXJpdHlCcmVha2Rvd246IEludERpc3RyaWJ1dGlvbjtcbiBcbiAgICAgY29uc3RydWN0b3IobWFsaWNpb3VzSXA/OiBzdHJpbmcsIG1hbGljaW91c0lwRG5zPzogc3RyaW5nLCBjb3VudHJ5Q29kZT86IHN0cmluZywgaXBEZXNjcmlwdGlvbj86IHN0cmluZywgbGFzdEV2ZW50VGltZT86IG51bWJlciwgYXR0YWNrQ2F0ZWdvcmllcz86IHN0cmluZ1tdLCBudW1iZXJPZkRldmljZXM/OiBudW1iZXIsIGV2ZW50c0J5U2V2ZXJpdHlCcmVha2Rvd24/OiBJbnREaXN0cmlidXRpb24pIHsgXG4gICAgICAgIGlmIChtYWxpY2lvdXNJcCAhPT0gdW5kZWZpbmVkKSB7IHRoaXMubWFsaWNpb3VzSXAgPSBtYWxpY2lvdXNJcDsgfVxuICAgICAgICBpZiAobWFsaWNpb3VzSXBEbnMgIT09IHVuZGVmaW5lZCkgeyB0aGlzLm1hbGljaW91c0lwRG5zID0gbWFsaWNpb3VzSXBEbnM7IH1cbiAgICAgICAgaWYgKGNvdW50cnlDb2RlICE9PSB1bmRlZmluZWQpIHsgdGhpcy5jb3VudHJ5Q29kZSA9IGNvdW50cnlDb2RlOyB9XG4gICAgICAgIGlmIChpcERlc2NyaXB0aW9uICE9PSB1bmRlZmluZWQpIHsgdGhpcy5pcERlc2NyaXB0aW9uID0gaXBEZXNjcmlwdGlvbjsgfVxuICAgICAgICBpZiAobGFzdEV2ZW50VGltZSAhPT0gdW5kZWZpbmVkKSB7IHRoaXMubGFzdEV2ZW50VGltZSA9IGxhc3RFdmVudFRpbWU7IH1cbiAgICAgICAgaWYgKGF0dGFja0NhdGVnb3JpZXMgIT09IHVuZGVmaW5lZCkgeyB0aGlzLmF0dGFja0NhdGVnb3JpZXMgPSBhdHRhY2tDYXRlZ29yaWVzOyB9XG4gICAgICAgIGlmIChudW1iZXJPZkRldmljZXMgIT09IHVuZGVmaW5lZCkgeyB0aGlzLm51bWJlck9mRGV2aWNlcyA9IG51bWJlck9mRGV2aWNlczsgfVxuICAgICAgICBpZiAoZXZlbnRzQnlTZXZlcml0eUJyZWFrZG93biAhPT0gdW5kZWZpbmVkKSB7IHRoaXMuZXZlbnRzQnlTZXZlcml0eUJyZWFrZG93biA9IGV2ZW50c0J5U2V2ZXJpdHlCcmVha2Rvd247IH1cbiAgICB9XG5cbn1cblxuXG4iXX0=

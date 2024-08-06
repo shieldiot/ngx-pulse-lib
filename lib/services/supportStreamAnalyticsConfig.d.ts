@@ -1,6 +1,6 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { StreamAnalyticsConfig } from '../entities/StreamAnalyticsConfig';
+import { StreamAnalyticsConfig } from '../entities';
 import * as i0 from "@angular/core";
 export declare class SupportStreamAnalyticsConfig {
     private config;

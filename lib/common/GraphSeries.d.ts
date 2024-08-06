@@ -1,4 +1,4 @@
-import { IntKeySeriesDataValue } from '../common/IntKeySeriesDataValue';
+import { IntKeySeriesDataValue } from '../common';
 export declare class GraphSeries {
     name: string;
     values: IntKeySeriesDataValue[];

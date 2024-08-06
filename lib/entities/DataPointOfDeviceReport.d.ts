@@ -1,4 +1,4 @@
-import { DeviceReport } from '../entities/DeviceReport';
+import { DeviceReport } from '../entities';
 export declare class DataPointOfDeviceReport {
     timestamp: number;
     value: DeviceReport;

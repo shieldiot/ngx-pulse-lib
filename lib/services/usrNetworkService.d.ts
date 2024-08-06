@@ -1,7 +1,7 @@
 import { RestUtil, EntitiesResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { UsageRecord } from '../entities/UsageRecord';
-import { SessionRecord } from '../entities/SessionRecord';
+import { UsageRecord } from '../entities';
+import { SessionRecord } from '../entities';
 import * as i0 from "@angular/core";
 export declare class UsrNetworkService {
     private config;

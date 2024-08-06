@@ -1,6 +1,6 @@
 import { RestUtil, EntityResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { Distribution } from '../entities/Distribution';
+import { Distribution } from '../entities';
 import * as i0 from "@angular/core";
 export declare class SysStatisticsService {
     private config;

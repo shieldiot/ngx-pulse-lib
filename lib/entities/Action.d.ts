@@ -1,5 +1,5 @@
-import { BaseEntity } from '../entities/BaseEntity';
-import { DeviceActionCode } from '../enums/DeviceActionCode';
+import { DeviceActionCode } from '../enums';
+import { BaseEntity } from '../base';
 export declare class Action extends BaseEntity {
     accountId: string;
     streamId: string;

@@ -1,6 +1,6 @@
-import { StringKeyValue } from '../common/StringKeyValue';
-import { StreamConfig } from '../entities/StreamConfig';
-import { BaseEntity } from '../entities/BaseEntity';
+import { StringKeyValue } from '../common';
+import { StreamConfig } from '../entities';
+import { BaseEntity } from '../base';
 export declare class Stream extends BaseEntity {
     accountId: string;
     name: string;

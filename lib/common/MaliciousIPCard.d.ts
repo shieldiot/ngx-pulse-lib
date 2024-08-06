@@ -1,4 +1,4 @@
-import { IntDistribution } from '../entities/IntDistribution';
+import { IntDistribution } from '../entities';
 export declare class MaliciousIPCard {
     maliciousIp: string;
     maliciousIpDns: string;

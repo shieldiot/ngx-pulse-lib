@@ -1,7 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { Group } from '../entities/Group';
-import { User } from '../entities/User';
+import { Group } from '../entities';
+import { User } from '../entities';
 import * as i0 from "@angular/core";
 export declare class SysGroupsService {
     private config;

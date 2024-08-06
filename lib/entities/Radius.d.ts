@@ -1,5 +1,5 @@
-import { StringKeyValue } from '../common/StringKeyValue';
-import { BaseEntity } from '../entities/BaseEntity';
+import { StringKeyValue } from '../common';
+import { BaseEntity } from '../base';
 export declare class Radius extends BaseEntity {
     source: string;
     accountId: string;

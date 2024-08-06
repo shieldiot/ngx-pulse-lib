@@ -1,4 +1,4 @@
-import { ConsumptionData } from '../common/ConsumptionData';
+import { ConsumptionData } from '../common';
 export declare class ConsumptionTimeDataPoint {
     timestamp: number;
     value: ConsumptionData;

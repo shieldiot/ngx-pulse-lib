@@ -1,4 +1,4 @@
-import { BaseEntity } from '../entities/BaseEntity';
+import { BaseEntity } from '../base';
 export declare class ConfigParam extends BaseEntity {
     value: string;
 }

@@ -1,7 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { ApiKey } from '../entities/ApiKey';
-import { StringIntValue } from '../common/StringIntValue';
+import { ApiKey } from '../entities';
+import { StringIntValue } from '../common';
 import * as i0 from "@angular/core";
 export declare class SysKeysService {
     private config;

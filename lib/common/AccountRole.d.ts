@@ -1,4 +1,4 @@
-import { MemberRoleCode } from '../enums/MemberRoleCode';
+import { MemberRoleCode } from '../enums';
 export declare class AccountRole {
     accountId: string;
     accountName: string;

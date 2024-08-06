@@ -1,4 +1,4 @@
-import { ZScore } from '../common/ZScore';
+import { ZScore } from '../common';
 export declare class SessionTransform {
     packetsIn: ZScore;
     packetsOut: ZScore;

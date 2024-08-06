@@ -1,5 +1,5 @@
-import { DevicesAtRiskConfig } from '../common/DevicesAtRiskConfig';
-import { DeviceScoreConfig } from '../common/DeviceScoreConfig';
+import { DevicesAtRiskConfig } from '../common';
+import { DeviceScoreConfig } from '../common';
 export declare class DeviceConfig {
     devicesAtRiskConfig: DevicesAtRiskConfig;
     deviceScoreConfig: DeviceScoreConfig;

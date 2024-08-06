@@ -1,6 +1,6 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { Integration } from '../entities/Integration';
+import { Integration } from '../entities';
 import * as i0 from "@angular/core";
 export declare class UsrIntegrationsService {
     private config;

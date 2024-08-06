@@ -1,6 +1,6 @@
-import { TeaserPopUpSettings } from '../entities/TeaserPopUpSettings';
-import { HomePageViewCode } from '../enums/HomePageViewCode';
-import { ComplianceReportSettings } from '../entities/ComplianceReportSettings';
+import { ComplianceReportSettings } from '../entities';
+import { TeaserPopUpSettings } from '../entities';
+import { HomePageViewCode } from '../enums';
 export declare class AccountSettings {
     logo: string;
     defaultHomePageView: HomePageViewCode;

@@ -1,4 +1,4 @@
-import { ZScore } from '../common/ZScore';
+import { ZScore } from '../common';
 export declare class UsageTransform {
     packetsIn: ZScore;
     packetsOut: ZScore;

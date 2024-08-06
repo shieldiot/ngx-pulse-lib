@@ -1,4 +1,4 @@
-import { BaseEntity } from '../entities/BaseEntity';
+import { BaseEntity } from '../base';
 export declare class Checkpoint extends BaseEntity {
     accountId: string;
     streamId: string;

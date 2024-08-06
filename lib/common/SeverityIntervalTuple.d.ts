@@ -1,5 +1,5 @@
-import { SeverityTypeCode } from '../enums/SeverityTypeCode';
-import { Interval } from '../common/Interval';
+import { SeverityTypeCode } from '../enums';
+import { Interval } from '../common';
 export declare class SeverityIntervalTuple {
     severity: SeverityTypeCode;
     interval: Interval;

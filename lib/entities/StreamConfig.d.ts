@@ -1,11 +1,11 @@
-import { SessionTransform } from '../common/SessionTransform';
-import { UsageTransform } from '../common/UsageTransform';
-import { Thresholds } from '../common/Thresholds';
-import { ShieldexConfig } from '../common/ShieldexConfig';
-import { EventSeverityConfig } from '../common/EventSeverityConfig';
-import { DeviceActionCode } from '../enums/DeviceActionCode';
-import { DeviceConfig } from '../common/DeviceConfig';
-import { DataIngestion } from '../entities/DataIngestion';
+import { DataIngestion } from '../entities';
+import { SessionTransform } from '../common';
+import { UsageTransform } from '../common';
+import { Thresholds } from '../common';
+import { ShieldexConfig } from '../common';
+import { EventSeverityConfig } from '../common';
+import { DeviceActionCode } from '../enums';
+import { DeviceConfig } from '../common';
 export declare class StreamConfig {
     ingest: DataIngestion;
     sessionTransform: SessionTransform;
