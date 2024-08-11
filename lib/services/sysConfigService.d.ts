@@ -24,6 +24,10 @@ export declare class SysConfigService {
      */
     get(id?: string): import("rxjs").Observable<EntityResponse<ConfigParam>>;
     /**
+     * Get list of configuration parameters keys and their description
+     */
+    keys(search?: string, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<ConfigParam>>;
+    /**
      * Find list of configuration parameters by query
      */
     find(search?: string, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<ConfigParam>>;
