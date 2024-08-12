@@ -1,8 +1,8 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { Report } from '../entities';
 import { TimeSeries } from '../common';
 import { GraphSeries } from '../common';
-import { Report } from '../entities';
 import * as i0 from "@angular/core";
 export declare class UsrReportsService {
     private config;
@@ -33,6 +33,10 @@ export declare class UsrReportsService {
      * Get compliance report
      */
     getComplianceReport(streamId?: string, from?: number, to?: number): import("rxjs").Observable<import("@angular/common/http").HttpEvent<Blob>>;
+    /**
+     * Create compliance report and send it by email
+     */
+    getComplianceReportByMail(streamId?: string, from?: number, to?: number, addresses?: string[]): import("rxjs").Observable<ActionResponse>;
     /**
      * Get histogram of network activity over time
      */
