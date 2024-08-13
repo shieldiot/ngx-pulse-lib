@@ -1,0 +1,12 @@
+// Key Value float tuple
+export class FloatKeyValue {
+    constructor(key, value) {
+        if (key !== undefined) {
+            this.key = key;
+        }
+        if (value !== undefined) {
+            this.value = value;
+        }
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRmxvYXRLZXlWYWx1ZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1wdWxzZS1saWIvc3JjL2xpYi9jb21tb24vRmxvYXRLZXlWYWx1ZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFHQSx3QkFBd0I7QUFDeEIsTUFBTSxPQUFPLGFBQWE7SUFRckIsWUFBWSxHQUFZLEVBQUUsS0FBYztRQUNyQyxJQUFJLEdBQUcsS0FBSyxTQUFTLEVBQUU7WUFBRSxJQUFJLENBQUMsR0FBRyxHQUFHLEdBQUcsQ0FBQztTQUFFO1FBQzFDLElBQUksS0FBSyxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxLQUFLLEdBQUcsS0FBSyxDQUFDO1NBQUU7SUFDcEQsQ0FBQztDQUVKIiwic291cmNlc0NvbnRlbnQiOlsiXG5cblxuLy8gS2V5IFZhbHVlIGZsb2F0IHR1cGxlXG5leHBvcnQgY2xhc3MgRmxvYXRLZXlWYWx1ZSB7XG4gXG4gICAgLy8gS2V5IG9mIHR1cGxlIFxuICAgIHB1YmxpYyBrZXk6IG51bWJlcjtcbiBcbiAgICAvLyBWYWx1ZSBvZiB0dXBsZSBcbiAgICBwdWJsaWMgdmFsdWU6IG51bWJlcjtcbiBcbiAgICAgY29uc3RydWN0b3Ioa2V5PzogbnVtYmVyLCB2YWx1ZT86IG51bWJlcikgeyBcbiAgICAgICAgaWYgKGtleSAhPT0gdW5kZWZpbmVkKSB7IHRoaXMua2V5ID0ga2V5OyB9XG4gICAgICAgIGlmICh2YWx1ZSAhPT0gdW5kZWZpbmVkKSB7IHRoaXMudmFsdWUgPSB2YWx1ZTsgfVxuICAgIH1cblxufVxuXG5cbiJdfQ==

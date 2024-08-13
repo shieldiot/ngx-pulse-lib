@@ -1,6 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
 import { ConfigParam } from '../entities';
+import { ConfigParams } from '../entities';
 import * as i0 from "@angular/core";
 export declare class SysConfigService {
     private config;
@@ -15,6 +16,10 @@ export declare class SysConfigService {
      * Update existing configuration parameter in the system
      */
     update(body?: ConfigParam): import("rxjs").Observable<EntityResponse<ConfigParam>>;
+    /**
+     * Update group of configuration parameters in the system in a bulk
+     */
+    updateGroup(body?: ConfigParams): import("rxjs").Observable<EntityResponse<ConfigParams>>;
     /**
      * Delete a configuration parameter from the system
      */

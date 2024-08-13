@@ -1,5 +1,5 @@
-import { BaseEntity } from '../base';
 import { UserTypeCode } from '../enums';
+import { BaseEntity } from '../base';
 export declare class AuditLog extends BaseEntity {
     accountId: string;
     userId: string;

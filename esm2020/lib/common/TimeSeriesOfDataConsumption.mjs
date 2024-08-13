@@ -1,0 +1,15 @@
+// TimeSeriesOfDataConsumption model represents a data consumption (in, out, total Kb) samples over time
+export class TimeSeriesOfDataConsumption {
+    constructor(name, range, values) {
+        if (name !== undefined) {
+            this.name = name;
+        }
+        if (range !== undefined) {
+            this.range = range;
+        }
+        if (values !== undefined) {
+            this.values = values;
+        }
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGltZVNlcmllc09mRGF0YUNvbnN1bXB0aW9uLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvbmd4LXB1bHNlLWxpYi9zcmMvbGliL2NvbW1vbi9UaW1lU2VyaWVzT2ZEYXRhQ29uc3VtcHRpb24udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBS0Esd0dBQXdHO0FBQ3hHLE1BQU0sT0FBTywyQkFBMkI7SUFXbkMsWUFBWSxJQUFhLEVBQUUsS0FBaUIsRUFBRSxNQUFtQztRQUM5RSxJQUFJLElBQUksS0FBSyxTQUFTLEVBQUU7WUFBRSxJQUFJLENBQUMsSUFBSSxHQUFHLElBQUksQ0FBQztTQUFFO1FBQzdDLElBQUksS0FBSyxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxLQUFLLEdBQUcsS0FBSyxDQUFDO1NBQUU7UUFDaEQsSUFBSSxNQUFNLEtBQUssU0FBUyxFQUFFO1lBQUUsSUFBSSxDQUFDLE1BQU0sR0FBRyxNQUFNLENBQUM7U0FBRTtJQUN2RCxDQUFDO0NBRUoiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb25zdW1wdGlvblRpbWVEYXRhUG9pbnQgfSBmcm9tICcuLi9jb21tb24nO1xuaW1wb3J0IHsgVGltZUZyYW1lIH0gZnJvbSAnLi4vY29tbW9uJztcblxuXG5cbi8vIFRpbWVTZXJpZXNPZkRhdGFDb25zdW1wdGlvbiBtb2RlbCByZXByZXNlbnRzIGEgZGF0YSBjb25zdW1wdGlvbiAoaW4sIG91dCwgdG90YWwgS2IpIHNhbXBsZXMgb3ZlciB0aW1lXG5leHBvcnQgY2xhc3MgVGltZVNlcmllc09mRGF0YUNvbnN1bXB0aW9uIHtcbiBcbiAgICAvLyBOYW1lIG9mIHRoZSB0aW1lIHNlcmllcyBcbiAgICBwdWJsaWMgbmFtZTogc3RyaW5nO1xuIFxuICAgIC8vIFJhbmdlIG9mIHRoZSBzZXJpZXMgKGZyb20gLi4uIHRvKSBcbiAgICBwdWJsaWMgcmFuZ2U6IFRpbWVGcmFtZTtcbiBcbiAgICAvLyBTZXJpZXMgb2YgY29uc3VtcHRpb24gZGF0YSBwb2ludHMgXG4gICAgcHVibGljIHZhbHVlczogQ29uc3VtcHRpb25UaW1lRGF0YVBvaW50W107XG4gXG4gICAgIGNvbnN0cnVjdG9yKG5hbWU/OiBzdHJpbmcsIHJhbmdlPzogVGltZUZyYW1lLCB2YWx1ZXM/OiBDb25zdW1wdGlvblRpbWVEYXRhUG9pbnRbXSkgeyBcbiAgICAgICAgaWYgKG5hbWUgIT09IHVuZGVmaW5lZCkgeyB0aGlzLm5hbWUgPSBuYW1lOyB9XG4gICAgICAgIGlmIChyYW5nZSAhPT0gdW5kZWZpbmVkKSB7IHRoaXMucmFuZ2UgPSByYW5nZTsgfVxuICAgICAgICBpZiAodmFsdWVzICE9PSB1bmRlZmluZWQpIHsgdGhpcy52YWx1ZXMgPSB2YWx1ZXM7IH1cbiAgICB9XG5cbn1cblxuXG4iXX0=
