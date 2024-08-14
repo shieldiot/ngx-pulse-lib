@@ -1,7 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { Checkpoint } from '../entities';
 import { TimeSeriesOfFloat } from '../common';
+import { Checkpoint } from '../entities';
 import * as i0 from "@angular/core";
 export declare class SysCheckpointsService {
     private config;
