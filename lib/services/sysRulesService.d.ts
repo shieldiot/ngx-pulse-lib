@@ -1,7 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { Rule } from '../entities';
 import { TimeSeriesOfFloat } from '../common';
+import { Rule } from '../entities';
 import * as i0 from "@angular/core";
 export declare class SysRulesService {
     private config;

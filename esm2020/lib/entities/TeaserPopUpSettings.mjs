@@ -1,0 +1,15 @@
+// TeaserPopUpSettings is a set of account's teaser pop up settings.
+export class TeaserPopUpSettings {
+    constructor(header, content, notificationContent) {
+        if (header !== undefined) {
+            this.header = header;
+        }
+        if (content !== undefined) {
+            this.content = content;
+        }
+        if (notificationContent !== undefined) {
+            this.notificationContent = notificationContent;
+        }
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGVhc2VyUG9wVXBTZXR0aW5ncy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1wdWxzZS1saWIvc3JjL2xpYi9lbnRpdGllcy9UZWFzZXJQb3BVcFNldHRpbmdzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdBLG9FQUFvRTtBQUNwRSxNQUFNLE9BQU8sbUJBQW1CO0lBVzNCLFlBQVksTUFBZSxFQUFFLE9BQWdCLEVBQUUsbUJBQTRCO1FBQ3hFLElBQUksTUFBTSxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxNQUFNLEdBQUcsTUFBTSxDQUFDO1NBQUU7UUFDbkQsSUFBSSxPQUFPLEtBQUssU0FBUyxFQUFFO1lBQUUsSUFBSSxDQUFDLE9BQU8sR0FBRyxPQUFPLENBQUM7U0FBRTtRQUN0RCxJQUFJLG1CQUFtQixLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxtQkFBbUIsR0FBRyxtQkFBbUIsQ0FBQztTQUFFO0lBQzlGLENBQUM7Q0FFSiIsInNvdXJjZXNDb250ZW50IjpbIlxuXG5cbi8vIFRlYXNlclBvcFVwU2V0dGluZ3MgaXMgYSBzZXQgb2YgYWNjb3VudCdzIHRlYXNlciBwb3AgdXAgc2V0dGluZ3MuXG5leHBvcnQgY2xhc3MgVGVhc2VyUG9wVXBTZXR0aW5ncyB7XG4gXG4gICAgLy8gVGVhc2VyIFBvcCBVcCBoZWFkZXIgXG4gICAgcHVibGljIGhlYWRlcjogc3RyaW5nO1xuIFxuICAgIC8vIFRlYXNlciBQb3AgVXAgY29udGVudCBcbiAgICBwdWJsaWMgY29udGVudDogc3RyaW5nO1xuIFxuICAgIC8vIFRlYXNlciBQb3AgVXAgbm90aWZpY2F0aW9uIGNvbnRlbnQgXG4gICAgcHVibGljIG5vdGlmaWNhdGlvbkNvbnRlbnQ6IHN0cmluZztcbiBcbiAgICAgY29uc3RydWN0b3IoaGVhZGVyPzogc3RyaW5nLCBjb250ZW50Pzogc3RyaW5nLCBub3RpZmljYXRpb25Db250ZW50Pzogc3RyaW5nKSB7IFxuICAgICAgICBpZiAoaGVhZGVyICE9PSB1bmRlZmluZWQpIHsgdGhpcy5oZWFkZXIgPSBoZWFkZXI7IH1cbiAgICAgICAgaWYgKGNvbnRlbnQgIT09IHVuZGVmaW5lZCkgeyB0aGlzLmNvbnRlbnQgPSBjb250ZW50OyB9XG4gICAgICAgIGlmIChub3RpZmljYXRpb25Db250ZW50ICE9PSB1bmRlZmluZWQpIHsgdGhpcy5ub3RpZmljYXRpb25Db250ZW50ID0gbm90aWZpY2F0aW9uQ29udGVudDsgfVxuICAgIH1cblxufVxuXG5cbiJdfQ==
