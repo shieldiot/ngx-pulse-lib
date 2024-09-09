@@ -1,0 +1,12 @@
+// NetworkMap is a data structure representing a set of nodes and vertex representing a network
+export class NetworkMap {
+    constructor(nodes, links) {
+        if (nodes !== undefined) {
+            this.nodes = nodes;
+        }
+        if (links !== undefined) {
+            this.links = links;
+        }
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTmV0d29ya01hcC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1wdWxzZS1saWIvc3JjL2xpYi9jb21tb24vTmV0d29ya01hcC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFLQSwrRkFBK0Y7QUFDL0YsTUFBTSxPQUFPLFVBQVU7SUFRbEIsWUFBWSxLQUFjLEVBQUUsS0FBYztRQUN2QyxJQUFJLEtBQUssS0FBSyxTQUFTLEVBQUU7WUFBRSxJQUFJLENBQUMsS0FBSyxHQUFHLEtBQUssQ0FBQztTQUFFO1FBQ2hELElBQUksS0FBSyxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxLQUFLLEdBQUcsS0FBSyxDQUFDO1NBQUU7SUFDcEQsQ0FBQztDQUVKIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTGluayB9IGZyb20gJy4uL2NvbW1vbic7XG5pbXBvcnQgeyBOb2RlIH0gZnJvbSAnLi4vY29tbW9uJztcblxuXG5cbi8vIE5ldHdvcmtNYXAgaXMgYSBkYXRhIHN0cnVjdHVyZSByZXByZXNlbnRpbmcgYSBzZXQgb2Ygbm9kZXMgYW5kIHZlcnRleCByZXByZXNlbnRpbmcgYSBuZXR3b3JrXG5leHBvcnQgY2xhc3MgTmV0d29ya01hcCB7XG4gXG4gICAgLy8gTGlzdCBvZiBub2RlcyBcbiAgICBwdWJsaWMgbm9kZXM6IE5vZGVbXTtcbiBcbiAgICAvLyBMaXN0IG9mIGxpbmtzIFxuICAgIHB1YmxpYyBsaW5rczogTGlua1tdO1xuIFxuICAgICBjb25zdHJ1Y3Rvcihub2Rlcz86IE5vZGVbXSwgbGlua3M/OiBMaW5rW10pIHsgXG4gICAgICAgIGlmIChub2RlcyAhPT0gdW5kZWZpbmVkKSB7IHRoaXMubm9kZXMgPSBub2RlczsgfVxuICAgICAgICBpZiAobGlua3MgIT09IHVuZGVmaW5lZCkgeyB0aGlzLmxpbmtzID0gbGlua3M7IH1cbiAgICB9XG5cbn1cblxuXG4iXX0=

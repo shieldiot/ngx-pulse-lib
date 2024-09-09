@@ -1,5 +1,5 @@
-import { StringKeyValue } from '../common';
 import { DeviceTypeCode } from '../enums';
+import { StringKeyValue } from '../common';
 export declare class Node {
     id: string;
     name: string;
