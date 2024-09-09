@@ -1,10 +1,10 @@
-import { BaseEntity } from '../base';
 import { RuleTypeCode } from '../enums';
 import { DataSourceCode } from '../enums';
 import { Condition } from '../entities';
 import { DeviceTypeCode } from '../enums';
 import { EventTypeCode } from '../enums';
 import { SeverityTypeCode } from '../enums';
+import { BaseEntity } from '../base';
 export declare class Rule extends BaseEntity {
     accountId: string;
     streamId: string;
@@ -22,4 +22,6 @@ export declare class Rule extends BaseEntity {
     timeWindowSec: number;
     setEventType: EventTypeCode;
     setEventSeverity: SeverityTypeCode;
+    lastAlertTimestamp: number;
+    alertsCount: number;
 }
