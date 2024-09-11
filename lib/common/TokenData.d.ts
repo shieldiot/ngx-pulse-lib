@@ -1,6 +1,6 @@
-import { MemberRoleCode } from '../enums';
 import { UserStatusCode } from '../enums';
 import { UserTypeCode } from '../enums';
+import { MemberRoleCode } from '../enums';
 export declare class TokenData {
     accountId: string;
     subjectId: string;
