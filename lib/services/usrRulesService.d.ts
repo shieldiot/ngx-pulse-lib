@@ -1,9 +1,9 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { TimeSeriesOfFloat } from '../common';
 import { Rule } from '../entities';
 import { SeverityTypeCode } from '../enums';
 import { EventTypeCode } from '../enums';
+import { TimeSeriesOfFloat } from '../common';
 import * as i0 from "@angular/core";
 export declare class UsrRulesService {
     private config;
@@ -29,7 +29,7 @@ export declare class UsrRulesService {
     /**
      * Find list of rules by query
      */
-    find(streamId?: string, search?: string, from?: number, to?: number, eventSeverity?: SeverityTypeCode[], isActiveRule?: boolean, eventType?: EventTypeCode[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<Rule>>;
+    find(streamId?: string, search?: string, from?: number, to?: number, eventSeverity?: SeverityTypeCode[], isActiveRule?: boolean, eventType?: EventTypeCode[], includeSysRules?: boolean, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<Rule>>;
     /**
      * Analyze rule configuration against historic data
      */
