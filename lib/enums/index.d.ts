@@ -22,6 +22,7 @@ export * from './NetworkMapTypeCode';
 export * from './OperatorCode';
 export * from './PermissionCode';
 export * from './ReportTypeCode';
+export * from './RuleActivityStatusCode';
 export * from './RuleTypeCode';
 export * from './SeverityTypeCode';
 export * from './TrafficDirectionCode';

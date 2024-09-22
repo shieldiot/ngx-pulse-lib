@@ -1,8 +1,8 @@
+import { AccountTypeCode } from '../enums';
+import { AccountStatusCode } from '../enums';
 import { StringKeyValue } from '../common';
 import { AccountSettings } from '../entities';
 import { BaseEntity } from '../base';
-import { AccountTypeCode } from '../enums';
-import { AccountStatusCode } from '../enums';
 export declare class Account extends BaseEntity {
     name: string;
     externalId: string;
