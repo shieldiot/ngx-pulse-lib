@@ -1,5 +1,5 @@
-import { TimeDataPoint2D } from '../common';
 import { TimeFrame } from '../common';
+import { TimeDataPoint2D } from '../common';
 export declare class TimeSeriesOf2D {
     name: string;
     range: TimeFrame;
