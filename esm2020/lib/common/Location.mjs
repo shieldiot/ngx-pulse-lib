@@ -1,0 +1,12 @@
+// WGS-84 Geo Location
+export class Location {
+    constructor(lat, lon) {
+        if (lat !== undefined) {
+            this.lat = lat;
+        }
+        if (lon !== undefined) {
+            this.lon = lon;
+        }
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTG9jYXRpb24uanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9uZ3gtcHVsc2UtbGliL3NyYy9saWIvY29tbW9uL0xvY2F0aW9uLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUdBLHNCQUFzQjtBQUN0QixNQUFNLE9BQU8sUUFBUTtJQVFoQixZQUFZLEdBQVksRUFBRSxHQUFZO1FBQ25DLElBQUksR0FBRyxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxHQUFHLEdBQUcsR0FBRyxDQUFDO1NBQUU7UUFDMUMsSUFBSSxHQUFHLEtBQUssU0FBUyxFQUFFO1lBQUUsSUFBSSxDQUFDLEdBQUcsR0FBRyxHQUFHLENBQUM7U0FBRTtJQUM5QyxDQUFDO0NBRUoiLCJzb3VyY2VzQ29udGVudCI6WyJcblxuXG4vLyBXR1MtODQgR2VvIExvY2F0aW9uXG5leHBvcnQgY2xhc3MgTG9jYXRpb24ge1xuIFxuICAgIC8vIExhdGl0dWRlIFxuICAgIHB1YmxpYyBsYXQ6IG51bWJlcjtcbiBcbiAgICAvLyBMb25naXR1ZGUgXG4gICAgcHVibGljIGxvbjogbnVtYmVyO1xuIFxuICAgICBjb25zdHJ1Y3RvcihsYXQ/OiBudW1iZXIsIGxvbj86IG51bWJlcikgeyBcbiAgICAgICAgaWYgKGxhdCAhPT0gdW5kZWZpbmVkKSB7IHRoaXMubGF0ID0gbGF0OyB9XG4gICAgICAgIGlmIChsb24gIT09IHVuZGVmaW5lZCkgeyB0aGlzLmxvbiA9IGxvbjsgfVxuICAgIH1cblxufVxuXG5cbiJdfQ==

@@ -1,5 +1,5 @@
-import { TimeFrame } from '../common';
 import { TimeDataPointFloat } from '../common';
+import { TimeFrame } from '../common';
 export declare class TimeSeriesOfFloat {
     name: string;
     range: TimeFrame;
