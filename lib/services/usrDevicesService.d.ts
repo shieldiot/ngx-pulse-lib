@@ -1,18 +1,18 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { TimeSeriesOfDataConsumption } from '../common';
 import { Device } from '../entities';
 import { BulkDevices } from '../entities';
-import { SeverityTypeCode } from '../enums';
-import { IntDistribution } from '../entities';
-import { NetworkMap } from '../common';
-import { TimeSeriesOfDeviceReport } from '../entities';
-import { DeviceReport } from '../entities';
 import { DeviceTypeCode } from '../enums';
 import { DeviceStatusCode } from '../enums';
+import { IntDistribution } from '../entities';
+import { NetworkMap } from '../common';
+import { SeverityTypeCode } from '../enums';
 import { DeviceWithEvents } from '../entities';
 import { DeviceActionCode } from '../enums';
 import { NetworkMapTypeCode } from '../enums';
-import { TimeSeriesOfDataConsumption } from '../common';
+import { TimeSeriesOfDeviceReport } from '../entities';
+import { DeviceReport } from '../entities';
 import * as i0 from "@angular/core";
 export declare class UsrDevicesService {
     private config;

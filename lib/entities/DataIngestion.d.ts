@@ -1,6 +1,6 @@
-import { DeviceTypeCode } from '../enums';
 import { DeviceCreationCode } from '../enums';
 import { DeviceIdentityCode } from '../enums';
+import { DeviceTypeCode } from '../enums';
 export declare class DataIngestion {
     inputURI: string;
     format: string;
