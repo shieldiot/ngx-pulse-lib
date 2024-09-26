@@ -1,7 +1,7 @@
-import { Interval } from '../common';
-import { SeverityConditionConfig } from '../common';
 import { RuleCountThresholdConfig } from '../common';
 import { RuleBasedSeverityConditionConfig } from '../common';
+import { Interval } from '../common';
+import { SeverityConditionConfig } from '../common';
 export declare class DeviceScoreConfig {
     deviceScoreAlphaFactor: number;
     occurrenceThreshold: number;

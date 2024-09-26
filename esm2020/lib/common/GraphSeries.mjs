@@ -1,0 +1,12 @@
+// GraphSeries model represents a generic set of data points over interval
+export class GraphSeries {
+    constructor(name, values) {
+        if (name !== undefined) {
+            this.name = name;
+        }
+        if (values !== undefined) {
+            this.values = values;
+        }
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiR3JhcGhTZXJpZXMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy9uZ3gtcHVsc2UtbGliL3NyYy9saWIvY29tbW9uL0dyYXBoU2VyaWVzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlBLDBFQUEwRTtBQUMxRSxNQUFNLE9BQU8sV0FBVztJQVFuQixZQUFZLElBQWEsRUFBRSxNQUFnQztRQUN4RCxJQUFJLElBQUksS0FBSyxTQUFTLEVBQUU7WUFBRSxJQUFJLENBQUMsSUFBSSxHQUFHLElBQUksQ0FBQztTQUFFO1FBQzdDLElBQUksTUFBTSxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxNQUFNLEdBQUcsTUFBTSxDQUFDO1NBQUU7SUFDdkQsQ0FBQztDQUVKIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgSW50S2V5U2VyaWVzRGF0YVZhbHVlIH0gZnJvbSAnLi4vY29tbW9uJztcblxuXG5cbi8vIEdyYXBoU2VyaWVzIG1vZGVsIHJlcHJlc2VudHMgYSBnZW5lcmljIHNldCBvZiBkYXRhIHBvaW50cyBvdmVyIGludGVydmFsXG5leHBvcnQgY2xhc3MgR3JhcGhTZXJpZXMge1xuIFxuICAgIC8vIE5hbWUgb2YgdGhlIGdyYXBoIHNlcmllcyBcbiAgICBwdWJsaWMgbmFtZTogc3RyaW5nO1xuIFxuICAgIC8vIEN1c3RvbSBhdHRyaWJ1dGVzIChrZXktdmFsdWUgcGFpcnMpIFxuICAgIHB1YmxpYyB2YWx1ZXM6IEludEtleVNlcmllc0RhdGFWYWx1ZVtdO1xuIFxuICAgICBjb25zdHJ1Y3RvcihuYW1lPzogc3RyaW5nLCB2YWx1ZXM/OiBJbnRLZXlTZXJpZXNEYXRhVmFsdWVbXSkgeyBcbiAgICAgICAgaWYgKG5hbWUgIT09IHVuZGVmaW5lZCkgeyB0aGlzLm5hbWUgPSBuYW1lOyB9XG4gICAgICAgIGlmICh2YWx1ZXMgIT09IHVuZGVmaW5lZCkgeyB0aGlzLnZhbHVlcyA9IHZhbHVlczsgfVxuICAgIH1cblxufVxuXG5cbiJdfQ==
