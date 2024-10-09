@@ -1,7 +1,7 @@
-import { SeverityTypeCode } from '../enums';
+import { EventTypeCode } from '../enums';
 import { GeoData } from '../common';
 import { BaseEntity } from '../base';
-import { EventTypeCode } from '../enums';
+import { SeverityTypeCode } from '../enums';
 import { EventStatusCode } from '../enums';
 import { RuleTypeCode } from '../enums';
 import { StringKeyValue } from '../common';

@@ -3,7 +3,7 @@ import { RuleCountThresholdConfig } from '../common';
 export declare class RuleBasedSeverityConditionConfig {
     severityType: SeverityTypeCode;
     bias: number;
-    ruleCountThresholdConfigs: RuleCountThresholdConfig[];
+    ruleConditionThresholdConfig: RuleCountThresholdConfig[];
     ruleTypesThreshold: number;
-    constructor(severityType?: SeverityTypeCode, bias?: number, ruleCountThresholdConfigs?: RuleCountThresholdConfig[], ruleTypesThreshold?: number);
+    constructor(severityType?: SeverityTypeCode, bias?: number, ruleConditionThresholdConfig?: RuleCountThresholdConfig[], ruleTypesThreshold?: number);
 }
