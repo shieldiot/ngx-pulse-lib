@@ -1,6 +1,6 @@
+import { BaseEntity } from '../base';
 import { ReportTypeCode } from '../enums';
 import { TimeFrame } from '../common';
-import { BaseEntity } from '../base';
 export declare class Report extends BaseEntity {
     accountId: string;
     userId: string;

@@ -1,11 +1,11 @@
 import { EventTypeCode } from '../enums';
-import { SeverityTypeCode } from '../enums';
 import { Indicator } from '../common';
-import { GeoData } from '../common';
+import { RuleTypeCode } from '../enums';
 import { StringKeyValue } from '../common';
 import { EventOccurrence } from '../entities';
+import { SeverityTypeCode } from '../enums';
 import { EventStatusCode } from '../enums';
-import { RuleTypeCode } from '../enums';
+import { GeoData } from '../common';
 import { EventCategoryCode } from '../enums';
 import { TrafficDirectionCode } from '../enums';
 import { BaseEntity } from '../base';
