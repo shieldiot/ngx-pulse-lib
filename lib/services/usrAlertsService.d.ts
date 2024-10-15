@@ -1,19 +1,19 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { TimeSeriesOfFloat } from '../common';
-import { StringKeyValue } from '../common';
 import { SeverityTypeCode } from '../enums';
-import { MaliciousIPData } from '../common';
-import { MaliciousIPCard } from '../common';
-import { AlertWithDevice } from '../entities';
-import { TimeSeriesOf2D } from '../common';
-import { DeviceActionCode } from '../enums';
-import { Alert } from '../entities';
-import { RuleTypeCode } from '../enums';
 import { EventStatusCode } from '../enums';
 import { IntDistribution } from '../entities';
+import { MaliciousIPCard } from '../common';
 import { EventTypeCode } from '../enums';
+import { RuleTypeCode } from '../enums';
+import { AlertWithDevice } from '../entities';
+import { DeviceActionCode } from '../enums';
+import { Alert } from '../entities';
 import { EventCategoryCode } from '../enums';
+import { MaliciousIPData } from '../common';
+import { TimeSeriesOf2D } from '../common';
+import { TimeSeriesOfFloat } from '../common';
+import { StringKeyValue } from '../common';
 import * as i0 from "@angular/core";
 export declare class UsrAlertsService {
     private config;

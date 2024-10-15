@@ -1,7 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { ConfigParams } from '../entities';
 import { ConfigParam } from '../entities';
+import { ConfigParams } from '../entities';
 import * as i0 from "@angular/core";
 export declare class SysConfigService {
     private config;
