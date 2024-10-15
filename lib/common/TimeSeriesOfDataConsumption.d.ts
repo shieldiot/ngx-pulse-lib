@@ -1,5 +1,5 @@
-import { TimeFrame } from '../common';
 import { ConsumptionTimeDataPoint } from '../common';
+import { TimeFrame } from '../common';
 export declare class TimeSeriesOfDataConsumption {
     name: string;
     range: TimeFrame;
