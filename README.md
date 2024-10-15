@@ -1,7 +1,6 @@
 # NgxPulseLib
 
 TypeScript client library for ShieldIoT pulse API, for Angular applications.
-This Angular Library is based on Angular 15.2.0
 
 ### How to use The Library
 
