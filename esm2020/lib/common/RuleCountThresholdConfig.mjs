@@ -1,0 +1,12 @@
+// RuleCountThresholdConfig is a set of event type to threshold
+export class RuleCountThresholdConfig {
+    constructor(eventType, threshold) {
+        if (eventType !== undefined) {
+            this.eventType = eventType;
+        }
+        if (threshold !== undefined) {
+            this.threshold = threshold;
+        }
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUnVsZUNvdW50VGhyZXNob2xkQ29uZmlnLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvbmd4LXB1bHNlLWxpYi9zcmMvbGliL2NvbW1vbi9SdWxlQ291bnRUaHJlc2hvbGRDb25maWcudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBSUEsK0RBQStEO0FBQy9ELE1BQU0sT0FBTyx3QkFBd0I7SUFRaEMsWUFBWSxTQUF5QixFQUFFLFNBQWtCO1FBQ3RELElBQUksU0FBUyxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxTQUFTLEdBQUcsU0FBUyxDQUFDO1NBQUU7UUFDNUQsSUFBSSxTQUFTLEtBQUssU0FBUyxFQUFFO1lBQUUsSUFBSSxDQUFDLFNBQVMsR0FBRyxTQUFTLENBQUM7U0FBRTtJQUNoRSxDQUFDO0NBRUoiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBFdmVudFR5cGVDb2RlIH0gZnJvbSAnLi4vZW51bXMnO1xuXG5cblxuLy8gUnVsZUNvdW50VGhyZXNob2xkQ29uZmlnIGlzIGEgc2V0IG9mIGV2ZW50IHR5cGUgdG8gdGhyZXNob2xkXG5leHBvcnQgY2xhc3MgUnVsZUNvdW50VGhyZXNob2xkQ29uZmlnIHtcbiBcbiAgICAvLyBldmVudCB0eXBlIGNvZGUgXG4gICAgcHVibGljIGV2ZW50VHlwZTogRXZlbnRUeXBlQ29kZTtcbiBcbiAgICAvLyBvY2N1cnJlbmNlcyB0aHJlc2hvbGQgXG4gICAgcHVibGljIHRocmVzaG9sZDogbnVtYmVyO1xuIFxuICAgICBjb25zdHJ1Y3RvcihldmVudFR5cGU/OiBFdmVudFR5cGVDb2RlLCB0aHJlc2hvbGQ/OiBudW1iZXIpIHsgXG4gICAgICAgIGlmIChldmVudFR5cGUgIT09IHVuZGVmaW5lZCkgeyB0aGlzLmV2ZW50VHlwZSA9IGV2ZW50VHlwZTsgfVxuICAgICAgICBpZiAodGhyZXNob2xkICE9PSB1bmRlZmluZWQpIHsgdGhpcy50aHJlc2hvbGQgPSB0aHJlc2hvbGQ7IH1cbiAgICB9XG5cbn1cblxuXG4iXX0=

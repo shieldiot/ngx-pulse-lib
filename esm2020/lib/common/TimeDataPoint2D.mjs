@@ -1,0 +1,12 @@
+// TimeDataPoint2D model represents a 2 dimensions datapoint in time
+export class TimeDataPoint2D {
+    constructor(timestamp, value) {
+        if (timestamp !== undefined) {
+            this.timestamp = timestamp;
+        }
+        if (value !== undefined) {
+            this.value = value;
+        }
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGltZURhdGFQb2ludDJELmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMvbmd4LXB1bHNlLWxpYi9zcmMvbGliL2NvbW1vbi9UaW1lRGF0YVBvaW50MkQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBSUEsb0VBQW9FO0FBQ3BFLE1BQU0sT0FBTyxlQUFlO0lBUXZCLFlBQVksU0FBa0IsRUFBRSxLQUF1QjtRQUNwRCxJQUFJLFNBQVMsS0FBSyxTQUFTLEVBQUU7WUFBRSxJQUFJLENBQUMsU0FBUyxHQUFHLFNBQVMsQ0FBQztTQUFFO1FBQzVELElBQUksS0FBSyxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxLQUFLLEdBQUcsS0FBSyxDQUFDO1NBQUU7SUFDcEQsQ0FBQztDQUVKIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgRmxvYXRLZXlWYWx1ZSB9IGZyb20gJy4uL2NvbW1vbic7XG5cblxuXG4vLyBUaW1lRGF0YVBvaW50MkQgbW9kZWwgcmVwcmVzZW50cyBhIDIgZGltZW5zaW9ucyBkYXRhcG9pbnQgaW4gdGltZVxuZXhwb3J0IGNsYXNzIFRpbWVEYXRhUG9pbnQyRCB7XG4gXG4gICAgLy8gU2F0YSBwb2ludCB0aW1lc3RhbXAgW0Vwb2NoIG1pbGxpc2Vjb25kcyBUaW1lc3RhbXBdIFxuICAgIHB1YmxpYyB0aW1lc3RhbXA6IG51bWJlcjtcbiBcbiAgICAvLyBGbG9hdCB2YWx1ZSBcbiAgICBwdWJsaWMgdmFsdWU6IEZsb2F0S2V5VmFsdWVbXTtcbiBcbiAgICAgY29uc3RydWN0b3IodGltZXN0YW1wPzogbnVtYmVyLCB2YWx1ZT86IEZsb2F0S2V5VmFsdWVbXSkgeyBcbiAgICAgICAgaWYgKHRpbWVzdGFtcCAhPT0gdW5kZWZpbmVkKSB7IHRoaXMudGltZXN0YW1wID0gdGltZXN0YW1wOyB9XG4gICAgICAgIGlmICh2YWx1ZSAhPT0gdW5kZWZpbmVkKSB7IHRoaXMudmFsdWUgPSB2YWx1ZTsgfVxuICAgIH1cblxufVxuXG5cbiJdfQ==
