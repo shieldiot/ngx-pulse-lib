@@ -1,3 +1,4 @@
+import { StringKeyValue } from '../common';
 import { EventTypeCode } from '../enums';
 import { SeverityTypeCode } from '../enums';
 import { DeviceActionCode } from '../enums';
@@ -5,7 +6,6 @@ import { BaseEntity } from '../base';
 import { IntegrationTypeCode } from '../enums';
 import { IntegrationTriggerCode } from '../enums';
 import { HttpMethodCode } from '../enums';
-import { StringKeyValue } from '../common';
 export declare class Integration extends BaseEntity {
     accountId: string;
     streamId: string;
