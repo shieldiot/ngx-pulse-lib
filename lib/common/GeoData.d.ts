@@ -7,7 +7,6 @@ export declare class GeoData {
     city_name: string;
     location: Location;
     street: string;
-    number: number;
     postal_code: number;
-    constructor(countryIsoCode?: string, countryName?: string, regionIsoCode?: string, regionName?: string, cityName?: string, location?: Location, street?: string, number?: number, postal?: number);
+    constructor(countryIsoCode?: string, countryName?: string, regionIsoCode?: string, regionName?: string, cityName?: string, location?: Location, street?: string, postal?: number);
 }

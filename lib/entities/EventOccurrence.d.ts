@@ -1,5 +1,5 @@
-import { Indicator } from '../common';
 import { TrafficDirectionCode } from '../enums';
+import { Indicator } from '../common';
 export declare class EventOccurrence {
     timestamp: number;
     source: string;
