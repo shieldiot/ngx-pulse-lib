@@ -1,6 +1,5 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { Image } from '../entities';
 import { Feature } from '../entities';
 import { Stream } from '../entities';
 import { UserMemberships } from '../entities';
@@ -8,6 +7,7 @@ import { FeatureCode } from '../enums';
 import { LoginParams } from '../common';
 import { User } from '../entities';
 import { AccountDTO } from '../entities';
+import { Image } from '../entities';
 import * as i0 from "@angular/core";
 export declare class UsrUserService {
     private config;
