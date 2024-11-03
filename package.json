@@ -1,23 +1,30 @@
 {
   "name": "@shieldiot/ngx-pulse-lib",
-  "version": "1.0.0",
-  "description": "Angular client library for Pulse API backend",
+  "version": "0.0.1",
+  "description": "Angular 17 client library for Pulse API backend",
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
-    "angular",
+    "typescript",
     "pulse",
     "shieldIoT"
   ],
   "author": "Motty Cohen <motty.cohen@shieldiot.io>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:shieldiot/pulse-dsl.git"
+  },
   "peerDependencies": {
-    "@angular/common": "~18.1.1",
-    "@angular/core": "~18.1.1"
+    "@angular/common": "^17.0.8",
+    "@angular/core": "^17.0.8"
   },
   "dependencies": {
-    "tslib": "~2.6.3"
+    "tslib": "^2.6.2"
   },
   "sideEffects": false,
   "module": "fesm2022/shieldiot-ngx-pulse-lib.mjs",

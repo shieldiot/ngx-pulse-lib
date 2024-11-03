@@ -1,3 +1,4 @@
+import { StringKeyValue } from '../common';
 import { DeviceActionCode } from '../enums';
 import { SIM } from '../entities';
 import { Event } from '../entities';
@@ -5,7 +6,6 @@ import { GeoData } from '../common';
 import { BaseEntity } from '../base';
 import { DeviceTypeCode } from '../enums';
 import { DeviceStatusCode } from '../enums';
-import { StringKeyValue } from '../common';
 export declare class DeviceWithEvents extends BaseEntity {
     accountId: string;
     streamId: string;
