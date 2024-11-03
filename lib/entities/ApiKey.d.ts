@@ -1,5 +1,5 @@
-import { BaseEntity } from '../base';
 import { StringKeyIntValue } from '../common';
+import { BaseEntity } from '../base';
 export declare class ApiKey extends BaseEntity {
     name: string;
     ttl: number;
