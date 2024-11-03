@@ -2,12 +2,13 @@ import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../.
 import { PulseConfig } from '../../config';
 import { Feature } from '../entities';
 import { Stream } from '../entities';
-import { UserMemberships } from '../entities';
 import { FeatureCode } from '../enums';
-import { LoginParams } from '../common';
+import { ConfigParam } from '../entities';
 import { User } from '../entities';
-import { AccountDTO } from '../entities';
 import { Image } from '../entities';
+import { UserMemberships } from '../entities';
+import { LoginParams } from '../common';
+import { AccountDTO } from '../entities';
 import * as i0 from "@angular/core";
 export declare class UsrUserService {
     private config;
@@ -68,6 +69,10 @@ export declare class UsrUserService {
      * Ask for premium request
      */
     premiumRequest(featureCode?: FeatureCode): import("rxjs").Observable<ActionResponse>;
+    /**
+     * Get system configuration parameters
+     */
+    getSysConfig(): import("rxjs").Observable<EntitiesResponse<ConfigParam>>;
     static ɵfac: i0.ɵɵFactoryDeclaration<UsrUserService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<UsrUserService>;
 }
