@@ -1,18 +1,18 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { TimeSeriesOfDeviceReport } from '../entities';
+import { DeviceTypeCode } from '../enums';
+import { DeviceStatusCode } from '../enums';
+import { IntDistribution } from '../entities';
+import { DeviceActionCode } from '../enums';
+import { NetworkMap } from '../common';
+import { TimeSeriesOfDataConsumption } from '../common';
 import { DeviceReport } from '../entities';
 import { Device } from '../entities';
 import { BulkDevices } from '../entities';
 import { SeverityTypeCode } from '../enums';
 import { DeviceWithEvents } from '../entities';
 import { NetworkMapTypeCode } from '../enums';
-import { NetworkMap } from '../common';
-import { TimeSeriesOfDataConsumption } from '../common';
-import { DeviceTypeCode } from '../enums';
-import { DeviceStatusCode } from '../enums';
-import { IntDistribution } from '../entities';
-import { DeviceActionCode } from '../enums';
+import { TimeSeriesOfDeviceReport } from '../entities';
 import * as i0 from "@angular/core";
 export declare class UsrDevicesService {
     private config;
@@ -102,7 +102,7 @@ export declare class UsrDevicesService {
     /**
      * Upload list of devices
      */
-    uploadDevices(file: File, streamId?: string, ip?: number[], iccid?: number[], imsi?: number[], msisdn?: number[], imei?: number, name?: number, operator?: number, label?: number[], tag?: number[]): import("rxjs").Observable<import("@angular/common/http").HttpEvent<unknown>>;
+    uploadDevices(file: File, streamId?: string, ip?: number[], iccid?: number[], imsi?: number[], msisdn?: number[], imei?: number, name?: number, operator?: number, label?: number[], tag?: number[], country?: number, city?: number, street?: number, postal?: number): import("rxjs").Observable<import("@angular/common/http").HttpEvent<unknown>>;
     /**
      * Find list of devices by Insight id query
      */
