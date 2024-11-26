@@ -18,6 +18,10 @@ export declare enum EventTypeCode {
     CRYPTO_MINING = 16,
     SUSPICIOUS_IP = 17,
     ABNORMAL_OUTBOUND_PORTS = 18,
-    ABNORMAL_OUTBOUND_ENDPOINTS = 19
+    ABNORMAL_OUTBOUND_ENDPOINTS = 19,
+    SIM_SWITCH = 20,
+    SIM_MISUSAGE = 21,
+    DEVICE_DISCONNECTION = 22,
+    ANOMALY_DETECTED = 23
 }
 export declare function GetEventTypeCodes(): Map<EventTypeCode, string>;
