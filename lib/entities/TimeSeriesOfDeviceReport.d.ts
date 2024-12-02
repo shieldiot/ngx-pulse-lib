@@ -1,5 +1,5 @@
-import { DataPointOfDeviceReport } from '../entities';
 import { TimeFrame } from '../common';
+import { DataPointOfDeviceReport } from '../entities';
 export declare class TimeSeriesOfDeviceReport {
     name: string;
     range: TimeFrame;

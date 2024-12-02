@@ -1,5 +1,5 @@
-import { BaseEntity } from '../base';
 import { AccountRole } from '../common';
+import { BaseEntity } from '../base';
 export declare class Group extends BaseEntity {
     name: string;
     externalId: string;
