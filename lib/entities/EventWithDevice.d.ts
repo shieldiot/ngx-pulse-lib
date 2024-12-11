@@ -1,14 +1,14 @@
-import { EventStatusCode } from '../enums';
-import { Indicator } from '../common';
+import { EventTypeCode } from '../enums';
 import { StringKeyValue } from '../common';
 import { EventCategoryCode } from '../enums';
 import { EventOccurrence } from '../entities';
-import { Device } from '../entities';
-import { EventTypeCode } from '../enums';
 import { SeverityTypeCode } from '../enums';
+import { EventStatusCode } from '../enums';
+import { Indicator } from '../common';
 import { RuleTypeCode } from '../enums';
 import { GeoData } from '../common';
 import { TrafficDirectionCode } from '../enums';
+import { Device } from '../entities';
 import { BaseEntity } from '../base';
 export declare class EventWithDevice extends BaseEntity {
     accountId: string;
