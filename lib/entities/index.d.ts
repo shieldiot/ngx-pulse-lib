@@ -1,5 +1,6 @@
 export * from './Account';
 export * from './AccountDTO';
+export * from './AccountReportDTO';
 export * from './AccountSettings';
 export * from './Action';
 export * from './Alert';

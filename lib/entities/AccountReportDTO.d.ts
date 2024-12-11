@@ -1,9 +1,11 @@
-import { StringKeyValue } from '../common';
-import { AccountSettings } from '../entities';
-import { BaseEntity } from '../base';
 import { AccountTypeCode } from '../enums';
 import { AccountStatusCode } from '../enums';
-export declare class Account extends BaseEntity {
+import { StringKeyValue } from '../common';
+import { AccountSettings } from '../entities';
+import { DeviceReport } from '../entities';
+import { IntDistribution } from '../entities';
+import { BaseEntity } from '../base';
+export declare class AccountReportDTO extends BaseEntity {
     name: string;
     externalId: string;
     description: string;
@@ -14,4 +16,8 @@ export declare class Account extends BaseEntity {
     tags: string[];
     labels: StringKeyValue[];
     settings: AccountSettings;
+    healthScore: number;
+    membersCount: number;
+    latestDeviceReport: DeviceReport;
+    deviceDistributionByStatus: IntDistribution;
 }
