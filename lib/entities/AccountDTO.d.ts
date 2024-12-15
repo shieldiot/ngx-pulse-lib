@@ -1,9 +1,9 @@
+import { StringKeyValue } from '../common';
 import { AccountSettings } from '../entities';
 import { BaseEntity } from '../base';
 import { AccountTypeCode } from '../enums';
 import { AccountStatusCode } from '../enums';
 import { FeatureCode } from '../enums';
-import { StringKeyValue } from '../common';
 export declare class AccountDTO extends BaseEntity {
     name: string;
     externalId: string;

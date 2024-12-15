@@ -3,6 +3,7 @@ export declare enum DeviceActionCode {
     REDIRECT = 1,
     SUSPEND = 2,
     THROTTLE = 3,
-    BLOCK_IP = 4
+    BLOCK_IP = 4,
+    UNSUSPEND = 5
 }
 export declare function GetDeviceActionCodes(): Map<DeviceActionCode, string>;
