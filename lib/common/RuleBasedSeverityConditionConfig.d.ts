@@ -1,5 +1,5 @@
-import { SeverityTypeCode } from '../enums';
 import { RuleCountThresholdConfig } from '../common';
+import { SeverityTypeCode } from '../enums';
 export declare class RuleBasedSeverityConditionConfig {
     severityType: SeverityTypeCode;
     bias: number;

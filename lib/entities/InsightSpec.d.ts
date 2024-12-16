@@ -1,5 +1,5 @@
-import { InsightStatusCode } from '../enums';
 import { BaseEntity } from '../base';
+import { InsightStatusCode } from '../enums';
 export declare class InsightSpec extends BaseEntity {
     accountId: string;
     streamId: string;

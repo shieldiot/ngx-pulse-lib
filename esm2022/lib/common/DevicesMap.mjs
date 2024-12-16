@@ -1,0 +1,12 @@
+// DevicesMap is a data structure representing a list of device nodes and map bounds
+export class DevicesMap {
+    constructor(deviceNodes, mapBounds) {
+        if (deviceNodes !== undefined) {
+            this.deviceNodes = deviceNodes;
+        }
+        if (mapBounds !== undefined) {
+            this.mapBounds = mapBounds;
+        }
+    }
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiRGV2aWNlc01hcC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1wdWxzZS1saWIvc3JjL2xpYi9jb21tb24vRGV2aWNlc01hcC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFLQSxvRkFBb0Y7QUFDcEYsTUFBTSxPQUFPLFVBQVU7SUFRbEIsWUFBWSxXQUEwQixFQUFFLFNBQXFCO1FBQzFELElBQUksV0FBVyxLQUFLLFNBQVMsRUFBRTtZQUFFLElBQUksQ0FBQyxXQUFXLEdBQUcsV0FBVyxDQUFDO1NBQUU7UUFDbEUsSUFBSSxTQUFTLEtBQUssU0FBUyxFQUFFO1lBQUUsSUFBSSxDQUFDLFNBQVMsR0FBRyxTQUFTLENBQUM7U0FBRTtJQUNoRSxDQUFDO0NBRUoiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBEZXZpY2VOb2RlIH0gZnJvbSAnLi4vY29tbW9uJztcbmltcG9ydCB7IE1hcEJvdW5kcyB9IGZyb20gJy4uL2NvbW1vbic7XG5cblxuXG4vLyBEZXZpY2VzTWFwIGlzIGEgZGF0YSBzdHJ1Y3R1cmUgcmVwcmVzZW50aW5nIGEgbGlzdCBvZiBkZXZpY2Ugbm9kZXMgYW5kIG1hcCBib3VuZHNcbmV4cG9ydCBjbGFzcyBEZXZpY2VzTWFwIHtcbiBcbiAgICAvLyBMaXN0IG9mIGRldmljZSBub2RlcyBcbiAgICBwdWJsaWMgZGV2aWNlTm9kZXM6IERldmljZU5vZGVbXTtcbiBcbiAgICAvLyBNYXAgYm91bmRzIFxuICAgIHB1YmxpYyBtYXBCb3VuZHM6IE1hcEJvdW5kcztcbiBcbiAgICAgY29uc3RydWN0b3IoZGV2aWNlTm9kZXM/OiBEZXZpY2VOb2RlW10sIG1hcEJvdW5kcz86IE1hcEJvdW5kcykgeyBcbiAgICAgICAgaWYgKGRldmljZU5vZGVzICE9PSB1bmRlZmluZWQpIHsgdGhpcy5kZXZpY2VOb2RlcyA9IGRldmljZU5vZGVzOyB9XG4gICAgICAgIGlmIChtYXBCb3VuZHMgIT09IHVuZGVmaW5lZCkgeyB0aGlzLm1hcEJvdW5kcyA9IG1hcEJvdW5kczsgfVxuICAgIH1cblxufVxuXG5cbiJdfQ==
