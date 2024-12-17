@@ -1,7 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { TimeSeriesOfFloat } from '../common';
 import { AuditLog } from '../entities';
+import { TimeSeriesOfFloat } from '../common';
 import * as i0 from "@angular/core";
 export declare class SysAuditLogService {
     private config;
