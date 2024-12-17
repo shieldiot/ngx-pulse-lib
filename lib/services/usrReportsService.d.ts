@@ -1,9 +1,9 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { Report } from '../entities';
 import { ReportSourceCode } from '../enums';
 import { TimeSeries } from '../common';
 import { GraphSeries } from '../common';
-import { Report } from '../entities';
 import * as i0 from "@angular/core";
 export declare class UsrReportsService {
     private config;

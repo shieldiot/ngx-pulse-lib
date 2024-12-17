@@ -1,11 +1,11 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { AccountTypeCode } from '../enums';
+import { AccountStatusCode } from '../enums';
 import { Image } from '../entities';
 import { AccountReportDTO } from '../entities';
 import { Account } from '../entities';
 import { AccountSettings } from '../entities';
-import { AccountTypeCode } from '../enums';
-import { AccountStatusCode } from '../enums';
 import * as i0 from "@angular/core";
 export declare class SysAccountsService {
     private config;
