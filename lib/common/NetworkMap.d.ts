@@ -1,5 +1,5 @@
-import { Node } from '../common';
 import { Link } from '../common';
+import { Node } from '../common';
 export declare class NetworkMap {
     nodes: Node[];
     links: Link[];

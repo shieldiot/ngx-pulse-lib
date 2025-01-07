@@ -21,6 +21,7 @@ export * from './usrInsightsService';
 export * from './usrIntegrationsService';
 export * from './usrMembersService';
 export * from './usrNetworkService';
+export * from './usrReportsInstanceService';
 export * from './usrReportsService';
 export * from './usrRulesService';
 export * from './usrUserService';

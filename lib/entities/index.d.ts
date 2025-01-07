@@ -34,6 +34,7 @@ export * from './Integration';
 export * from './Member';
 export * from './Radius';
 export * from './Report';
+export * from './ReportInstance';
 export * from './Rule';
 export * from './RuleTemplate';
 export * from './SIM';
