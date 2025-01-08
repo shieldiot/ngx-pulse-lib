@@ -1,10 +1,10 @@
+import { IntDistribution } from '../entities';
 import { BaseEntity } from '../base';
 import { AccountTypeCode } from '../enums';
 import { AccountStatusCode } from '../enums';
 import { StringKeyValue } from '../common';
 import { AccountSettings } from '../entities';
 import { DeviceReport } from '../entities';
-import { IntDistribution } from '../entities';
 export declare class AccountReportDTO extends BaseEntity {
     name: string;
     externalId: string;

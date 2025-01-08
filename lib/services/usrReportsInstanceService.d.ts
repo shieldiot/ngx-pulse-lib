@@ -23,7 +23,7 @@ export declare class UsrReportsInstanceService {
     /**
      * Find list of reports instance by query
      */
-    find(accountId?: string, search?: string, sort?: string, page?: number, size?: number, from?: number, to?: number, type?: ReportSourceCode[]): import("rxjs").Observable<EntitiesResponse<ReportInstance>>;
+    find(accountId?: string, search?: string, sort?: string, page?: number, size?: number, from?: number, to?: number, reportTriggerSource?: ReportSourceCode[]): import("rxjs").Observable<EntitiesResponse<ReportInstance>>;
     /**
      * Download report file
      */

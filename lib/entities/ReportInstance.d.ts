@@ -1,7 +1,7 @@
+import { IntDistribution } from '../entities';
 import { DeviceReport } from '../entities';
 import { ReportTypeCode } from '../enums';
 import { BaseEntity } from '../base';
-import { IntDistribution } from '../entities';
 export declare class ReportInstance extends BaseEntity {
     accountId: string;
     from: number;
