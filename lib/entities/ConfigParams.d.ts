@@ -1,5 +1,5 @@
-import { BaseEntity } from '../base';
 import { ConfigParam } from '../entities';
+import { BaseEntity } from '../base';
 export declare class ConfigParams extends BaseEntity {
     params: ConfigParam[];
 }

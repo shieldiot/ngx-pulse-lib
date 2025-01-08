@@ -1,6 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
 import { ReportInstance } from '../entities';
+import { ReportSourceCode } from '../enums';
 import * as i0 from "@angular/core";
 export declare class UsrReportsInstanceService {
     private config;
@@ -22,7 +23,7 @@ export declare class UsrReportsInstanceService {
     /**
      * Find list of reports instance by query
      */
-    find(accountId?: string, search?: string, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<ReportInstance>>;
+    find(accountId?: string, search?: string, sort?: string, page?: number, size?: number, from?: number, to?: number, type?: ReportSourceCode[]): import("rxjs").Observable<EntitiesResponse<ReportInstance>>;
     /**
      * Download report file
      */
