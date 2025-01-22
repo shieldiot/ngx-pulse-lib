@@ -1,20 +1,20 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { BulkDevices } from '../entities';
 import { DeviceStatusCode } from '../enums';
-import { TimeSeriesOfDeviceReport } from '../entities';
+import { NetworkMap } from '../common';
+import { TimeSeriesOfDataConsumption } from '../common';
+import { DeviceTypeCode } from '../enums';
+import { DeviceActionCode } from '../enums';
+import { DeviceReport } from '../entities';
+import { MapBounds } from '../common';
 import { DevicesMap } from '../common';
 import { Device } from '../entities';
-import { BulkDevices } from '../entities';
-import { DeviceWithEvents } from '../entities';
-import { IntDistribution } from '../entities';
-import { DeviceTypeCode } from '../enums';
-import { NetworkMap } from '../common';
-import { DeviceReport } from '../entities';
-import { TimeSeriesOfDataConsumption } from '../common';
 import { SeverityTypeCode } from '../enums';
-import { DeviceActionCode } from '../enums';
+import { IntDistribution } from '../entities';
 import { NetworkMapTypeCode } from '../enums';
-import { MapBounds } from '../common';
+import { TimeSeriesOfDeviceReport } from '../entities';
+import { DeviceWithEvents } from '../entities';
 import * as i0 from "@angular/core";
 export declare class UsrDevicesService {
     private config;
@@ -69,6 +69,10 @@ export declare class UsrDevicesService {
      * Find device distribution by action filtered by query
      */
     countByAction(streamId?: string, search?: string, from?: number, to?: number, type?: DeviceTypeCode[], status?: DeviceStatusCode[], risk?: SeverityTypeCode[], scoreRange?: number[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntityResponse<IntDistribution>>;
+    /**
+     * Find device distribution by risk filtered by query
+     */
+    countByRisk(streamId?: string, search?: string, from?: number, to?: number, type?: DeviceTypeCode[], status?: DeviceStatusCode[], risk?: SeverityTypeCode[], scoreRange?: number[], sort?: string, page?: number, size?: number): import("rxjs").Observable<EntityResponse<IntDistribution>>;
     /**
      * Add tag to a device
      */
