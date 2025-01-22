@@ -9,7 +9,6 @@ export declare enum FeatureCode {
     NETWORK_MAP = 7,
     COMPLIANCE_REPORTS = 8,
     CUSTOM_RULES = 9,
-    INTEGRATIONS = 10,
-    ACTIVE_DEVICES = 11
+    INTEGRATIONS = 10
 }
 export declare function GetFeatureCodes(): Map<FeatureCode, string>;

@@ -1,5 +1,5 @@
-import { DeviceTypeCode } from '../enums';
 import { Location } from '../common';
+import { DeviceTypeCode } from '../enums';
 export declare class DeviceNode {
     deviceId: string;
     score: number;
