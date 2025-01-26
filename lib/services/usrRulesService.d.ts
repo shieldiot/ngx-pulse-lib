@@ -1,12 +1,12 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
+import { EventTypeCode } from '../enums';
 import { TimeSeriesOfFloat } from '../common';
 import { IntDistribution } from '../entities';
 import { Distribution } from '../entities';
 import { Rule } from '../entities';
 import { SeverityTypeCode } from '../enums';
 import { RuleActivityStatusCode } from '../enums';
-import { EventTypeCode } from '../enums';
 import * as i0 from "@angular/core";
 export declare class UsrRulesService {
     private config;

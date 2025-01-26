@@ -36,6 +36,10 @@ export declare class SysConfigService {
      * Find list of configuration parameters by query
      */
     find(search?: string, sort?: string, page?: number, size?: number): import("rxjs").Observable<EntitiesResponse<ConfigParam>>;
+    /**
+     * Test email template by configId
+     */
+    testEmailTemplate(configId?: string, addresses?: string[]): import("rxjs").Observable<ActionResponse>;
     static ɵfac: i0.ɵɵFactoryDeclaration<SysConfigService, never>;
     static ɵprov: i0.ɵɵInjectableDeclaration<SysConfigService>;
 }
