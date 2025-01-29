@@ -7,7 +7,8 @@ export declare class Report extends BaseEntity {
     name: string;
     cron: string;
     recipients: string[];
-    subject: string;
     reportType: ReportTypeCode;
     timeFrame: TimeFrame;
+    status: boolean;
+    receiveViaMail: boolean;
 }

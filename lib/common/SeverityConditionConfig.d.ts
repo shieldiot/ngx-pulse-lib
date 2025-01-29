@@ -1,5 +1,5 @@
-import { SeverityTypeCode } from '../enums';
 import { Interval } from '../common';
+import { SeverityTypeCode } from '../enums';
 export declare class SeverityConditionConfig {
     conditionSeverity: SeverityTypeCode;
     sevs: SeverityTypeCode[];
