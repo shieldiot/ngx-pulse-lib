@@ -1,10 +1,10 @@
+import { SIM } from '../entities';
 import { GeoData } from '../common';
 import { BaseEntity } from '../base';
 import { DeviceTypeCode } from '../enums';
 import { DeviceStatusCode } from '../enums';
 import { StringKeyValue } from '../common';
 import { DeviceActionCode } from '../enums';
-import { SIM } from '../entities';
 export declare class Device extends BaseEntity {
     accountId: string;
     streamId: string;

@@ -1,7 +1,7 @@
 import { RestUtil, EntityResponse, EntitiesResponse, ActionResponse } from '../../utils';
 import { PulseConfig } from '../../config';
-import { FeaturesGroup } from '../entities';
 import { Feature } from '../entities';
+import { FeaturesGroup } from '../entities';
 import * as i0 from "@angular/core";
 export declare class SysFeaturesService {
     private config;

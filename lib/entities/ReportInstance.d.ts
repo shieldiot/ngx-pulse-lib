@@ -13,4 +13,5 @@ export declare class ReportInstance extends BaseEntity {
     downloadLink: string;
     reportTriggerSource: ReportTypeCode;
     triggeredByUser: string;
+    triggeredByScheduler: string;
 }
