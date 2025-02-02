@@ -1,5 +1,5 @@
-import { DeviceNode } from '../common';
 import { MapBounds } from '../common';
+import { DeviceNode } from '../common';
 export declare class DevicesMap {
     deviceNodes: DeviceNode[];
     mapBounds: MapBounds;
